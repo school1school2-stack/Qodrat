@@ -15,7 +15,7 @@
     <style>
         body {
             font-family: 'Cairo', system-ui, -apple-system, sans-serif;
-            background-color: #fcfbf7;
+            background-color: #fcfbf7;A
             background-image: 
                 linear-gradient(to right, rgba(220, 215, 201, 0.3) 1px, transparent 1px),
                 linear-gradient(to bottom, rgba(220, 215, 201, 0.3) 1px, transparent 1px);
@@ -303,7 +303,7 @@
                     </div>
                     <h3 class="text-lg font-black text-rose-900">سابعاً: مكتبة وعارض ملفات الـ PDF الخاصة بالقدرات 📄</h3>
                     <p class="text-xs text-slate-600 font-bold leading-relaxed">
-                        استعرض وارفَق كُتب التاسيس وتجميعات القدرات بصيغة PDF وقراءتها مباشرةً داخل التطبيق للتسهيل على الطالب.
+                        استعرض وارفَق كُتب التأسيس (مثل كتاب تاسيس التناظر اللفظي 2026) وقراءتها مباشرةً داخل التطبيق.
                     </p>
                 </div>
                 <div class="mt-4 pt-3 border-t border-slate-100 flex items-center justify-between text-xs font-black text-rose-600">
@@ -336,14 +336,14 @@
                 <div class="flex items-center gap-3 w-full sm:w-auto">
                     <label for="pdf-file-input" class="bg-rose-600 hover:bg-rose-700 text-white font-black px-4 py-2 rounded-xl text-xs sm:text-sm cursor-pointer transition shadow-sm flex items-center gap-2 whitespace-nowrap">
                         <i class="fa-solid fa-file-arrow-up"></i>
-                        <span>اختر ملف PDF من جهازك</span>
+                        <span>اختر كتاب التأسيس أو أي ملف PDF</span>
                     </label>
                     <input type="file" id="pdf-file-input" accept="application/pdf" class="hidden" onchange="handlePdfUpload(event)">
-                    <span id="pdf-file-name" class="text-xs font-bold text-slate-600 truncate max-w-[200px]">لم يتم تحديد ملف بعد</span>
+                    <span id="pdf-file-name" class="text-xs font-bold text-slate-600 truncate max-w-[200px]">كتاب التاسيس التناظر اللفظي_2.pdf</span>
                 </div>
                 <div class="flex items-center gap-2 w-full sm:w-auto justify-end">
                     <button onclick="playSound('click'); resetPdfViewer()" class="text-xs font-bold bg-white text-slate-700 hover:text-rose-600 px-3 py-1.5 rounded-lg border border-slate-300 shadow-sm">
-                        <i class="fa-solid fa-arrow-rotate-left"></i> إغلاق الملف
+                        <i class="fa-solid fa-arrow-rotate-left"></i> تفريغ القارئ
                     </button>
                 </div>
             </div>
@@ -353,10 +353,14 @@
                     <div class="w-16 h-16 rounded-full bg-rose-100 text-rose-600 flex items-center justify-center text-2xl mx-auto border-2 border-rose-300">
                         <i class="fa-solid fa-file-pdf"></i>
                     </div>
-                    <h4 class="text-base font-black text-slate-800">استعرض ملفات PDF ومذكرات القدرات هنا</h4>
-                    <p class="text-xs text-slate-500 font-bold max-w-md mx-auto">
-                        اضغط على الزر بالأعلى لاختيار ملف "كتاب تأسيس التناظر اللفظي" أو أي ملف آخر بصيغة PDF لقراءته والتدرب عليه داخل الكشكول الموحد.
+                    <h4 class="text-base font-black text-slate-800">جاهز لاستعراض ملف التأسيس 2026</h4>
+                    <p class="text-xs text-slate-500 font-bold max-w-md mx-auto mb-3">
+                        يمكنك فتح كتاب التأسيس المرفق مباشرة في التطبيق، أو اختيار ملف PDF محلي آخر من جهازك.
                     </p>
+                    <button onclick="loadDefaultPdf()" class="bg-rose-600 hover:bg-rose-700 text-white font-black px-4 py-2 rounded-xl text-xs sm:text-sm transition shadow-sm inline-flex items-center gap-2">
+                        <i class="fa-solid fa-book-open"></i>
+                        <span>فتح "كتاب التاسيس التناظر اللفظي_2.pdf" المرفوع</span>
+                    </button>
                 </div>
                 <iframe id="pdf-iframe" class="w-full h-full hidden rounded-xl" frameborder="0"></iframe>
             </div>
@@ -692,6 +696,20 @@
                 iframe.classList.remove('hidden');
                 emptyState.classList.add('hidden');
             }
+        }
+
+        // دالة تحميل الملف المرفوع على المستودع تلقائياً
+        function loadDefaultPdf() {
+            playSound('click');
+            const iframe = document.getElementById('pdf-iframe');
+            const emptyState = document.getElementById('pdf-empty-state');
+            const fileNameSpan = document.getElementById('pdf-file-name');
+
+            // المسار المباشر للملف في المستودع
+            iframe.src = './كتاب التاسيس التناظر اللفظي_2.pdf';
+            fileNameSpan.innerText = 'كتاب التاسيس التناظر اللفظي_2.pdf';
+            iframe.classList.remove('hidden');
+            emptyState.classList.add('hidden');
         }
 
         function resetPdfViewer() {
