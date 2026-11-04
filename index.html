@@ -294,21 +294,21 @@
                 </div>
             </div>
 
-            <!-- Card 7: قسم استعراض ملفات PDF -->
-            <div onclick="playSound('click'); openModal('modal-pdf-viewer')" class="notebook-card border-rose-500 shadow-[4px_5px_0px_rgba(244,63,94,0.15)] hover:shadow-[6px_8px_0px_rgba(244,63,94,0.25)] p-5 cursor-pointer flex flex-col justify-between sm:col-span-2 lg:col-span-3">
+            <!-- Card 7: مكتبة مذكرات الـ PDF (تصميم البطاقات المطابق للصورة تماماً) -->
+            <div onclick="playSound('click'); openModal('modal-pdf-library')" class="notebook-card border-rose-500 shadow-[4px_5px_0px_rgba(244,63,94,0.15)] hover:shadow-[6px_8px_0px_rgba(244,63,94,0.25)] p-5 cursor-pointer flex flex-col justify-between sm:col-span-2 lg:col-span-3">
                 <div class="space-y-3">
                     <div class="flex items-center justify-between">
                         <span class="w-8 h-8 rounded-full bg-rose-100 text-rose-800 font-black flex items-center justify-center text-sm border-2 border-rose-400">📄</span>
-                        <span class="text-xs font-black text-rose-800 bg-rose-50 px-2.5 py-1 rounded-lg border border-rose-200">ميزة جديدة للطلاب</span>
+                        <span class="text-xs font-black text-rose-800 bg-rose-50 px-2.5 py-1 rounded-lg border border-rose-200">مكتبة الملفات المرفوعة</span>
                     </div>
-                    <h3 class="text-lg font-black text-rose-900">سابعاً: مكتبة وعارض ملفات الـ PDF الخاصة بالقدرات 📄</h3>
+                    <h3 class="text-lg font-black text-rose-900">سابعاً: مكتبة وملفات الـ PDF (الملخصات والمذكرات) 📄</h3>
                     <p class="text-xs text-slate-600 font-bold leading-relaxed">
-                        استعرض وارفَق كُتب التأسيس (مثل كتاب تاسيس التناظر اللفظي 2026) وقراءتها مباشرةً داخل التطبيق.
+                        استعرض كُتب التأسيس وملازم القدرات المرفوعة كبطاقات أنيقة (معاينة وتحميل).
                     </p>
                 </div>
                 <div class="mt-4 pt-3 border-t border-slate-100 flex items-center justify-between text-xs font-black text-rose-600">
-                    <span>افتح عارض الملفات والمذكرات 📖</span>
-                    <i class="fa-solid fa-file-pdf text-rose-600 text-sm"></i>
+                    <span>افتح مكتبة البطاقات 📂</span>
+                    <i class="fa-solid fa-folder-open text-rose-600 text-sm"></i>
                 </div>
             </div>
 
@@ -318,51 +318,110 @@
 
     <!-- ==================== MODALS ==================== -->
 
-    <!-- MODAL PDF VIEWER -->
-    <div id="modal-pdf-viewer" class="fixed inset-0 z-50 hidden bg-slate-900/60 backdrop-blur-sm flex items-center justify-center p-2 sm:p-5 overflow-y-auto">
-        <div class="bg-white rounded-2xl max-w-5xl w-full h-[90vh] flex flex-col border-4 border-rose-500 shadow-2xl modal-animate p-4 sm:p-6 space-y-4">
-            <div class="pb-3 border-b border-slate-200 flex justify-between items-center z-10 shrink-0">
-                <div class="flex items-center gap-2.5">
-                    <span class="w-9 h-9 rounded-xl bg-rose-100 text-rose-800 font-black flex items-center justify-center text-lg border-2 border-rose-400">📄</span>
-                    <div>
-                        <h3 class="text-base sm:text-lg font-black text-slate-900">قسم استعراض ملفات الـ PDF المدرسية والتجميعات</h3>
-                        <p class="text-xs text-slate-500 font-bold">ارفق كتاب التأسيس أو الملفات المساعدة واقرأها بسلاسة</p>
+    <!-- MODAL PDF LIBRARY (بطاقات الملفات تماماً مثل الصورة المطلوبة) -->
+    <div id="modal-pdf-library" class="fixed inset-0 z-50 hidden bg-slate-900/60 backdrop-blur-sm flex items-center justify-center p-3 sm:p-5 overflow-y-auto">
+        <div class="bg-white rounded-3xl max-w-3xl w-full max-h-[90vh] overflow-hidden shadow-2xl modal-animate flex flex-col">
+            <div class="bg-emerald-800 text-white p-5 flex justify-between items-center shrink-0">
+                <h3 class="text-lg font-black flex items-center gap-2"><i class="fa-solid fa-file-pdf text-emerald-300"></i> الملخصات والمذكرات القواعدية (PDF)</h3>
+                <button onclick="playSound('click'); closeModal('modal-pdf-library')" class="text-white hover:bg-emerald-700 p-2 rounded-xl text-lg transition"><i class="fa-solid fa-xmark"></i></button>
+            </div>
+            
+            <div class="p-6 space-y-4 overflow-y-auto max-h-[70vh]">
+                
+                <!-- Card 1: كتاب التأسيس المرفوع -->
+                <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between p-4 bg-slate-50 border border-slate-200 rounded-2xl hover:border-emerald-500 transition gap-4">
+                    <div class="flex items-center gap-3">
+                        <i class="fa-solid fa-file-pdf text-red-500 text-3xl"></i>
+                        <div>
+                            <h4 class="font-bold text-slate-900 text-sm sm:text-base">كتاب التأسيس الشامل (التناظر اللفظي 2026)</h4>
+                            <p class="text-xs text-slate-500">الملف الأساسي المرفوع في المستودع (present-verb-1.pdf)</p>
+                        </div>
+                    </div>
+                    <div class="flex items-center gap-2 w-full sm:w-auto justify-end">
+                        <button onclick="previewPDF('present-verb-1.pdf')" class="bg-cyan-50 hover:bg-cyan-100 text-cyan-700 border border-cyan-200 px-4 py-2 rounded-xl text-xs font-bold flex items-center gap-1.5 transition">
+                            <i class="fa-solid fa-eye"></i> معاينة
+                        </button>
+                        <a href="present-verb-1.pdf" download class="bg-emerald-50 hover:bg-emerald-100 text-emerald-700 border border-emerald-200 px-4 py-2 rounded-xl text-xs font-bold flex items-center gap-1.5 transition">
+                            <i class="fa-solid fa-download"></i> تحميل
+                        </a>
                     </div>
                 </div>
-                <button onclick="playSound('click'); closeModal('modal-pdf-viewer')" class="w-8 h-8 rounded-lg bg-slate-100 hover:bg-slate-200 text-slate-600 flex items-center justify-center font-bold">✕</button>
-            </div>
 
-            <div class="bg-rose-50/70 border-2 border-dashed border-rose-300 rounded-xl p-3 sm:p-4 flex flex-col sm:flex-row items-center justify-between gap-3 shrink-0">
-                <div class="flex items-center gap-3 w-full sm:w-auto">
-                    <label for="pdf-file-input" class="bg-rose-600 hover:bg-rose-700 text-white font-black px-4 py-2 rounded-xl text-xs sm:text-sm cursor-pointer transition shadow-sm flex items-center gap-2 whitespace-nowrap">
-                        <i class="fa-solid fa-file-arrow-up"></i>
-                        <span>اختر كتاب التأسيس أو أي ملف PDF</span>
-                    </label>
-                    <input type="file" id="pdf-file-input" accept="application/pdf" class="hidden" onchange="handlePdfUpload(event)">
-                    <span id="pdf-file-name" class="text-xs font-bold text-slate-600 truncate max-w-[200px]">present-verb-1.pdf</span>
-                </div>
-                <div class="flex items-center gap-2 w-full sm:w-auto justify-end">
-                    <button onclick="playSound('click'); resetPdfViewer()" class="text-xs font-bold bg-white text-slate-700 hover:text-rose-600 px-3 py-1.5 rounded-lg border border-slate-300 shadow-sm">
-                        <i class="fa-solid fa-arrow-rotate-left"></i> تفريغ القارئ
-                    </button>
-                </div>
-            </div>
-
-            <div id="pdf-container" class="flex-1 bg-slate-100 border-2 border-slate-300 rounded-xl overflow-hidden flex items-center justify-center relative">
-                <div id="pdf-empty-state" class="text-center p-6 space-y-3">
-                    <div class="w-16 h-16 rounded-full bg-rose-100 text-rose-600 flex items-center justify-center text-2xl mx-auto border-2 border-rose-300">
-                        <i class="fa-solid fa-file-pdf"></i>
+                <!-- Card 2 -->
+                <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between p-4 bg-slate-50 border border-slate-200 rounded-2xl hover:border-emerald-500 transition gap-4">
+                    <div class="flex items-center gap-3">
+                        <i class="fa-solid fa-file-pdf text-red-500 text-3xl"></i>
+                        <div>
+                            <h4 class="font-bold text-slate-900 text-sm sm:text-base">ملخص الجملة الاسمية ( المبتدأ والخبر )</h4>
+                            <p class="text-xs text-slate-500">قواعد الكفايات اللغوية</p>
+                        </div>
                     </div>
-                    <h4 class="text-base font-black text-slate-800">جاهز لاستعراض ملف التأسيس 2026</h4>
-                    <p class="text-xs text-slate-500 font-bold max-w-md mx-auto mb-3">
-                        يمكنك فتح كتاب التأسيس المرفق مباشرة في التطبيق، أو اختيار ملف PDF محلي آخر من جهازك.
-                    </p>
-                    <button onclick="loadDefaultPdf()" class="bg-rose-600 hover:bg-rose-700 text-white font-black px-4 py-2 rounded-xl text-xs sm:text-sm transition shadow-sm inline-flex items-center gap-2">
-                        <i class="fa-solid fa-book-open"></i>
-                        <span>فتح "present-verb-1.pdf" المرفوع</span>
-                    </button>
+                    <div class="flex items-center gap-2 w-full sm:w-auto justify-end">
+                        <button onclick="previewPDF('present-verb-1.pdf')" class="bg-cyan-50 hover:bg-cyan-100 text-cyan-700 border border-cyan-200 px-4 py-2 rounded-xl text-xs font-bold flex items-center gap-1.5 transition">
+                            <i class="fa-solid fa-eye"></i> معاينة
+                        </button>
+                        <a href="present-verb-1.pdf" download class="bg-emerald-50 hover:bg-emerald-100 text-emerald-700 border border-emerald-200 px-4 py-2 rounded-xl text-xs font-bold flex items-center gap-1.5 transition">
+                            <i class="fa-solid fa-download"></i> تحميل
+                        </a>
+                    </div>
                 </div>
-                <iframe id="pdf-iframe" class="w-full h-full hidden rounded-xl" frameborder="0"></iframe>
+
+                <!-- Card 3 -->
+                <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between p-4 bg-slate-50 border border-slate-200 rounded-2xl hover:border-emerald-500 transition gap-4">
+                    <div class="flex items-center gap-3">
+                        <i class="fa-solid fa-file-pdf text-red-500 text-3xl"></i>
+                        <div>
+                            <h4 class="font-bold text-slate-900 text-sm sm:text-base">ملخص الفعل المضارع</h4>
+                            <p class="text-xs text-slate-500">الأفعال الخمسة والنصب والجزم</p>
+                        </div>
+                    </div>
+                    <div class="flex items-center gap-2 w-full sm:w-auto justify-end">
+                        <button onclick="previewPDF('present-verb-1.pdf')" class="bg-cyan-50 hover:bg-cyan-100 text-cyan-700 border border-cyan-200 px-4 py-2 rounded-xl text-xs font-bold flex items-center gap-1.5 transition">
+                            <i class="fa-solid fa-eye"></i> معاينة
+                        </button>
+                        <a href="present-verb-1.pdf" download class="bg-emerald-50 hover:bg-emerald-100 text-emerald-700 border border-emerald-200 px-4 py-2 rounded-xl text-xs font-bold flex items-center gap-1.5 transition">
+                            <i class="fa-solid fa-download"></i> تحميل
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Card 4 -->
+                <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between p-4 bg-slate-50 border border-slate-200 rounded-2xl hover:border-emerald-500 transition gap-4">
+                    <div class="flex items-center gap-3">
+                        <i class="fa-solid fa-file-pdf text-red-500 text-3xl"></i>
+                        <div>
+                            <h4 class="font-bold text-slate-900 text-sm sm:text-base">ملخص الفاعل ونائب الفاعل</h4>
+                            <p class="text-xs text-slate-500">التأسيس النحوي المتقدم</p>
+                        </div>
+                    </div>
+                    <div class="flex items-center gap-2 w-full sm:w-auto justify-end">
+                        <button onclick="previewPDF('present-verb-1.pdf')" class="bg-cyan-50 hover:bg-cyan-100 text-cyan-700 border border-cyan-200 px-4 py-2 rounded-xl text-xs font-bold flex items-center gap-1.5 transition">
+                            <i class="fa-solid fa-eye"></i> معاينة
+                        </button>
+                        <a href="present-verb-1.pdf" download class="bg-emerald-50 hover:bg-emerald-100 text-emerald-700 border border-emerald-200 px-4 py-2 rounded-xl text-xs font-bold flex items-center gap-1.5 transition">
+                            <i class="fa-solid fa-download"></i> تحميل
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="bg-slate-100 px-6 py-4 flex justify-between items-center shrink-0">
+                <span class="text-xs text-slate-500 font-bold">يمكنك رفع ملفات جديدة لتظهر كبطاقات مباشرة</span>
+                <button onclick="closeModal('modal-pdf-library')" class="bg-slate-700 hover:bg-slate-800 text-white font-bold px-5 py-2 rounded-xl text-xs transition">إغلاق</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- PDF Viewer Modal (عارف الملفات الداخلي) -->
+    <div id="modal-pdf-viewer" class="fixed inset-0 z-50 hidden bg-slate-900/70 backdrop-blur-sm flex items-center justify-center p-3 sm:p-5">
+        <div class="bg-white rounded-3xl max-w-5xl w-full h-[95vh] flex flex-col shadow-2xl overflow-hidden">
+            <div class="bg-emerald-800 text-white p-4 flex justify-between items-center shrink-0">
+                <h3 class="text-base font-black flex items-center gap-2"><i class="fa-solid fa-book-open text-emerald-300"></i> عارض مستندات الـ PDF</h3>
+                <button onclick="closeModal('modal-pdf-viewer')" class="text-white hover:bg-emerald-700 p-2 rounded-xl text-base transition"><i class="fa-solid fa-xmark"></i></button>
+            </div>
+            <div class="flex-1 bg-slate-100 p-2">
+                <iframe id="pdf-frame" src="" class="w-full h-full rounded-2xl border-0 bg-white"></iframe>
             </div>
         </div>
     </div>
@@ -383,7 +442,6 @@
 
             <!-- Content Sections -->
             <div class="space-y-4 text-xs sm:text-sm font-bold text-slate-800 leading-relaxed">
-                <!-- Section 1 -->
                 <div class="bg-blue-50 border-2 border-blue-200 rounded-xl p-4 space-y-2">
                     <h4 class="font-black text-blue-900 text-sm sm:text-base flex items-center gap-2">
                         <i class="fa-solid fa-scale-balanced text-blue-600"></i>
@@ -395,7 +453,6 @@
                     </p>
                 </div>
 
-                <!-- Section 2 -->
                 <div class="bg-amber-50 border-2 border-amber-200 rounded-xl p-4 space-y-3">
                     <h4 class="font-black text-amber-900 text-sm sm:text-base flex items-center gap-2">
                         <i class="fa-solid fa-laptop-file text-amber-600"></i>
@@ -431,14 +488,13 @@
                     </div>
                 </div>
 
-                <!-- Section 3 -->
                 <div class="bg-rose-50 border-2 border-rose-200 rounded-xl p-4 space-y-2">
                     <h4 class="font-black text-rose-900 text-sm sm:text-base flex items-center gap-2">
                         <i class="fa-solid fa-triangle-exclamation text-rose-600"></i>
                         3. أسرار وفخاخ القدرات (حذار من السقوط فيها!)
                     </h4>
                     <ul class="list-disc list-inside space-y-1.5 text-slate-700">
-                        <li><strong>فخ العكس في التناظر:</strong> إذا بدأت العلاقة بـ (منجل : حصاد) كـ [أداة : وظيفة]، لا تقتنص (قطع : سكية) بل اختر (معول : هدم) لتطابق الترتيب!</li>
+                        <li><strong>فخ العكس في التناظر:</strong> إذا بدأت العلاقة بـ (منجل : حصاد) كـ [أداة : وظيفة]، لا تقتنص (قطع : سكين) بل اختر (معول : هدم) لتطابق الترتيب!</li>
                         <li><strong>فخ المعنى الظاهري في الخطأ السياقي:</strong> لا تبحث عن الكلمة الصعبة، بل ابحث عن الكلمة البسيطة التي "تُخَرِّب" الحكمة المنطقية.</li>
                         <li><strong>فخ العجلة في التخمين:</strong> عند استبعاد خيارين، اقرأ الخيارين المتبقيين بتركيز بدلاً من الاختيار العشوائي.</li>
                     </ul>
@@ -994,46 +1050,10 @@
             });
         }
 
-        function handlePdfUpload(event) {
-            const file = event.target.files[0];
-            if (file && file.type === 'application/pdf') {
-                playSound('click');
-                const fileNameSpan = document.getElementById('pdf-file-name');
-                fileNameSpan.innerText = file.name;
-
-                const fileUrl = URL.createObjectURL(file);
-                const iframe = document.getElementById('pdf-iframe');
-                const emptyState = document.getElementById('pdf-empty-state');
-
-                iframe.src = fileUrl;
-                iframe.classList.remove('hidden');
-                emptyState.classList.add('hidden');
-            }
-        }
-
-        function loadDefaultPdf() {
+        function previewPDF(url) {
             playSound('click');
-            const iframe = document.getElementById('pdf-iframe');
-            const emptyState = document.getElementById('pdf-empty-state');
-            const fileNameSpan = document.getElementById('pdf-file-name');
-
-            iframe.src = './present-verb-1.pdf';
-            fileNameSpan.innerText = 'present-verb-1.pdf';
-            iframe.classList.remove('hidden');
-            emptyState.classList.add('hidden');
-        }
-
-        function resetPdfViewer() {
-            const iframe = document.getElementById('pdf-iframe');
-            const emptyState = document.getElementById('pdf-empty-state');
-            const fileNameSpan = document.getElementById('pdf-file-name');
-            const fileInput = document.getElementById('pdf-file-input');
-
-            iframe.src = '';
-            iframe.classList.add('hidden');
-            emptyState.classList.remove('hidden');
-            fileNameSpan.innerText = 'لم يتم تحديد ملف بعد';
-            fileInput.value = '';
+            document.getElementById('pdf-frame').src = url;
+            openModal('modal-pdf-viewer');
         }
 
         function openRelationQuiz(relId) {
