@@ -15,7 +15,7 @@
     <style>
         body {
             font-family: 'Cairo', system-ui, -apple-system, sans-serif;
-            background-color: #fcfbf7;A
+            background-color: #fcfbf7;
             background-image: 
                 linear-gradient(to right, rgba(220, 215, 201, 0.3) 1px, transparent 1px),
                 linear-gradient(to bottom, rgba(220, 215, 201, 0.3) 1px, transparent 1px);
@@ -438,7 +438,7 @@
                         3. أسرار وفخاخ القدرات (حذار من السقوط فيها!)
                     </h4>
                     <ul class="list-disc list-inside space-y-1.5 text-slate-700">
-                        <li><strong>فخ العكس في التناظر:</strong> إذا بدأت العلاقة بـ (منجل : حصاد) كـ [أداة : وظيفة]، لا تقتنص (قطع : سكين) بل اختر (معول : هدم) لتطابق الترتيب!</li>
+                        <li><strong>فخ العكس في التناظر:</strong> إذا بدأت العلاقة بـ (منجل : حصاد) كـ [أداة : وظيفة]، لا تقتنص (قطع : سكية) بل اختر (معول : هدم) لتطابق الترتيب!</li>
                         <li><strong>فخ المعنى الظاهري في الخطأ السياقي:</strong> لا تبحث عن الكلمة الصعبة، بل ابحث عن الكلمة البسيطة التي "تُخَرِّب" الحكمة المنطقية.</li>
                         <li><strong>فخ العجلة في التخمين:</strong> عند استبعاد خيارين، اقرأ الخيارين المتبقيين بتركيز بدلاً من الاختيار العشوائي.</li>
                     </ul>
@@ -773,7 +773,7 @@
                 questions: [
                     { q: "صوم : رمضان", opts: ["أ) صلاة : مسجد", "ب) حج : ذو الحجة", "ج) نوم : ليل", "د) عمل : نهار"], ans: 1, exp: "الصوم وقته رمضان والحج وقته ذو الحجة." },
                     { q: "نوم : ليل", opts: ["أ) استيقاظ : صباح", "ب) ظلام : قمر", "ج) شمس : ضياء", "د) فطور : غداء"], ans: 0, exp: "علاقة الاقتران بالزمن المحدد." },
-                    { q: "ربيع : أزهار", opts: ["أ) خريف : تساقط", "ب) شتاء : مطر", "ج) صيف : حر", "د) كل ما ذكر صحيح"], ans: 3, exp: "كل فصل اقترن بزمن وظاهرة مناخية مرتبطة به." },
+                    { q: "ربيع : أزهار", opts: ["أ) خريف : تساقط", "ب) شتاء : مطر", "ج) صيف : حر", "د) كل ما ذكر صحيح"], ans: 3, exp: "كل فصل اقترن بزمن وخاصية مناخية مرتبطة به." },
                     { q: "عاشوراء : محرم", opts: ["أ) عرفة : ذو الحجة", "ب) بدر : رمضان", "ج) أضحى : شوال", "د) أ و ب صحيحان"], ans: 3, exp: "ارتباط المناسبة بالزمن والشهر الهجري." },
                     { q: "شمس : نهار", opts: ["أ) قمر : ليل", "ب) نجوم : ظلام", "ج) أنداء : فجر", "د) كل ما سبق صحيح"], ans: 3, exp: "اقتران المعالم بالطبيعة الزمانية." },
                     { q: "شباب : حيويّة", opts: ["أ) مشيب : حكمة", "ب) طفولة : براءة", "ج) هرم : ضعف", "د) جميع ما سبق"], ans: 3, exp: "اقتران المرحلة العمرية بالزمن والخصائص." },
@@ -971,6 +971,7 @@
 
         let currentActiveRelId = null;
         let answeredQuestions = new Set();
+        let currentScore = 0;
         const totalQuestions = 600;
 
         function loadAnalogyCards() {
@@ -1010,14 +1011,12 @@
             }
         }
 
-        // دالة تحميل الملف المرفوع على المستودع تلقائياً
         function loadDefaultPdf() {
             playSound('click');
             const iframe = document.getElementById('pdf-iframe');
             const emptyState = document.getElementById('pdf-empty-state');
             const fileNameSpan = document.getElementById('pdf-file-name');
 
-            // المسار المباشر للملف في المستودع
             iframe.src = './present-verb-1.pdf';
             fileNameSpan.innerText = 'present-verb-1.pdf';
             iframe.classList.remove('hidden');
@@ -1124,7 +1123,6 @@
         function loadModalContent() {
             loadAnalogyCards();
 
-            // 2. Completion
             const compContainer = document.getElementById('completion-questions');
             compContainer.innerHTML = '';
             completionData.forEach((item, idx) => {
@@ -1139,7 +1137,6 @@
                 compContainer.innerHTML += html;
             });
 
-            // 3. Contextual Error
             const ctxContainer = document.getElementById('context-questions');
             ctxContainer.innerHTML = '';
             contextData.forEach((item, idx) => {
@@ -1154,7 +1151,6 @@
                 ctxContainer.innerHTML += html;
             });
 
-            // 4. Reading Comprehension
             const readContainer = document.getElementById('reading-questions');
             readContainer.innerHTML = '';
             readingData.forEach((item, idx) => {
@@ -1169,7 +1165,6 @@
                 readContainer.innerHTML += html;
             });
 
-            // 5. Odd One Out
             const oddContainer = document.getElementById('odd-questions');
             oddContainer.innerHTML = '';
             oddData.forEach((item, idx) => {
@@ -1184,7 +1179,6 @@
                 oddContainer.innerHTML += html;
             });
 
-            // 6. Relation Type (Most Related)
             const rtContainer = document.getElementById('relation-type-questions');
             rtContainer.innerHTML = '';
             relationTypeData.forEach((item, idx) => {
