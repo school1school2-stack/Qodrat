@@ -175,10 +175,11 @@
         <section class="bg-white border-2 border-slate-800 rounded-2xl p-5 sm:p-6 shadow-[5px_5px_0px_0px_rgba(30,41,59,1)]">
             <div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
                 <div class="space-y-1.5 max-w-3xl">
-                    <div class="inline-flex items-center gap-1.5 bg-blue-100 text-blue-900 px-3 py-0.5 rounded-full text-xs font-black border border-blue-300">
-                        <i class="fa-solid fa-bookmark"></i> دليل الطالب المتميز
-                    </div>
-                    <h2 class="text-xl sm:text-2xl font-black text-slate-900">
+                    <a href="https://aztlaztl1512-bit.github.io/SAML-" target="_blank" class="inline-flex items-center gap-1.5 bg-blue-100 hover:bg-blue-200 text-blue-900 px-3 py-1 rounded-full text-xs font-black border border-blue-300 transition shadow-sm guide-pulse">
+                        <i class="fa-solid fa-bookmark text-blue-700"></i>
+                        <span>دليل الطالب المتميز (الدليل الشامل للمنظومة) 🧭</span>
+                    </a>
+                    <h2 class="text-xl sm:text-2xl font-black text-slate-900 mt-2">
                         اختر القسم المطلوب وابدأ المذاكرة والتدريب التفاعلي! ✏️
                     </h2>
                     <p class="text-slate-600 text-xs sm:text-sm font-bold leading-relaxed">
@@ -892,7 +893,7 @@
                 desc: "حدث يؤدي لنتيجة حتمية (مثل: فيروس : مرض).", 
                 ex: "مثال: [سرعة : حادث] ➔ [إهمال : رسوب].", 
                 questions: [
-                    { q: "حادث : سرعة", opts: ["أ) انشراح : سعادة", "ب) حريق : شرارة", "ج) طائرة : كبينة", "د) قطار : سكة"], ans: 1, exp: "الشرارة سبب الحريق والسرعة سبب الحادث." },
+                    { q: "حادث : سرعة", opts: ["أ) انشراح : سعادة", "ب) حريق : شرارة", "ج) طائرة : كبينة", "د) قطار : سكة"], ans: 1, exp: "الشرارة سبب الحريق والسرعة سبب الححادث." },
                     { q: "إهمال : رسوب", opts: ["أ) اجتهاد : نجاح", "ب) ممارسة : إتقان", "ج) طعام : شبع", "د) كسل : فشل"], ans: 0, exp: "السبب يؤدي إلى النتيجة المباشرة." },
                     { q: "فيروس : مرض", opts: ["أ) تطعيم : مناعة", "ب) دواء : شفاء", "ج) قلق : أرق", "د) غضب : ندم"], ans: 1, exp: "الفيروس يسبب المرض والدواء يسبب الشفاء." },
                     { q: "اجتهاد : تفوق", opts: ["أ) كسل : فشل", "ب) سرعة : وصول", "ج) تدريب : مهارة", "د) كل ما سبق صحيح"], ans: 3, exp: "علاقة السبب والنتيجة الإيجابية أو السلبية." },
