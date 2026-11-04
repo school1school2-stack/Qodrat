@@ -176,39 +176,24 @@
             <div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
                 <div class="space-y-1.5 max-w-3xl">
                     <div class="inline-flex items-center gap-1.5 bg-blue-100 text-blue-900 px-3 py-0.5 rounded-full text-xs font-black border border-blue-300">
-                        <i class="fa-solid fa-bookmark"></i>[span_0](start_span)[span_0](end_span) دليل الطالب المتميز[span_1](start_span)[span_1](end_span)
+                        <i class="fa-solid fa-bookmark"></i> دليل الطالب المتميز
                     </div>
-                    <h2 class="text-xl sm:text-2xl font-black text-slate-900">[span_2](start_span)[span_2](end_span) اختر القسم المطلوب وابدأ المذاكرة والتدريب التفاعلي! ✏️[span_3](start_span)[span_3](end_span)
+                    <h2 class="text-xl sm:text-2xl font-black text-slate-900">
+                        اختر القسم المطلوب وابدأ المذاكرة والتدريب التفاعلي! ✏️
                     </h2>
-                    <p class="text-slate-600 text-xs sm:text-sm font-bold leading-relaxed">[span_4](start_span)[span_4](end_span) يحتوي قسم التناظر اللفظي على 20 علاقة أساسية بأسئلة حقيقية ومعتمدة من اختبارات القدرات. نوافذ الاختبارات تظهر فوراً في المقدمة لتجربة حل ممتعة.[span_5](start_span)[span_5](end_span)
+                    <p class="text-slate-600 text-xs sm:text-sm font-bold leading-relaxed">
+                        يحتوي قسم التناظر اللفظي على 20 علاقة أساسية بأسئلة حقيقية ومعتمدة من اختبارات القدرات. نوافذ الاختبارات تظهر فوراً في المقدمة لتجربة حل ممتعة.
                     </p>
                 </div>
                 <div class="scallop-bubble p-4 text-xs font-bold text-amber-900 min-w-[230px]">
-                    <span class="block font-black text-amber-900 text-sm mb-1">[span_6](start_span)[span_6](end_span) 💡 بنك الأسئلة الشامل! 🙂[span_7](start_span)[span_7](end_span)</span>[span_8](start_span)[span_8](end_span) أسئلة حقيقية ومعتمدة بالكامل مع الشرح الفوري والتغذية الراجعة.[span_9](start_span)[span_9](end_span)
+                    <span class="block font-black text-amber-900 text-sm mb-1">💡 بنك الأسئلة الشامل! 🙂</span>
+                    أسئلة حقيقية ومعتمدة بالكامل مع الشرح الفوري والتغذية الراجعة.
                 </div>
             </div>
         </section>
 
-        <!-- Main Sections Grid (8 Cards including Comprehensive Guide) -->
+        <!-- Main Sections Grid (7 Cards) -->
         <section class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
-
-            <!-- Card 0: الدليل الشامل (المضاف حديثاً) -->
-            <div onclick="playSound('click'); openModal('modal-comprehensive-guide')" class="notebook-card border-amber-500 shadow-[4px_5px_0px_rgba(217,119,6,0.15)] hover:shadow-[6px_8px_0px_rgba(217,119,6,0.25)] p-5 cursor-pointer flex flex-col justify-between bg-gradient-to-br from-amber-50/50 to-white">
-                <div class="space-y-3">
-                    <div class="flex items-center justify-between">
-                        <span class="w-8 h-8 rounded-full bg-amber-100 text-amber-800 font-black flex items-center justify-center text-sm border-2 border-amber-400">📚</span>
-                        <span class="text-xs font-black text-amber-900 bg-amber-100 px-2.5 py-1 rounded-lg border border-amber-300">المرجع الأساسي</span>
-                    </div>
-                    <h3 class="text-lg font-black text-amber-950">الدليل الشامل للقدرات اللفظية 🌟</h3>
-                    <p class="text-xs text-slate-600 font-bold leading-relaxed">
-                        دليلك المتكامل لكل أقسام اللفظي، استراتيجيات الحل السريع، وأهم التجميعات والنصائح لضمان الدرجة الكاملة (100%).
-                    </p>
-                </div>
-                <div class="mt-4 pt-3 border-t border-amber-200/60 flex items-center justify-between text-xs font-black text-amber-700">
-                    <span>استعرض الدليل الشامل 📖</span>
-                    <i class="fa-solid fa-arrow-left"></i>
-                </div>
-            </div>
 
             <!-- Card 1: التناظر اللفظي -->
             <div onclick="playSound('click'); openModal('modal-analogy')" class="notebook-card p-5 cursor-pointer flex flex-col justify-between">
@@ -341,93 +326,6 @@
     </main>
 
     <!-- ==================== MODALS ==================== -->
-
-    <!-- MODAL COMPREHENSIVE GUIDE (الدليل الشامل الجديد) -->
-    <div id="modal-comprehensive-guide" class="fixed inset-0 z-50 hidden bg-slate-900/60 backdrop-blur-sm flex items-center justify-center p-3 sm:p-5 overflow-y-auto">
-        <div class="bg-white rounded-3xl max-w-4xl w-full max-h-[90vh] overflow-y-auto border-4 border-amber-500 shadow-2xl modal-animate p-4 sm:p-6 space-y-5">
-            <div class="sticky top-0 bg-white/95 backdrop-blur-md pb-3 border-b border-slate-200 flex justify-between items-center z-10">
-                <div class="flex items-center gap-2.5">
-                    <span class="w-10 h-10 rounded-xl bg-amber-100 text-amber-800 font-black flex items-center justify-center text-xl border-2 border-amber-400">📚</span>
-                    <div>
-                        <h3 class="text-base sm:text-lg font-black text-slate-900">الدليل الشامل للقدرات اللفظية 2026</h3>
-                        <p class="text-xs text-slate-500 font-bold">المرجع المتكامل لتأسيس واجتياز القسم اللفظي بتفوق</p>
-                    </div>
-                </div>
-                <button onclick="playSound('click'); closeModal('modal-comprehensive-guide')" class="w-8 h-8 rounded-lg bg-slate-100 hover:bg-slate-200 text-slate-600 flex items-center justify-center font-bold">✕</button>
-            </div>
-
-            <!-- Content Sections of Comprehensive Guide -->
-            <div class="space-y-4 text-xs sm:text-sm font-bold text-slate-800 leading-relaxed">
-                
-                <div class="bg-amber-50 border-2 border-amber-300 rounded-2xl p-4 space-y-2">
-                    <h4 class="font-black text-amber-950 text-sm sm:text-base flex items-center gap-2">
-                        <i class="fa-solid fa-star text-amber-600"></i>
-                        مقدمة الدليل وأهمية القسم اللفظي
-                    </h4>
-                    <p class="text-slate-700 leading-relaxed">
-                        يُعَد القسم اللفظي في اختبار القدرات العامة فرصة ذهبية لتحقيق درجات عالية (تصل إلى 100%) نظراً لاعتماده على الفهم اللغوي، الحصيلة المعرفية، والتدرب المستمر على التجميعات الحديثة. هذا الدليل يضع بين يديك خارطة الطريق الشاملة للتعامل مع كافة أجزاء الاختبار.
-                    </p>
-                </div>
-
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                    <div class="bg-blue-50 border-2 border-blue-200 rounded-2xl p-4 space-y-2">
-                        <h5 class="font-black text-blue-900 text-sm flex items-center gap-2">
-                            <i class="fa-solid fa-puzzle-piece text-blue-600"></i> 1. استراتيجيات التناظر اللفظي
-                        </h5>
-                        <p class="text-slate-700 text-xs leading-relaxed">
-                            • حدد نوع العلاقة بدقة بين الكلمتين الأساسيتين (مثلاً: سبب ونتيجة، جزء وكل، تضاد).<br>
-                            • انتبه تماماً لـ "اتجاه العلاقة" (من اليمين لليسار أو العكس).<br>
-                            • استخدم الجملة الشارحة المبتكرة لاختبار صحة الخيارات.
-                        </p>
-                    </div>
-
-                    <div class="bg-purple-50 border-2 border-purple-200 rounded-2xl p-4 space-y-2">
-                        <h5 class="font-black text-purple-900 text-sm flex items-center gap-2">
-                            <i class="fa-solid fa-pen-nib text-purple-600"></i> 2. مفاتيح إكمال الجمل
-                        </h5>
-                        <p class="text-slate-700 text-xs leading-relaxed">
-                            • ابحث عن الروابط المنطقية (مثل: و، أو، لكن، على الرغم من، لأن).<br>
-                            • اقرأ الجملة كاملة قبل اتخاذ القرار لضمان التناسق المعنوي والنحوي بين الفراغات.
-                        </p>
-                    </div>
-
-                    <div class="bg-red-50 border-2 border-red-200 rounded-2xl p-4 space-y-2">
-                        <h5 class="font-black text-red-900 text-sm flex items-center gap-2">
-                            <i class="fa-solid fa-triangle-exclamation text-red-600"></i> 3. قواعد الخطأ السياقي
-                        </h5>
-                        <p class="text-slate-700 text-xs leading-relaxed">
-                            • لا تبحث عن الكلمة الصعبة، بل ابحث عن الكلمة التي تُحدث تناقضاً أو خللاً في المعنى العام للسياق أو الحكمة المذكورة.<br>
-                            • طبق قاعدة "العكس الذهني" للتأكد من بديل الكلمة الخاطئة.
-                        </p>
-                    </div>
-
-                    <div class="bg-teal-50 border-2 border-teal-200 rounded-2xl p-4 space-y-2">
-                        <h5 class="font-black text-teal-900 text-sm flex items-center gap-2">
-                            <i class="fa-solid fa-book-open-reader text-teal-600"></i> 4. مهارات استيعاب المقروء
-                        </h5>
-                        <p class="text-slate-700 text-xs leading-relaxed">
-                            • اقرأ الأسئلة أولاً قبل قراءة النص لتوفير الوقت وتحديد الكلمات المفتاحية.<br>
-                            • ركز على الفقرة الأولى والأخيرة لمعرفة الفكرة العامة والعلاقات بين الجمل (تعليل، نتيجة، تفصيل).
-                        </p>
-                    </div>
-                </div>
-
-                <div class="bg-slate-100 border-2 border-slate-300 rounded-2xl p-4 space-y-2 text-center">
-                    <h5 class="font-black text-slate-900 text-sm">💡 نصيحة الأستاذ عبدالعزيز الفيفي لتحقيق الـ 100%</h5>
-                    <p class="text-slate-600 text-xs">
-                        "المذاكرة الذكية تعتمد على التغذية الراجعة وتصحيح الأخطاء. لا تقم بحل الأسئلة عشوائياً، بل اقرأ شرح كل سؤال تخطئ فيه لتثبيت المعلومة في ذهندك نهائياً."
-                    </p>
-                </div>
-
-            </div>
-            
-            <div class="pt-2 flex justify-end">
-                <button onclick="playSound('click'); closeModal('modal-comprehensive-guide')" class="bg-amber-600 hover:bg-amber-700 text-white font-black px-6 py-2.5 rounded-xl text-xs transition shadow-md">
-                    فهمت الدليل، العودة للكشكول 🚀
-                </button>
-            </div>
-        </div>
-    </div>
 
     <!-- MODAL PDF LIBRARY -->
     <div id="modal-pdf-library" class="fixed inset-0 z-50 hidden bg-slate-900/60 backdrop-blur-sm flex items-center justify-center p-3 sm:p-5 overflow-y-auto">
