@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>كشكول القدرات اللفظية 2026 - ورقة عمل تفاعلية الشاملة</title>
+    <title>كشكول القدرات اللفظية 2026 - ورقة عمل تفاعلية</title>
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Standard Clean Arabic Font (Cairo) -->
@@ -47,6 +47,9 @@
 
         .notebook-card-teal { border-color: #0d9488; box-shadow: 4px 5px 0px rgba(13, 148, 136, 0.15); }
         .notebook-card-teal:hover { box-shadow: 6px 8px 0px rgba(13, 148, 136, 0.25); }
+
+        .notebook-card-rose { border-color: #e11d48; box-shadow: 4px 5px 0px rgba(225, 29, 72, 0.15); }
+        .notebook-card-rose:hover { box-shadow: 6px 8px 0px rgba(225, 29, 72, 0.25); }
 
         .scallop-bubble {
             border: 2px dashed #d97706;
@@ -117,7 +120,7 @@
                     <h1 class="text-lg sm:text-xl font-black text-slate-900 leading-tight">
                         كشكول المذاكرة التفاعلي • القدرات اللفظية <span class="text-xs font-extrabold bg-amber-100 text-amber-800 px-2.5 py-0.5 rounded-full border border-amber-400">معيار 2026 📝</span>
                     </h1>
-                    <p class="text-xs text-slate-500 font-bold">الشرح الموسع: 20 علاقة في التناظر + استراتيجيات الحل وفخاخ قياس</p>
+                    <p class="text-xs text-slate-500 font-bold">20 علاقة في التناظر + دليل الطالب الجديد وفخاخ الاختبار</p>
                 </div>
             </div>
 
@@ -128,7 +131,7 @@
                 </button>
                 <div class="text-right pl-3 border-l border-amber-200">
                     <span class="block text-[10px] font-black text-amber-800">النتيجة الإجمالية</span>
-                    <span id="score" class="text-sm font-black text-emerald-600">0 / 600</span>
+                    <span id="score" class="text-sm font-black text-emerald-600">0 / 250</span>
                 </div>
                 <button onclick="playSound('click'); resetQuiz()" class="text-xs font-bold text-slate-700 hover:text-blue-600 transition flex items-center gap-1.5 bg-white px-3 py-1.5 rounded-xl border-2 border-slate-300 shadow-sm">
                     <i class="fa-solid fa-rotate-right text-slate-500"></i>
@@ -146,17 +149,17 @@
             <div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
                 <div class="space-y-2">
                     <div class="inline-flex items-center gap-1.5 bg-amber-200 text-amber-900 px-3 py-0.5 rounded-full text-xs font-black border border-amber-400">
-                        <i class="fa-solid fa-graduation-cap"></i> دليل التأسيس والتأهيل الشامل للطالب 2026
+                        <i class="fa-solid fa-graduation-cap"></i> دليل التأسيس والبداية للطالب الجديد 2026
                     </div>
                     <h2 class="text-xl sm:text-2xl font-black text-slate-900">
                         هل أنت طالب جديد في القدرات؟ ابدأ بفتح "دليل الطالب والفرق بين الورقي والمحوسب"! 🧭
                     </h2>
                     <p class="text-slate-700 text-xs sm:text-sm font-bold leading-relaxed">
-                        تعرف بالتفصيل على الفرق بين اللفظي والكمي، والفرق بين الورقي والمحوسب، واستراتيجيات التعامل مع أسئلة قياس وفخاخ التناظر اللفظي والخطأ السياقي.
+                        تعرف على الفرق بين اللفظي والكمي، والفرق بين الورقي والمحوسب، واحذر من فخاخ التناظر والأسئلة المخادعة في قياس.
                     </p>
                 </div>
                 <button onclick="playSound('click'); openModal('modal-student-guide')" class="bg-amber-600 hover:bg-amber-700 text-white font-black px-5 py-2.5 rounded-xl text-xs sm:text-sm transition shadow-md whitespace-nowrap flex items-center gap-2">
-                    <span>افتح الدليل والشرح الشامل 📖</span>
+                    <span>افتح الدليل والفخاخ 📖</span>
                     <i class="fa-solid fa-book-open"></i>
                 </button>
             </div>
@@ -167,18 +170,18 @@
             <div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
                 <div class="space-y-1.5 max-w-3xl">
                     <div class="inline-flex items-center gap-1.5 bg-blue-100 text-blue-900 px-3 py-0.5 rounded-full text-xs font-black border border-blue-300">
-                        <i class="fa-solid fa-bookmark"></i> الشرح والتأسيس التفاعلي المتقدم
+                        <i class="fa-solid fa-bookmark"></i> دليل الطالب المتميز
                     </div>
                     <h2 class="text-xl sm:text-2xl font-black text-slate-900">
-                        اختر القسم المطلوب وابدأ المذاكرة والتدريب التفاعلي المباشر! ✏️
+                        اختر القسم المطلوب وابدأ المذاكرة والتدريب التفاعلي! ✏️
                     </h2>
                     <p class="text-slate-600 text-xs sm:text-sm font-bold leading-relaxed">
-                        تمت إضافة شروحات تفصيلية موسعة واستراتيجيات تحليل مع تحليلات دقيقة لكل سؤال من أسئلة اختبارات القدرات المعتمدة لتضمن أعلى درجات الفهم والإتقان.
+                        يحتوي قسم التناظر اللفظي على 20 علاقة أساسية بأسئلة حقيقية ومعتمدة من اختبارات القدرات. نوافذ الاختبارات تظهر فوراً في المقدمة لتجربة حل ممتعة.
                     </p>
                 </div>
                 <div class="scallop-bubble p-4 text-xs font-bold text-amber-900 min-w-[230px]">
-                    <span class="block font-black text-amber-900 text-sm mb-1">💡 بنك أسئلة مشروح بالكامل! 🙂</span>
-                    أسئلة معتمدة مصحوبة بشرح خطوات الحل والتغذية الراجعة التفصيلية.
+                    <span class="block font-black text-amber-900 text-sm mb-1">💡 بنك الأسئلة الشامل! 🙂</span>
+                    أسئلة حقيقية ومعتمدة بالكامل مع الشرح الفوري والتغذية الراجعة.
                 </div>
             </div>
         </section>
@@ -191,15 +194,15 @@
                 <div class="space-y-3">
                     <div class="flex items-center justify-between">
                         <span class="w-8 h-8 rounded-full bg-blue-100 text-blue-800 font-black flex items-center justify-center text-sm border-2 border-blue-400">1</span>
-                        <span class="text-xs font-black text-blue-800 bg-blue-50 px-2.5 py-1 rounded-lg border border-blue-200">20 علاقة + شرح تفصيلي</span>
+                        <span class="text-xs font-black text-blue-800 bg-blue-50 px-2.5 py-1 rounded-lg border border-blue-200">20 علاقة معتمدة</span>
                     </div>
                     <h3 class="text-lg font-black text-blue-900">أولاً: التناظر اللفظي ✳️</h3>
                     <p class="text-xs text-slate-600 font-bold leading-relaxed">
-                        استعرض الـ 20 علاقة الأساسية مع شرح موسع لكيفية تكوين جملة التناظر، واستبعاد الخيارات، وتفادي الفخاخ الترتيبية.
+                        استعرض جميع الـ 20 علاقة المشهورة مع الأسئلة التطبيقية الحقيقية لكل علاقة على حدة.
                     </p>
                 </div>
                 <div class="mt-4 pt-3 border-t border-slate-100 flex items-center justify-between text-xs font-black text-blue-600">
-                    <span>استعرض بطاقات العلاقات والشروحات 📌</span>
+                    <span>استعرض بطاقات العلاقات 📌</span>
                     <i class="fa-solid fa-arrow-left"></i>
                 </div>
             </div>
@@ -209,15 +212,15 @@
                 <div class="space-y-3">
                     <div class="flex items-center justify-between">
                         <span class="w-8 h-8 rounded-full bg-purple-100 text-purple-800 font-black flex items-center justify-center text-sm border-2 border-purple-400">2</span>
-                        <span class="text-xs font-black text-purple-800 bg-purple-50 px-2.5 py-1 rounded-lg border border-purple-200">روابط الجمل + مفاتيح السياق</span>
+                        <span class="text-xs font-black text-purple-800 bg-purple-50 px-2.5 py-1 rounded-lg border border-purple-200">مفاتيح الحل + أسئلة حقيقية</span>
                     </div>
                     <h3 class="text-lg font-black text-purple-900">ثانياً: إكمال الجمل ✳️</h3>
                     <p class="text-xs text-slate-600 font-bold leading-relaxed">
-                        طرق التعامل مع الجمل ذات الفراغين، وفهم روابط التضاد والسببية، وتدريبات محلولة بشرح مستفيض.
+                        مؤشرات التضاد والسببية والتناسق المعنوي بين الفراغات مع نماذج أسئلة تجميعات حقيقية.
                     </p>
                 </div>
                 <div class="mt-4 pt-3 border-t border-slate-100 flex items-center justify-between text-xs font-black text-purple-600">
-                    <span>افتح الشرح والأسئلة 📌</span>
+                    <span>افتح صفحة الكشكول 📌</span>
                     <i class="fa-solid fa-arrow-left"></i>
                 </div>
             </div>
@@ -227,15 +230,15 @@
                 <div class="space-y-3">
                     <div class="flex items-center justify-between">
                         <span class="w-8 h-8 rounded-full bg-red-100 text-red-800 font-black flex items-center justify-center text-sm border-2 border-red-400">3</span>
-                        <span class="text-xs font-black text-red-800 bg-red-50 px-2.5 py-1 rounded-lg border border-red-200">قاعدة العكس الذهني والمحاكاة</span>
+                        <span class="text-xs font-black text-red-800 bg-red-50 px-2.5 py-1 rounded-lg border border-red-200">العكس الذهني + أسئلة معتمدة</span>
                     </div>
                     <h3 class="text-lg font-black text-red-900">ثالثاً: الخطأ السياقي ✳️</h3>
                     <p class="text-xs text-slate-600 font-bold leading-relaxed">
-                        استراتيجية تقسيم العبارة، واستبدال الكلمات بعكسها لاكتشاف المخل بالمعنى العام للحكمة أو المبدأ.
+                        طريقة اكتشاف الكلمة التي تخالف المعنى، مع قاعدة العكس الذهني وأسئلة تجميعات حقيقية.
                     </p>
                 </div>
                 <div class="mt-4 pt-3 border-t border-slate-100 flex items-center justify-between text-xs font-black text-red-600">
-                    <span>افتح الشرح والأسئلة 📌</span>
+                    <span>افتح صفحة الكشكول 📌</span>
                     <i class="fa-solid fa-arrow-left"></i>
                 </div>
             </div>
@@ -245,15 +248,15 @@
                 <div class="space-y-3">
                     <div class="flex items-center justify-between">
                         <span class="w-8 h-8 rounded-full bg-amber-100 text-amber-800 font-black flex items-center justify-center text-sm border-2 border-amber-400">4</span>
-                        <span class="text-xs font-black text-amber-800 bg-amber-50 px-2.5 py-1 rounded-lg border border-amber-200">حساب العقود والقرون والروابط</span>
+                        <span class="text-xs font-black text-amber-800 bg-amber-50 px-2.5 py-1 rounded-lg border border-amber-200">تحليل النصوص + تجميعات</span>
                     </div>
                     <h3 class="text-lg font-black text-amber-900">رابعاً: استيعاب المقروء ✳️</h3>
                     <p class="text-xs text-slate-600 font-bold leading-relaxed">
-                        شرح التواريخ والقرون والعقود، واستنباط الهدف العام والروابط بين الفقرات والجمل بالتفصيل.
+                        تحليل الفقرات، علاقة الجمل، وقواعد التواريخ والقرون مع نصوص تجميعات معيارية حقيقية.
                     </p>
                 </div>
                 <div class="mt-4 pt-3 border-t border-slate-100 flex items-center justify-between text-xs font-black text-amber-600">
-                    <span>افتح الشرح والنصوص 📌</span>
+                    <span>افتح صفحة الكشكول 📌</span>
                     <i class="fa-solid fa-arrow-left"></i>
                 </div>
             </div>
@@ -263,15 +266,15 @@
                 <div class="space-y-3">
                     <div class="flex items-center justify-between">
                         <span class="w-8 h-8 rounded-full bg-teal-100 text-teal-800 font-black flex items-center justify-center text-sm border-2 border-teal-400">5</span>
-                        <span class="text-xs font-black text-teal-800 bg-teal-50 px-2.5 py-1 rounded-lg border border-teal-200">تصنيف الفئات والخصائص</span>
+                        <span class="text-xs font-black text-teal-800 bg-teal-50 px-2.5 py-1 rounded-lg border border-teal-200">4 خيارات (واحدة شاذة)</span>
                     </div>
                     <h3 class="text-lg font-black text-teal-900">خامساً: المفردة الشاذة ✳️</h3>
                     <p class="text-xs text-slate-600 font-bold leading-relaxed">
-                        استراتيجية التجميع والفرز الدقيق لاكتشاف المفردة الغريبة عن الرابط الخفي الذي يجمع الثلاثة الأخرى.
+                        أسئلة استخراج الكلمة المختلفة تماماً عن بقية الخيارات الأربعة (مثل: أسد، نمر، فهد، خروف).
                     </p>
                 </div>
                 <div class="mt-4 pt-3 border-t border-slate-100 flex items-center justify-between text-xs font-black text-teal-600">
-                    <span>افتح الشرح والأسئلة 📌</span>
+                    <span>افتح صفحة الكشكول 📌</span>
                     <i class="fa-solid fa-arrow-left"></i>
                 </div>
             </div>
@@ -281,15 +284,15 @@
                 <div class="space-y-3">
                     <div class="flex items-center justify-between">
                         <span class="w-8 h-8 rounded-full bg-purple-100 text-purple-800 font-black flex items-center justify-center text-sm border-2 border-purple-400">6</span>
-                        <span class="text-xs font-black text-purple-800 bg-purple-50 px-2.5 py-1 rounded-lg border border-purple-200">قياس قوة التلازم والمعنى</span>
+                        <span class="text-xs font-black text-purple-800 bg-purple-50 px-2.5 py-1 rounded-lg border border-purple-200">الكلمة الأكثر ارتباطاً</span>
                     </div>
                     <h3 class="text-lg font-black text-purple-900">سادساً: الارتباط اللفظي ✳️</h3>
                     <p class="text-xs text-slate-600 font-bold leading-relaxed">
-                        طرق تحديد درجة القرابة الذهنية والاقتران المباشر بين الكلمة الرأسية والخيارات المطروحة.
+                        سؤال يحتوي على كلمة في السؤال و4 خيارات، والمطلوب اختيار الخيار الأكثر ارتباطاً بها.
                     </p>
                 </div>
                 <div class="mt-4 pt-3 border-t border-slate-100 flex items-center justify-between text-xs font-black text-purple-600">
-                    <span>افتح الشرح والأسئلة 📌</span>
+                    <span>افتح صفحة الكشكول 📌</span>
                     <i class="fa-solid fa-arrow-left"></i>
                 </div>
             </div>
@@ -328,77 +331,96 @@
             
             <div class="p-6 space-y-4 overflow-y-auto max-h-[70vh]">
                 
-                <!-- Card 1 -->
+                <!-- Card 1: كتاب التأسيس التناظر اللفظي -->
                 <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between p-4 bg-slate-50 border border-slate-200 rounded-2xl hover:border-emerald-500 transition gap-4">
                     <div class="flex items-center gap-3">
                         <i class="fa-solid fa-file-pdf text-red-500 text-3xl"></i>
                         <div>
-                            <h4 class="font-bold text-slate-900 text-sm sm:text-base">كتاب التأسيس الشامل (التناظر اللفظي 2026)</h4>
-                            <p class="text-xs text-slate-500">الملف الأساسي المرفوع في المستودع (present-verb-1.pdf)</p>
+                            <h4 class="font-bold text-slate-900 text-sm sm:text-base">كتاب التأسيس الشامل (التناظر اللفظي)</h4>
+                            <p class="text-xs text-slate-500">كتاب التاسيس التناظر اللفظي.pdf</p>
                         </div>
                     </div>
                     <div class="flex items-center gap-2 w-full sm:w-auto justify-end">
-                        <button onclick="previewPDF('present-verb-1.pdf')" class="bg-cyan-50 hover:bg-cyan-100 text-cyan-700 border border-cyan-200 px-4 py-2 rounded-xl text-xs font-bold flex items-center gap-1.5 transition">
+                        <button onclick="previewPDF('كتاب التاسيس التناظر اللفظي.pdf')" class="bg-cyan-50 hover:bg-cyan-100 text-cyan-700 border border-cyan-200 px-4 py-2 rounded-xl text-xs font-bold flex items-center gap-1.5 transition">
                             <i class="fa-solid fa-eye"></i> معاينة
                         </button>
-                        <a href="present-verb-1.pdf" download class="bg-emerald-50 hover:bg-emerald-100 text-emerald-700 border border-emerald-200 px-4 py-2 rounded-xl text-xs font-bold flex items-center gap-1.5 transition">
+                        <a href="كتاب التاسيس التناظر اللفظي.pdf" download class="bg-emerald-50 hover:bg-emerald-100 text-emerald-700 border border-emerald-200 px-4 py-2 rounded-xl text-xs font-bold flex items-center gap-1.5 transition">
                             <i class="fa-solid fa-download"></i> تحميل
                         </a>
                     </div>
                 </div>
 
-                <!-- Card 2 -->
+                <!-- Card 2: تاسيس استعياب المقروء -->
                 <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between p-4 bg-slate-50 border border-slate-200 rounded-2xl hover:border-emerald-500 transition gap-4">
                     <div class="flex items-center gap-3">
                         <i class="fa-solid fa-file-pdf text-red-500 text-3xl"></i>
                         <div>
-                            <h4 class="font-bold text-slate-900 text-sm sm:text-base">ملخص الجملة الاسمية ( المبتدأ والخبر )</h4>
-                            <p class="text-xs text-slate-500">قواعد الكفايات اللغوية</p>
+                            <h4 class="font-bold text-slate-900 text-sm sm:text-base">تأسيس استيعاب المقروء 2026</h4>
+                            <p class="text-xs text-slate-500">تاسيس استعياب المقروء تيل 2026.pdf</p>
                         </div>
                     </div>
                     <div class="flex items-center gap-2 w-full sm:w-auto justify-end">
-                        <button onclick="previewPDF('present-verb-1.pdf')" class="bg-cyan-50 hover:bg-cyan-100 text-cyan-700 border border-cyan-200 px-4 py-2 rounded-xl text-xs font-bold flex items-center gap-1.5 transition">
+                        <button onclick="previewPDF('تاسيس استعياب المقروء تيل 2026.pdf')" class="bg-cyan-50 hover:bg-cyan-100 text-cyan-700 border border-cyan-200 px-4 py-2 rounded-xl text-xs font-bold flex items-center gap-1.5 transition">
                             <i class="fa-solid fa-eye"></i> معاينة
                         </button>
-                        <a href="present-verb-1.pdf" download class="bg-emerald-50 hover:bg-emerald-100 text-emerald-700 border border-emerald-200 px-4 py-2 rounded-xl text-xs font-bold flex items-center gap-1.5 transition">
+                        <a href="تاسيس استعياب المقروء تيل 2026.pdf" download class="bg-emerald-50 hover:bg-emerald-100 text-emerald-700 border border-emerald-200 px-4 py-2 rounded-xl text-xs font-bold flex items-center gap-1.5 transition">
                             <i class="fa-solid fa-download"></i> تحميل
                         </a>
                     </div>
                 </div>
 
-                <!-- Card 3 -->
+                <!-- Card 3: تاسيس المفردة الشاذة -->
                 <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between p-4 bg-slate-50 border border-slate-200 rounded-2xl hover:border-emerald-500 transition gap-4">
                     <div class="flex items-center gap-3">
                         <i class="fa-solid fa-file-pdf text-red-500 text-3xl"></i>
                         <div>
-                            <h4 class="font-bold text-slate-900 text-sm sm:text-base">ملخص الفعل المضارع</h4>
-                            <p class="text-xs text-slate-500">الأفعال الخمسة والنصب والجزم</p>
+                            <h4 class="font-bold text-slate-900 text-sm sm:text-base">تأسيس المفردة الشاذة</h4>
+                            <p class="text-xs text-slate-500">تاسيس المفردة الشاذة تيل.pdf</p>
                         </div>
                     </div>
                     <div class="flex items-center gap-2 w-full sm:w-auto justify-end">
-                        <button onclick="previewPDF('present-verb-1.pdf')" class="bg-cyan-50 hover:bg-cyan-100 text-cyan-700 border border-cyan-200 px-4 py-2 rounded-xl text-xs font-bold flex items-center gap-1.5 transition">
+                        <button onclick="previewPDF('تاسيس المفردة الشاذة تيل.pdf')" class="bg-cyan-50 hover:bg-cyan-100 text-cyan-700 border border-cyan-200 px-4 py-2 rounded-xl text-xs font-bold flex items-center gap-1.5 transition">
                             <i class="fa-solid fa-eye"></i> معاينة
                         </button>
-                        <a href="present-verb-1.pdf" download class="bg-emerald-50 hover:bg-emerald-100 text-emerald-700 border border-emerald-200 px-4 py-2 rounded-xl text-xs font-bold flex items-center gap-1.5 transition">
+                        <a href="تاسيس المفردة الشاذة تيل.pdf" download class="bg-emerald-50 hover:bg-emerald-100 text-emerald-700 border border-emerald-200 px-4 py-2 rounded-xl text-xs font-bold flex items-center gap-1.5 transition">
                             <i class="fa-solid fa-download"></i> تحميل
                         </a>
                     </div>
                 </div>
 
-                <!-- Card 4 -->
+                <!-- Card 4: كتاب التاسيس اكمال الجمل -->
                 <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between p-4 bg-slate-50 border border-slate-200 rounded-2xl hover:border-emerald-500 transition gap-4">
                     <div class="flex items-center gap-3">
                         <i class="fa-solid fa-file-pdf text-red-500 text-3xl"></i>
                         <div>
-                            <h4 class="font-bold text-slate-900 text-sm sm:text-base">ملخص الفاعل ونائب الفاعل</h4>
-                            <p class="text-xs text-slate-500">التأسيس النحوي المتقدم</p>
+                            <h4 class="font-bold text-slate-900 text-sm sm:text-base">كتاب التأسيس إكمال الجمل</h4>
+                            <p class="text-xs text-slate-500">كتاب التاسيس اكمال الجمل تيل.pdf</p>
                         </div>
                     </div>
                     <div class="flex items-center gap-2 w-full sm:w-auto justify-end">
-                        <button onclick="previewPDF('present-verb-1.pdf')" class="bg-cyan-50 hover:bg-cyan-100 text-cyan-700 border border-cyan-200 px-4 py-2 rounded-xl text-xs font-bold flex items-center gap-1.5 transition">
+                        <button onclick="previewPDF('كتاب التاسيس اكمال الجمل تيل.pdf')" class="bg-cyan-50 hover:bg-cyan-100 text-cyan-700 border border-cyan-200 px-4 py-2 rounded-xl text-xs font-bold flex items-center gap-1.5 transition">
                             <i class="fa-solid fa-eye"></i> معاينة
                         </button>
-                        <a href="present-verb-1.pdf" download class="bg-emerald-50 hover:bg-emerald-100 text-emerald-700 border border-emerald-200 px-4 py-2 rounded-xl text-xs font-bold flex items-center gap-1.5 transition">
+                        <a href="كتاب التاسيس اكمال الجمل تيل.pdf" download class="bg-emerald-50 hover:bg-emerald-100 text-emerald-700 border border-emerald-200 px-4 py-2 rounded-xl text-xs font-bold flex items-center gap-1.5 transition">
+                            <i class="fa-solid fa-download"></i> تحميل
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Card 5: كتاب التاسيس الخطأ السياقي -->
+                <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between p-4 bg-slate-50 border border-slate-200 rounded-2xl hover:border-emerald-500 transition gap-4">
+                    <div class="flex items-center gap-3">
+                        <i class="fa-solid fa-file-pdf text-red-500 text-3xl"></i>
+                        <div>
+                            <h4 class="font-bold text-slate-900 text-sm sm:text-base">كتاب التأسيس الخطأ السياقي</h4>
+                            <p class="text-xs text-slate-500">كتاب التاسيس الخطأ السياقي تيل.pdf</p>
+                        </div>
+                    </div>
+                    <div class="flex items-center gap-2 w-full sm:w-auto justify-end">
+                        <button onclick="previewPDF('كتاب التاسيس الخطأ السياقي تيل.pdf')" class="bg-cyan-50 hover:bg-cyan-100 text-cyan-700 border border-cyan-200 px-4 py-2 rounded-xl text-xs font-bold flex items-center gap-1.5 transition">
+                            <i class="fa-solid fa-eye"></i> معاينة
+                        </button>
+                        <a href="كتاب التاسيس الخطأ السياقي تيل.pdf" download class="bg-emerald-50 hover:bg-emerald-100 text-emerald-700 border border-emerald-200 px-4 py-2 rounded-xl text-xs font-bold flex items-center gap-1.5 transition">
                             <i class="fa-solid fa-download"></i> تحميل
                         </a>
                     </div>
@@ -426,7 +448,7 @@
         </div>
     </div>
 
-    <!-- MODAL STUDENT GUIDE (مطابق للتصميم المطلوب تماماً) -->
+    <!-- MODAL STUDENT GUIDE -->
     <div id="modal-student-guide" class="fixed inset-0 z-50 hidden bg-slate-900/60 backdrop-blur-sm flex items-center justify-center p-3 sm:p-5 overflow-y-auto">
         <div class="bg-white rounded-2xl max-w-4xl w-full max-h-[90vh] overflow-y-auto border-4 border-amber-500 shadow-2xl modal-animate p-4 sm:p-6 space-y-5">
             <div class="sticky top-0 bg-white/95 backdrop-blur-md pb-3 border-b border-slate-200 flex justify-between items-center z-10">
@@ -448,8 +470,8 @@
                         1. الفرق بين القسم اللفظي والقسم الكمي
                     </h4>
                     <p class="text-slate-700">
-                        • <strong>القسم اللفظي:</strong> يقيس مهارات الفهم اللغوي، استيعاب النصوص، التناظر اللفظي، واكتشاف الأخطاء السياقية والارتباط المعنوي[span_1](start_span)[span_1](end_span).<br>
-                        • <strong>القسم الكمي:</strong> يقيس المهارات الرياضية والهندسية، الحساب الذهني، وتحليل البيانات والإحصاء[span_2](start_span)[span_2](end_span).
+                        • <strong>القسم اللفظي:</strong> يقيس مهارات الفهم اللغوي، استيعاب النصوص، التناظر اللفظي، واكتشاف الأخطاء السياقية والارتباط المعنوي.<br>
+                        • <strong>القسم الكمي:</strong> يقيس المهارات الرياضية والهندسية، الحساب الذهني، وتحليل البيانات والإحصاء.
                     </p>
                 </div>
 
@@ -470,18 +492,18 @@
                             <tbody>
                                 <tr class="border-b border-amber-200">
                                     <td class="p-2 border border-amber-200 font-black">طريقة التظليل</td>
-                                    <td class="p-2 border border-amber-200">تظليل ورقة الإجابة بقلم الرصاص[span_3](start_span)[span_3](end_span)</td>
-                                    <td class="p-2 border border-amber-200">اختيار الخيار بالماوس على الشاشة[span_4](start_span)[span_4](end_span)</td>
+                                    <td class="p-2 border border-amber-200">تظليل ورقة الإجابة بقلم الرصاص</td>
+                                    <td class="p-2 border border-amber-200">اختيار الخيار بالماوس على الشاشة</td>
                                 </tr>
                                 <tr class="border-b border-amber-200 bg-white/50">
                                     <td class="p-2 border border-amber-200 font-black">عدد الفرص</td>
-                                    <td class="p-2 border border-amber-200">فرصتان فقط في السنة[span_5](start_span)[span_5](end_span)</td>
-                                    <td class="p-2 border border-amber-200">3 فرص متاحة طوال العام[span_6](start_span)[span_6](end_span)</td>
+                                    <td class="p-2 border border-amber-200">فرصتان فقط في السنة</td>
+                                    <td class="p-2 border border-amber-200">3 فرص متاحة طوال العام</td>
                                 </tr>
                                 <tr>
                                     <td class="p-2 border border-amber-200 font-black">سرعة ظهور النتائج</td>
-                                    <td class="p-2 border border-amber-200">تستغرق من 3 إلى 4 أسابيع[span_7](start_span)[span_7](end_span)</td>
-                                    <td class="p-2 border border-amber-200">تظهر خلال 3 إلى 10 أيام عمل[span_8](start_span)[span_8](end_span)</td>
+                                    <td class="p-2 border border-amber-200">تستغرق من 3 إلى 4 أسابيع</td>
+                                    <td class="p-2 border border-amber-200">تظهر خلال 3 إلى 10 أيام عمل</td>
                                 </tr>
                             </tbody>
                         </table>
@@ -493,24 +515,11 @@
                         <i class="fa-solid fa-triangle-exclamation text-rose-600"></i>
                         3. أسرار وفخاخ القدرات (حذار من السقوط فيها!)
                     </h4>
-                    <ul class="list-disc list-inside space-y-2 text-slate-700">
-                        <li><strong>فخ العكس في التناظر:</strong> إذا بدأت العلاقة بـ (منجل : حصاد) كـ [أداة : وظيفة]، لا تقتنص (قطع : سكين) بل اختر (معول : هدم) لتطابق الترتيب[span_9](start_span)[span_9](end_span)!</li>
-                        <li><strong>فخ المعنى الظاهري في الخطأ السياقي:</strong> لا تبحث عن الكلمة الصعبة، بل ابحث عن الكلمة البسيطة التي "تُخَرِّب" الحكمة المنطقية[span_10](start_span)[span_10](end_span).</li>
-                        <li><strong>فخ العجلة في التخمين:</strong> عند استبعاد خيارين، اقرأ الخيارين المتبقيين بتركيز بدلاً من الاختيار العشوائي[span_11](start_span)[span_11](end_span).</li>
+                    <ul class="list-disc list-inside space-y-1.5 text-slate-700">
+                        <li><strong>فخ العكس في التناظر:</strong> إذا بدأت العلاقة بـ (منجل : حصاد) كـ [أداة : وظيفة]، لا تقتنص (قطع : سكين) بل اختر (معول : هدم) لتطابق الترتيب!</li>
+                        <li><strong>فخ المعنى الظاهري في الخطأ السياقي:</strong> لا تبحث عن الكلمة الصعبة، بل ابحث عن الكلمة البسيطة التي "تُخَرِّب" الحكمة المنطقية.</li>
+                        <li><strong>فخ العجلة في التخمين:</strong> عند استبعاد خيارين، اقرأ الخيارين المتبقيين بتركيز بدلاً من الاختيار العشوائي.</li>
                     </ul>
-                </div>
-
-                <!-- إضافة قسم الشرح الموسع لاستراتيجيات الحل -->
-                <div class="bg-emerald-50 border-2 border-emerald-200 rounded-xl p-4 space-y-2">
-                    <h4 class="font-black text-emerald-900 text-sm sm:text-base flex items-center gap-2">
-                        <i class="fa-solid fa-brain text-emerald-600"></i>
-                        4. الشرح والاستراتيجية الشاملة للتعامل مع أسئلة قياس
-                    </h4>
-                    <p class="text-slate-700 text-xs sm:text-sm leading-relaxed">
-                        • <strong>استراتيجية تكوين الجملة بالتناظر:</strong> قم بوضع كلمتي السؤال في جملة مفيدة بسيطة مثل "الـ (أ) يحتاج إلى (ب)"، ثم طبق نفس الجملة تماماً بنفس الترتيب والإتجاه على جميع الخيارات.<br>
-                        • <strong>استراتيجية تقسيم الجملة في الخطأ السياقي:</strong> قسم العبارة إلى جُمَل صغيرة مستقلة، وافحص العبارات جزءاً جزءاً لمعرفة الجزئية التي اختل فيها المفهوم.<br>
-                        • <strong>قاعدة حساب القرون والعقود:</strong> لإيجاد القرن أضف (1) لخانة المئات (مثلاً عام 1420م هو القرن 15). لإيجاد العقد أضف (1) لخانة العشرات (مثلاً 1420م هو العقد الثالث من القرن 15).
-                    </p>
                 </div>
             </div>
         </div>
@@ -521,13 +530,13 @@
         <div class="bg-white rounded-2xl max-w-5xl w-full max-h-[90vh] overflow-y-auto border border-slate-200 shadow-xl modal-animate p-4 sm:p-6">
             <div class="sticky top-0 bg-white/95 backdrop-blur-md pb-3 mb-4 border-b border-slate-200 flex justify-between items-center z-10">
                 <div class="flex items-center gap-2.5">
-                    <span class="w-8 h-8 rounded-lg bg-blue-100 text-blue-800 font-black flex items-center justify-center text-sm">1</span>
-                    <h3 class="text-base sm:text-lg font-black text-slate-900">قسم التناظر اللفظي (الـ 20 علاقة المعتمدة مع الشرح التأسيسي)</h3>
+                    <span class="w-8 h-8 rounded-lg bg-blue-100 text-blue-800 font-black flex items-center justify-center text-sm border-2 border-blue-400">1</span>
+                    <h3 class="text-base sm:text-lg font-black text-slate-900">قسم التناظر اللفظي (الـ 20 علاقة المعْتمدة)</h3>
                 </div>
                 <button onclick="playSound('click'); closeModal('modal-analogy')" class="w-8 h-8 rounded-lg bg-slate-100 hover:bg-slate-200 text-slate-600 flex items-center justify-center font-bold">✕</button>
             </div>
-            <p class="text-xs text-slate-600 font-bold mb-4">اختر أي علاقة أدناه لفتح الشرح الموسع المسبق والاختبار التطبيقي المباشر لها:</p>
-            <div id="relations-cards-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4"></div>
+            <p class="text-xs text-slate-600 font-bold mb-4">اختر أي علاقة أدناه لفتح بطاقتها واختبارها الحقيقي بنفس نمط كشكول المذاكرة:</p>
+            <div id="relations-cards-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5"></div>
         </div>
     </div>
 
@@ -536,14 +545,10 @@
         <div class="bg-white rounded-2xl max-w-3xl w-full max-h-[90vh] overflow-y-auto border border-slate-200 shadow-xl modal-animate p-4 sm:p-6">
             <div class="sticky top-0 bg-white/95 backdrop-blur-md pb-3 mb-4 border-b border-slate-200 flex justify-between items-center z-10">
                 <div class="flex items-center gap-2.5">
-                    <span class="w-8 h-8 rounded-lg bg-purple-100 text-purple-800 font-black flex items-center justify-center text-sm">2</span>
-                    <h3 class="text-base sm:text-lg font-black text-slate-900">قسم إكمال الجمل (شرح المفاتيح السياقية + أسئلة محلولة)</h3>
+                    <span class="w-8 h-8 rounded-lg bg-purple-100 text-purple-800 font-black flex items-center justify-center text-sm border-2 border-purple-400">2</span>
+                    <h3 class="text-base sm:text-lg font-black text-slate-900">قسم إكمال الجمل (أسئلة حقيقية ومعتمدة)</h3>
                 </div>
                 <button onclick="playSound('click'); closeModal('modal-completion')" class="w-8 h-8 rounded-lg bg-slate-100 hover:bg-slate-200 text-slate-600 flex items-center justify-center font-bold">✕</button>
-            </div>
-            <!-- مقدمة شارحة للقسم -->
-            <div class="bg-purple-50 border border-purple-200 p-3.5 rounded-xl mb-4 text-xs font-bold text-purple-900 leading-relaxed">
-                💡 <strong>استراتيجية الحل:</strong> ابحث عن الكلمات الموحيّة (مثل: ولكن، لأن، مع ذلك، رغم) التي تبين نوع العلاقة بين الفراغين (تضاد، سبب ونتيجة، أو توافق)، وقم بتجريب الكلمة الأولى دائماً لتصفية الخيارات قبل الانتقال للكلمة الثانية.
             </div>
             <div id="completion-questions" class="space-y-4"></div>
         </div>
@@ -554,14 +559,10 @@
         <div class="bg-white rounded-2xl max-w-3xl w-full max-h-[90vh] overflow-y-auto border border-slate-200 shadow-xl modal-animate p-4 sm:p-6">
             <div class="sticky top-0 bg-white/95 backdrop-blur-md pb-3 mb-4 border-b border-slate-200 flex justify-between items-center z-10">
                 <div class="flex items-center gap-2.5">
-                    <span class="w-8 h-8 rounded-lg bg-red-100 text-red-800 font-black flex items-center justify-center text-sm">3</span>
-                    <h3 class="text-base sm:text-lg font-black text-slate-900">قسم الخطأ السياقي (قواعد الاكتشاف والعكس الذهني)</h3>
+                    <span class="w-8 h-8 rounded-lg bg-red-100 text-red-800 font-black flex items-center justify-center text-sm border-2 border-red-400">3</span>
+                    <h3 class="text-base sm:text-lg font-black text-slate-900">قسم الخطأ السياقي (أسئلة حقيقية ومعتمدة)</h3>
                 </div>
                 <button onclick="playSound('click'); closeModal('modal-context')" class="w-8 h-8 rounded-lg bg-slate-100 hover:bg-slate-200 text-slate-600 flex items-center justify-center font-bold">✕</button>
-            </div>
-            <!-- مقدمة شارحة للقسم -->
-            <div class="bg-red-50 border border-red-200 p-3.5 rounded-xl mb-4 text-xs font-bold text-red-900 leading-relaxed">
-                💡 <strong>قاعدة العكس الذهني:</strong> الكلمة الخاطئة في الجملة تكون صحيحة إملائياً ولغوياً لكنها تغير معنى المقولة أو الحكمة المشهورة؛ للتحقق جرب إبدال الكلمة بعكسها التام فإذا استقام المعنى تكون هي الكلمة المستهدفة[span_12](start_span)[span_12](end_span)!
             </div>
             <div id="context-questions" class="space-y-4"></div>
         </div>
@@ -572,14 +573,10 @@
         <div class="bg-white rounded-2xl max-w-3xl w-full max-h-[90vh] overflow-y-auto border border-slate-200 shadow-xl modal-animate p-4 sm:p-6">
             <div class="sticky top-0 bg-white/95 backdrop-blur-md pb-3 mb-4 border-b border-slate-200 flex justify-between items-center z-10">
                 <div class="flex items-center gap-2.5">
-                    <span class="w-8 h-8 rounded-lg bg-amber-100 text-amber-800 font-black flex items-center justify-center text-sm">4</span>
-                    <h3 class="text-base sm:text-lg font-black text-slate-900">قسم استيعاب المقروء (تحليل النصوص وحساب التواريخ)</h3>
+                    <span class="w-8 h-8 rounded-lg bg-amber-100 text-amber-800 font-black flex items-center justify-center text-sm border-2 border-amber-400">4</span>
+                    <h3 class="text-base sm:text-lg font-black text-slate-900">قسم استيعاب المقروء (نصوص وأسئلة تجميعات)</h3>
                 </div>
                 <button onclick="playSound('click'); closeModal('modal-reading')" class="w-8 h-8 rounded-lg bg-slate-100 hover:bg-slate-200 text-slate-600 flex items-center justify-center font-bold">✕</button>
-            </div>
-            <!-- مقدمة شارحة للقسم -->
-            <div class="bg-amber-50 border border-amber-200 p-3.5 rounded-xl mb-4 text-xs font-bold text-amber-900 leading-relaxed">
-                💡 <strong>استراتيجية التعامل مع النص:</strong> اقرأ الأسئلة أولاً قبل النص لتحديد ما تبحث عنه (سبب، نتيجة، عقد، قرن، أو معنى مفرطة)، واستخدم روابط الأفكار لاكتشاف العلاقات الفقرية المباشرة.
             </div>
             <div id="reading-questions" class="space-y-4"></div>
         </div>
@@ -590,14 +587,10 @@
         <div class="bg-white rounded-2xl max-w-3xl w-full max-h-[90vh] overflow-y-auto border border-slate-200 shadow-xl modal-animate p-4 sm:p-6">
             <div class="sticky top-0 bg-white/95 backdrop-blur-md pb-3 mb-4 border-b border-slate-200 flex justify-between items-center z-10">
                 <div class="flex items-center gap-2.5">
-                    <span class="w-8 h-8 rounded-lg bg-teal-100 text-teal-800 font-black flex items-center justify-center text-sm">5</span>
-                    <h3 class="text-base sm:text-lg font-black text-slate-900">قسم المفردة الشاذة (استراتيجية التصنيف المتقدم)</h3>
+                    <span class="w-8 h-8 rounded-lg bg-teal-100 text-teal-800 font-black flex items-center justify-center text-sm border-2 border-teal-400">5</span>
+                    <h3 class="text-base sm:text-lg font-black text-slate-900">قسم المفردة الشاذة (4 خيارات - واحدة شاذة)</h3>
                 </div>
                 <button onclick="playSound('click'); closeModal('modal-odd')" class="w-8 h-8 rounded-lg bg-slate-100 hover:bg-slate-200 text-slate-600 flex items-center justify-center font-bold">✕</button>
-            </div>
-            <!-- مقدمة شارحة للقسم -->
-            <div class="bg-teal-50 border border-teal-200 p-3.5 rounded-xl mb-4 text-xs font-bold text-teal-900 leading-relaxed">
-                💡 <strong>طريقة التجميع:</strong> ابحث عن الصفة المشتركة الدقيقة بين 3 خيارات (مثل: كلها عواصم، كلها مفترسات، كلها مجرات، كلها أفعال)، فتكون الكلمة الرابعة التي تفتقد لهذه الصفة هي المفردة الشاذة.
             </div>
             <div id="odd-questions" class="space-y-4"></div>
         </div>
@@ -608,14 +601,10 @@
         <div class="bg-white rounded-2xl max-w-3xl w-full max-h-[90vh] overflow-y-auto border border-slate-200 shadow-xl modal-animate p-4 sm:p-6">
             <div class="sticky top-0 bg-white/95 backdrop-blur-md pb-3 mb-4 border-b border-slate-200 flex justify-between items-center z-10">
                 <div class="flex items-center gap-2.5">
-                    <span class="w-8 h-8 rounded-lg bg-purple-100 text-purple-800 font-black flex items-center justify-center text-sm">6</span>
-                    <h3 class="text-base sm:text-lg font-black text-slate-900">قسم الارتباط اللفظي (الاقتران والتلازم المعنوي)</h3>
+                    <span class="w-8 h-8 rounded-lg bg-purple-100 text-purple-800 font-black flex items-center justify-center text-sm border-2 border-purple-400">6</span>
+                    <h3 class="text-base sm:text-lg font-black text-slate-900">قسم الارتباط اللفظي (الكلمة الأكثر ارتباطاً)</h3>
                 </div>
                 <button onclick="playSound('click'); closeModal('modal-relation-type')" class="w-8 h-8 rounded-lg bg-slate-100 hover:bg-slate-200 text-slate-600 flex items-center justify-center font-bold">✕</button>
-            </div>
-            <!-- مقدمة شارحة للقسم -->
-            <div class="bg-purple-50 border border-purple-200 p-3.5 rounded-xl mb-4 text-xs font-bold text-purple-900 leading-relaxed">
-                💡 <strong>درجة التلازم الذهني:</strong> يطرح السؤال كلمة واحدة رئيسية، والمطلوب اختيار الكلمة الأكثر تلازماً واقتراناً بها في الواقع واللغة من بين الخيارات المتاحة.
             </div>
             <div id="relation-type-questions" class="space-y-4"></div>
         </div>
@@ -648,104 +637,153 @@
         </div>
     </div>
 
+    <!-- Footer / حقوق الطبع والنشر -->
+    <footer class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 text-center border-t border-slate-200 mt-10">
+        <p class="text-xs sm:text-sm font-bold text-slate-600">
+            جميع الحقوق محفوظة © 2026 • إعداد وتطوير الأستاذ: <span class="text-blue-600 font-black">عبدالعزيز الفيفي</span> ✏️
+        </p>
+    </footer>
+
     <!-- Data & Script Logic -->
     <script>
         const realRelationsData = {
             r1: {
+                idNum: 1,
+                icon: "fa-solid fa-paw",
+                themeClass: "notebook-card",
+                titleColor: "text-blue-900",
+                badgeBg: "bg-blue-100 text-blue-800 border-blue-400",
+                tagBg: "text-blue-800 bg-blue-50 border-blue-200",
+                linkColor: "text-blue-600",
                 name: "1. أصوات الكائنات الحية",
-                desc: "تُعنى هذه العلاقة بالربط المباشر والمنظم بين الكائن الحي (سواء كان حيواناً أو طيراً) والصوت اللغوي الفصيح المخصص له في المعاجم العربية. مفتاح الحل يكون بصياغة جملة: (الصوت الصادر من... هو...).",
-                ex: "مثال شارح ومحلول: [ذئب : عواء] ➔ [ضفدع : نقيق]. الشرح والتحليل: العواء هو الصوت الطبيعي الصادر عن الذئب، وبالمثل فإن النقيق هو الصوت الصادر عن الضفدع، مع مراعاة البدأ بالكائن والانتهاء بالصوت بنفس الترتيب التام.",
+                desc: "العلاقة تربط بين الكائن الحي والصوت الخاص به (مثل: ذئب : عواء).",
+                ex: "مثال محلول: [ذئب : عواء] ➔ [ضفدع : نقيق]. الشرح: النقيق هو الصوت الصادر من الضفدع.",
                 questions: [
-                    { q: "ذئب : عواء", opts: ["أ) ماء : خرير", "ب) نسر : ثغاء", "ج) ضفدع : نقيق", "د) كلب : حراسة"], ans: 2, exp: "علاقة كائن وصوته الفصيح؛ العواء صوت الذئب والنقيق صوت الضفدع." },
+                    { q: "ذئب : عواء", opts: ["أ) ماء : خرير", "ب) نسر : ثغاء", "ج) ضفدع : نقيق", "د) كلب : حراسة"], ans: 2, exp: "علاقة كائن وصوته؛ العواء صوت الذئب والنقيق صوت الضفدع." },
                     { q: "ضفدع : نقيق", opts: ["أ) أسد : عواء", "ب) نحلة : طنين", "ج) ماء : هدير", "د) مسجد : مئذنة"], ans: 1, exp: "علاقة الكائن وصوته؛ النقيق صوت الضفدع والطنين صوت النحلة." },
                     { q: "ماعز : ثغاء", opts: ["أ) خفاش : نقيق", "ب) أفعى : فحيح", "ج) ضفدع : نعيق", "د) بعير : هدير"], ans: 1, exp: "الثغاء صوت الماعز والفحيح صوت الأفعى." },
-                    { q: "حصان : صهيل", opts: ["أ) عجل : خوار", "ب) برق : سحاب", "ج) زئير : أسد", "د) حفيف : شجر"], ans: 0, exp: "الصهيل صوت الحصان والخوار صوت العجل، مع الحذر من (ج) لأنها معكوسة الترتيب." },
-                    { q: "أفعى : فحيح", opts: ["أ) صهيل : حصان", "ب) جبل : عراء", "ج) ذئب : عواء", "د) جمل : صحراء"], ans: 2, exp: "الفحيح صوت الأفعى والعواء صوت الذئب بنفس الترتيب." },
+                    { q: "حصان : صهيل", opts: ["أ) عجل : خوار", "ب) برق : سحاب", "ج) زئير : أسد", "د) حفيف : شجر"], ans: 0, exp: "الصهيل صوت الحصان والخوار صوت العجل." },
+                    { q: "أفعى : فحيح", opts: ["أ) صهيل : حصان", "ب) جبل : عراء", "ج) ذئب : عواء", "د) جمل : صحراء"], ans: 2, exp: "الفحيح صوت الأفعى والعواء صوت الذئب." },
                     { q: "أسد : زئير", opts: ["أ) حمامة : هديل", "ب) شجر : حفيف", "ج) كلب : نباح", "د) غراب : نعيق"], ans: 0, exp: "الزئير صوت الأسد والهديل صوت الحمامة." },
                     { q: "حمار : نهيق", opts: ["أ) طير : تغريد", "ب) بومة : نعيق", "ج) نمر : خرير", "د) قطة : مواء"], ans: 3, exp: "النهيق صوت الحمار والمواء صوت القطة." },
                     { q: "غراب : نعيق", opts: ["أ) عصفور : زقزقة", "ب) بعير : رغاء", "ج) ضفدع : طنين", "د) أفعى : صهيل"], ans: 0, exp: "النعيق صوت الغراب والزقزقة صوت العصفور." },
-                    { q: "نحلة : طنين", opts: ["أ) ذبابة : طنين", "ب) نسر : صهيل", "ج) جمل : ثغاء", "د) أسد : فحيح"], ans: 0, exp: "الطنين هو الصوت المخصص الصادر عن النحلة والذبابة." },
+                    { q: "نحلة : طنين", opts: ["أ) ذبابة : طنين", "ب) نسر : صهيل", "ج) جمل : ثغاء", "د) أسد : فحيح"], ans: 0, exp: "الطنين هو الصوت الصادر عن النحلة والذبابة." },
                     { q: "حمام : هديل", opts: ["أ) ديك : صياح", "ب) نسر : زئير", "ج) شجر : خرير", "د) هواء : صهيل"], ans: 0, exp: "الهديل صوت الحمام والصياح صوت الديك." }
                 ]
             },
             r2: {
+                idNum: 2,
+                icon: "fa-solid fa-bell",
+                themeClass: "notebook-card notebook-card-purple",
+                titleColor: "text-purple-900",
+                badgeBg: "bg-purple-100 text-purple-800 border-purple-400",
+                tagBg: "text-purple-800 bg-purple-50 border-purple-200",
+                linkColor: "text-purple-600",
                 name: "2. أصوات الجمادات والطبيعة",
-                desc: "تختص هذه العلاقة بالتعبير عن الأصوات الطبيعية الصادرة عن الظواهر الطبيعية أو الأدوات والجمادات (كالأسلحة والأبواب والمياه). طريقة التفكير الحاكمة: الربط بين المادة والظاهرة الصوتية الناتجة عنها.",
-                ex: "مثال شارح ومحلول: [رحى : جعجعة] ➔ [خطى : وقع]. التحليل والتفصيل: الجعجعة هي الصوت الناجم عن دوران أداة الرحى، ووقع الخطى هو الصوت الصادر عن الأقدام أثناء السير.",
+                desc: "العلاقة تربط بين الشيء الطبيعي أو الجماد والصوت المميز له (مثل: رحى : جعجعة).",
+                ex: "مثال محلول: [رحى : جعجعة] ➔ [خطى : وقع]. الشرح: وقع الخطى هو الصوت الناجم عن المشي.",
                 questions: [
-                    { q: "رحى : جعجعة", opts: ["أ) خيل : صهيل", "ب) عويل : ذئب", "ج) خطى : وقع", "د) طاحونة : حبوب"], ans: 2, exp: "علاقة الشيء وصوته الناتج؛ الرحى صوتها جعجعة والخطى صوتها وقع." },
-                    { q: "صوت : ضجيج", opts: ["أ) همس : سر", "ب) ضحك : قهقهة", "ج) زمالة : صديقة", "د) نوم : عمق"], ans: 1, exp: "الضجيج هو الصوت العالي الشديد، والقهقهة هي الضحك العالي الشديد." },
-                    { q: "برق : رعد", opts: ["أ) قمر : بدر", "ب) شمس : نور", "ج) قلم : كتابة", "د) حمل : ولادة"], ans: 1, exp: "البرق يرافقه الضوء والنور والرعد يرافقه الصوت، اقتران طبيعي." },
-                    { q: "جرس : حصة", opts: ["أ) أذان : صلاة", "ب) خرير : ماء", "ج) عين : بصر", "د) فراولة : مشمش"], ans: 0, exp: "صوت الجرس يعلن بدء الحصة وصوت الأذان يعلن وقت الصلاة." },
-                    { q: "ماء : خرير", opts: ["أ) شجر : حفيف", "ب) ريح : صرير", "ج) سيف : صليل", "د) نار : بنزين"], ans: 0, exp: "الخرير صوت جريان الماء والحفيف صوت أوراق الشجر." },
+                    { q: "رحى : جعجعة", opts: ["أ) خيل : صهيل", "ب) عويل : ذئب", "ج) خطى : وقع", "د) طاحونة : حبوب"], ans: 2, exp: "علاقة الشيء وصوته؛ الرحى صوتها جعجعة والخطى صوتها وقع." },
+                    { q: "صوت : ضجيج", opts: ["أ) همس : سر", "ب) ضحك : قهقهة", "ج) زمالة : صديقة", "د) نوم : عمق"], ans: 1, exp: "الضجيج شدة الصوت والقهقهة شدة الضحك." },
+                    { q: "برق : رعد", opts: ["أ) قمر : بدر", "ب) شمس : نور", "ج) قلم : كتابة", "د) حمل : ولادة"], ans: 1, exp: "علاقة اقتران واقتران؛ البرق يرافقه الضوء والنور." },
+                    { q: "جرس : حصة", opts: ["أ) أذان : صلاة", "ب) خرير : ماء", "ج) عين : بصر", "د) فراولة : مشمش"], ans: 0, exp: "الجرس إعلان للحصة والأذان إعلان للصلاة." },
+                    { q: "ماء : خرير", opts: ["أ) شجر : حفيف", "ب) ريح : صرير", "ج) سيف : صليل", "د) نار : بنزين"], ans: 0, exp: "الخرير صوت الماء والحفيف صوت أوراق الشجر." },
                     { q: "سيف : صليل", opts: ["أ) مدفع : دوي", "ب) باب : صرير", "ج) قلم : صرير", "د) نار : حفيف"], ans: 0, exp: "الصليل صوت احتكاك السيوف والدوي صوت الانفجار والمدفع." },
                     { q: "نار : حسيس", opts: ["أ) ريح : حفيف", "ب) رعد : قصف", "ج) جرس : رنين", "د) ثوب : حفيف"], ans: 1, exp: "الحسيس صوت اشتعال النار والقصف صوت الرعد." },
                     { q: "شجر : حفيف", opts: ["أ) ماء : خرير", "ب) سيف : صرير", "ج) باب : زئير", "د) هواء : نقيق"], ans: 0, exp: "الحفيف صوت أوراق الشجر والخرير صوت جريان الماء." },
-                    { q: "رعد : قصف", opts: ["أ) مدفع : دوي", "ب) ثوب : فحيح", "ج) ريح : رغاء", "د) جرس : هديل"], ans: 0, exp: "القصف هو الصوت الشديد للرعد والدوي هو الصوت الشديد للمدفع." },
-                    { q: "باب : صرير", opts: ["أ) قلم : صرير", "ب) خيل : خرير", "ج) جبل : جعجعة", "د) صحراء : طنين"], ans: 0, exp: "الصرير هو الصوت الصادر عن احتكاك الباب أو كتابة القلم." }
+                    { q: "رعد : قصف", opts: ["أ) مدفع : دوي", "ب) ثوب : فحيح", "ج) ريح : رغاء", "د) جرس : هديل"], ans: 0, exp: "القصف صوت الرعد والدوي صوت المدفع." },
+                    { q: "باب : صرير", opts: ["أ) قلم : صرير", "ب) خيل : خرير", "ج) جبل : جعجعة", "د) صحراء : طنين"], ans: 0, exp: "الصرير هو الصوت الصادر عن احتكاك الباب أو صرير القلم." }
                 ]
             },
             r3: {
+                idNum: 3,
+                icon: "fa-solid fa-house-chimney",
+                themeClass: "notebook-card notebook-card-red",
+                titleColor: "text-red-900",
+                badgeBg: "bg-red-100 text-red-800 border-red-400",
+                tagBg: "text-red-800 bg-red-50 border-red-200",
+                linkColor: "text-red-600",
                 name: "3. مساكن الكائنات (المأوى)",
-                desc: "تحدد هذه العلاقة المقر والمأوى المخصص الدائم للكائن الحي في المعجم العربي. مفتاح الحل: صياغة جملة (الـ... يعيش ويأوي في الـ...).",
-                ex: "مثال شارح ومحلول: [حصان : إسطبل] ➔ [عصفور : عش]. التحليل التفصيلي: الإسطبل هو المكان المصمم لمأوى الحصان، والعش هو مأوى العصفور.",
+                desc: "تحدد الساكن ومسكانه الخاص (مثل: أسد : عرين، ضب : جحر).",
+                ex: "مثال محلول: [حصان : إسطبل] ➔ [عصفور : عش].",
                 questions: [
-                    { q: "غابة : أسد", opts: ["أ) سفينة : قبطان", "ب) عش : عصفور", "ج) غذاء : نوم", "د) طائرة : مسافر"], ans: 1, exp: "العش مسكن ومأوى العصفور والغابة المكان الطبيعي للأسد." },
-                    { q: "جحر : ضب", opts: ["أ) مسجد : مصلون", "ب) إسطبل : حظيرة", "ج) إسطبل : حصان", "د) عائلة : منزل"], ans: 2, exp: "الإسطبل بيت ومأوى الحصان والجحر بيت ومأوى الضب." },
-                    { q: "حصان : إسطبل", opts: ["أ) بحر : سمك", "ب) ثور : حظيرة", "ج) عصفور : عش", "د) ثعلب : جحر"], ans: 2, exp: "علاقة كائن ومسكنه ومأواه المباشر بنفس الترتيب." },
-                    { q: "إنسان : منزل", opts: ["أ) حيوان : غابة", "ب) مساواة : عدل", "ج) معلم : طالب", "د) بحر : سمك"], ans: 0, exp: "المنزل المسكن الخاص بالإنسان والغابة المسكن العام للحيوانات." },
+                    { q: "غابة : أسد", opts: ["أ) سفينة : قبطان", "ب) عش : عصفور", "ج) غذاء : نوم", "د) طائرة : مسافر"], ans: 1, exp: "مكان العيش الخاص بالطائر هو العش." },
+                    { q: "جحر : ضب", opts: ["أ) مسجد : مصلون", "ب) إسطبل : حظيرة", "ج) إسطبل : حصان", "د) عائلة : منزل"], ans: 2, exp: "الإسطبل بيت الحصان والجحر بيت الضب." },
+                    { q: "حصان : إسطبل", opts: ["أ) بحر : سمك", "ب) ثور : حظيرة", "ج) عصفور : عش", "د) ثعلب : جحر"], ans: 2, exp: "علاقة كائن ومسكنه المباشر." },
+                    { q: "إنسان : منزل", opts: ["أ) حيوان : غابة", "ب) مساواة : عدل", "ج) معلم : طالب", "د) بحر : سمك"], ans: 0, exp: "المنزل مسكن الإنسان والغابة مسكن الحيوانات." },
                     { q: "نحل : خلية", opts: ["أ) نمل : قرية", "ب) صقر : وكر", "ج) حوت : بحر", "د) خروف : حظيرة"], ans: 1, exp: "الخلية مأوى النحل والوكر مأوى الصقر." },
-                    { q: "ثور : حظيرة", opts: ["أ) أرانب : وجار", "ب) أسد : عرين", "ج) جمل : مبرك", "د) حمامة : برج"], ans: 1, exp: "الحظيرة مسكن ومأوى الثور والعرين مسكن ومأوى الأسد." },
+                    { q: "ثور : حظيرة", opts: ["أ) أرانب : وجار", "ب) أسد : عرين", "ج) جمل : مبرك", "د) حمامة : برج"], ans: 1, exp: "الحظيرة مسكن الثور والعرين مسكن الأسد." },
                     { q: "صقر : وكر", opts: ["أ) حمامة : برج", "ب) حوت : شاطئ", "ج) كلب : وجار", "د) أسد : حظيرة"], ans: 0, exp: "الوكر مسكن الصقر والبرج مسكن الحمام." },
-                    { q: "نمل : قرية", opts: ["أ) نحل : خلية", "ب) ضب : عرين", "ج) خيل : عش", "د) ثعلب : مبرك"], ans: 0, exp: "قرية النمل مأواه الجماعي وخلية النحل مأواه." },
+                    { q: "نمل : قرية", opts: ["أ) نحل : خلية", "ب) ضب : عرين", "ج) خيل : عش", "د) ثعلب : مبرك"], ans: 0, exp: "قرية النمل مأواه وخلية النحل مأواه." },
                     { q: "جمل : مبرك", opts: ["أ) ثور : حظيرة", "ب) إنسان : غابة", "ج) سمك : عش", "د) أرنب : عرين"], ans: 0, exp: "المبرك مكان إناخة وجلوس الجمل والحظيرة للثور." },
-                    { q: "كلب : وجار", opts: ["أ) أسد : عرين", "ب) عصفور : مبرك", "ج) حصان : وكر", "د) نحل : جحر"], ans: 0, exp: "الوجار مسكن ومأوى الكلب والعرين مسكن ومأوى الأسد." }
+                    { q: "كلب : وجار", opts: ["أ) أسد : عرين", "ب) عصفور : مبرك", "ج) حصان : وكر", "د) نحل : جحر"], ans: 0, exp: "الوجار مسكن الكلب والعرين مسكن الأسد." }
                 ]
             },
             r4: {
+                idNum: 4,
+                icon: "fa-solid fa-toolbox",
+                themeClass: "notebook-card notebook-card-amber",
+                titleColor: "text-amber-900",
+                badgeBg: "bg-amber-100 text-amber-800 border-amber-400",
+                tagBg: "text-amber-800 bg-amber-50 border-amber-200",
+                linkColor: "text-amber-600",
                 name: "4. المهن والأدوات",
-                desc: "تحدد هذه العلاقة صاحب المهنة أو الحرفة والأداة الفيزيائية التي يستعين بها لإنجاز عمله. طريقة التفكير: (الـ... يستخدم أداة الـ...).",
-                ex: "مثال شارح ومحلول: [منشار : نجار] ➔ [مقص : حلاق]. التحليل: المنشار أداة النجار الأساسية، والمقص أداة الحلاق الرئيسية[span_13](start_span)[span_13](end_span).",
+                desc: "ربط أصحاب المهن بالأدوات التي يستخدمونها في عملهم (مثل: جراح : مشرط).",
+                ex: "مثال محلول: [منشار : نجار] ➔ [مقص : حلاق].",
                 questions: [
-                    { q: "منشار : نجار", opts: ["أ) باب : حداد", "ب) دقيق : خباز", "ج) مقص : حلاق", "د) قماش : خياط"], ans: 2, exp: "المنشار أداة النجار والمقص أداة الحلاق بنفس الترتيب التام." },
-                    { q: "مطرقة : قاضي", opts: ["أ) صدقة : فقير", "ب) عصا : راعي", "ج) تاج : ملك", "د) رتبة : عسكري"], ans: 1, exp: "علاقة الأداة بالمستخدم؛ المطرقة للقاضي والعصا للراعي." },
-                    { q: "جندي : سلاح", opts: ["أ) طبيب : مشرط", "ب) شاحنة : سيارة", "ج) طعام : خبز", "د) مسجد : محراب"], ans: 0, exp: "السلاح أداة الجندي والمشرط أداة الطبيب والجراح." },
+                    { q: "منشار : نجار", opts: ["أ) باب : حداد", "ب) دقيق : خباز", "ج) مقص : حلاق", "د) قماش : خياط"], ans: 2, exp: "المنشار أداة النجار والمقص أداة الحلاق." },
+                    { q: "مطرقة : قاضي", opts: ["أ) صدقة : فقير", "ب) عصا : راعي", "ج) تاج : ملك", "د) رتبة : عسكري"], ans: 1, exp: "علاقة الشخص وأداته التي يستخدمها." },
+                    { q: "جندي : سلاح", opts: ["أ) طبيب : مشرط", "ب) شاحنة : سيارة", "ج) طعام : خبز", "د) مسجد : محراب"], ans: 0, exp: "سلاح الجندي كمشرط الطبيب." },
                     { q: "جراح : مشرط", opts: ["أ) فلاح : منجل", "ب) هرقل : بيزنطة", "ج) معلم : حاسب", "د) ملك : المغرب"], ans: 0, exp: "المشرط أداة الجراح والمنجل أداة الفلاح." },
                     { q: "رسام : فرشة", opts: ["أ) خياط : إبرة", "ب) كاتبة : رواية", "ج) مزارع : حقل", "د) مهندس : خوذة"], ans: 0, exp: "الفرشة أداة الرسام والإبرة أداة الخياط." },
                     { q: "طباخ : سكين", opts: ["أ) حلاق : موس", "ب) سائق : طريق", "ج) معلم : سبورة", "د) طائر : جناح"], ans: 0, exp: "السكين أداة الطباخ والموس أداة الحلاق." },
                     { q: "خياط : إبرة", opts: ["أ) نجار : منشار", "ب) مزارع : محصول", "ج) كاتبة : ورقة", "د) قاضي : حُكم"], ans: 0, exp: "الإبرة أداة الخياط والمنشار أداة النجار." },
-                    { q: "فلاح : منجل", opts: ["أ) جراح : مشرط", "ب) سائق : وقود", "ج) مهندس : بناء", "د) شرطي : قانون"], ans: 0, exp: "المنجل أداة الفلاح والمشرط أداة الجراح[span_14](start_span)[span_14](end_span)." },
-                    { q: "حلاق : موس", opts: ["أ) طباخ : سكين", "ب) معلم : مدرسة", "ج) رسام : لوحة", "د) بناء : طابوق"], ans: 0, exp: "الموس أداة الحلاق والسكين أداة الطباخ." },
+                    { q: "فلاح : منجل", opts: ["أ) جراح : مشرط", "ب) سائق : وقود", "ج) مهندس : بناء", "د) شرطي : قانون"], ans: 0, exp: "المنجل أداة الفلاح والمشرط أداة الجراح." },
+                    { q: "حلاق : موس", opts: ["أ) طباخ : سكين", "ب) معلم : مدرسة", "ج) رسام : لوحة", "د) بناار : طابوق"], ans: 0, exp: "الموس أداة الحلاق والسكين أداة الطباخ." },
                     { q: "كاتب : قلم", opts: ["أ) مزارع : محراث", "ب) قاضي : محكمة", "ج) طبيب : مستشفى", "د) مهندس : خريطة"], ans: 0, exp: "القلم أداة الكاتب والمحراث أداة المزارع." }
                 ]
             },
             r5: {
+                idNum: 5,
+                icon: "fa-solid fa-gears",
+                themeClass: "notebook-card notebook-card-teal",
+                titleColor: "text-teal-900",
+                badgeBg: "bg-teal-100 text-teal-800 border-teal-400",
+                tagBg: "text-teal-800 bg-teal-50 border-teal-200",
+                linkColor: "text-teal-600",
                 name: "5. الوظائف والمهام",
-                desc: "تربط بين العضو الجسدي أو الآلة التكنولوجية والوظيفة الغريزية أو الاستعمال الأساسي له. جملة التناظر: (تُستخدم الـ... لعملية الـ...).",
-                ex: "مثال شارح ومحلول: [منجل : حصاد] ➔ [معول : هدم]. التحليل: المنجل وظيفته الحصاد والمعول وظيفته الهدم[span_15](start_span)[span_15](end_span).",
+                desc: "ربط العضو أو الآلة بوظيفته الأساسية (مثل: سكين : قطع، رئة : تنفس).",
+                ex: "مثال محلول: [مِنجَل : حصاد] ➔ [مِعْوَل : هدم].",
                 questions: [
-                    { q: "مِنجَل : حصاد", opts: ["أ) سكين : خشب", "ب) مِعْوَل : هدم", "ج) عصا : سوط", "د) دبابة : رشاش"], ans: 1, exp: "علاقة الأداة بوظيفتها؛ المنجل يستعمل للحصاد والمعول للهدم[span_16](start_span)[span_16](end_span)." },
+                    { q: "مِنجَل : حصاد", opts: ["أ) سكين : خشب", "ب) مِعْوَل : هدم", "ج) عصا : سوط", "د) دبابة : رشاش"], ans: 1, exp: "علاقة أداة ووظيفتها؛ المنجل للحصاد والمعول للهدم." },
                     { q: "سكين : قطع", opts: ["أ) كهرباء : إضاءة", "ب) سيف : بتر", "ج) إهمال : إصابة", "د) شفاء : دواء"], ans: 1, exp: "وظيفة السكين القطع ووظيفة السيف البتر." },
-                    { q: "كاميرا : تصوير", opts: ["أ) خشب : نار", "ب) ضيق : ازدحام", "ج) مصباح : إضاءة", "د) برد : زكام"], ans: 2, exp: "الكاميرا للوظيفة التصويرية والمصباح للوظيفة الإضاءية." },
-                    { q: "مكواة : ثياب", opts: ["أ) محراث : حقل", "ب) مسمار : خشب", "ج) ملعقة : مطبخ", "د) لحم : سكين"], ans: 0, exp: "المكواة تستعمل للثياب والمحراث يستعمل للحقل." },
+                    { q: "كاميرا : تصوير", opts: ["أ) خشب : نار", "ب) ضيق : ازدحام", "ج) مصباح : إضاءة", "د) برد : زكام"], ans: 2, exp: "الكاميرا للتصوير والمصباح للإضاءة." },
+                    { q: "مكواة : ثياب", opts: ["أ) محراث : حقل", "ب) مسمار : خشب", "ج) ملعقة : مطبخ", "د) لحم : سكين"], ans: 0, exp: "علاقة الأداة ووظيفة استخدامها." },
                     { q: "عين : رؤية", opts: ["أ) أذن : سمع", "ب) قدم : مشي", "ج) أنف : شم", "د) لسان : تذوق"], ans: 0, exp: "وظيفة العين الرؤية ووظيفة الأذن السمع." },
                     { q: "شبكة : صيد", opts: ["أ) مقود : توجيه", "ب) بئر : ماء", "ج) خيط : إبرة", "د) مرساة : توقف"], ans: 0, exp: "الشبكة تستخدم للصيد والمقود يستخدم للتوجيه." },
                     { q: "رئة : تنفس", opts: ["أ) قلب : ضخ", "ب) كبد : إبصار", "ج) أذن : مشي", "د) قدم : تفكير"], ans: 0, exp: "وظيفة الرئة التنفس ووظيفة القلب ضخ الدم." },
                     { q: "مصباح : إضاءة", opts: ["أ) مروحة : تهوية", "ب) باب : خشب", "ج) نافذة : حائط", "د) قلم : دفتر"], ans: 0, exp: "المصباح للإضاءة والمروحة للتهوية." },
                     { q: "لسان : تذوق", opts: ["أ) أنف : شم", "ب) يد : إبصار", "ج) شعر : سمع", "د) عظم : هضم"], ans: 0, exp: "وظيفة اللسان التذوق ووظيفة الأنف الشم." },
-                    { q: "مقود : توجيه", opts: ["أ) كابح : إيقاف", "ب) عجلة : طريق", "ج) محرك : بنزين", "د) مقعد : جلوس"], ans: 0, exp: "وظيفة المقود التوجيه ووظيفة الكابح الإيقاف." }
+                    { q: "مقود : توجيه", opts: ["أ) كابح : إيقاف", "ب) عجلة : طريق", "ج) محرك : بنزين", "د) مقعد : جلوس"], ans: 0, exp: "وظيفة المقود التوجيه ووظيفة الكابح (الفرامل) الإيقاف." }
                 ]
             },
             r6: { 
+                idNum: 6,
+                icon: "fa-solid fa-boxes-packing",
+                themeClass: "notebook-card notebook-card-rose",
+                titleColor: "text-rose-900",
+                badgeBg: "bg-rose-100 text-rose-800 border-rose-400",
+                tagBg: "text-rose-800 bg-rose-50 border-rose-200",
+                linkColor: "text-rose-600",
                 name: "6. الأصل والمنتج", 
-                desc: "تحدد المادة الخام الأولية والمخرج المصنوع النهائي الناتج عنها بعد التحويل أو المعالجة. مفتاح الحل: (الـ... يُصنع أو يستخرج منه الـ...).", 
-                ex: "مثال شارح ومحلول: [حليب : جبن] ➔ [قمح : عجين]. التحليل: الجبن منتج مشتق من الحليب، والعجين منتج مشتق من القمح.", 
+                desc: "ربط المادة الخام بما ينتج منها (مثل: قمح : دقيق).", 
+                ex: "مثال: [حليب : جبن] ➔ [قمح : عجين].", 
                 questions: [
-                    { q: "قماش : ملابس", opts: ["أ) بيت : غرفة", "ب) طائرة : قطار", "ج) نفط : وقود", "د) حديد : سيارة"], ans: 2, exp: "القماش مادة خام للملابس والنفط مادة خام للوقود." },
-                    { q: "حليب : لبن", opts: ["أ) قمح : طحين", "ب) خشب : شجرة", "ج) ماء : ثلج", "د) عصير : برتقال"], ans: 0, exp: "الحليب يتحول وينتج منه اللبن والطحين ينتج من القمح." },
+                    { q: "قماش : ملابس", opts: ["أ) بيت : غرفة", "ب) طائرة : قطار", "ج) نفط : وقود", "د) حديد : سيارة"], ans: 2, exp: "القماش يصنع منه الملابس والنفط يصنع منه الوقود." },
+                    { q: "حليب : لبن", opts: ["أ) قمح : طحين", "ب) خشب : شجرة", "ج) ماء : ثلج", "د) عصير : برتقال"], ans: 0, exp: "الحليب يتحول أو ينتج منه اللبن والطحين من القمح." },
                     { q: "قطن : غزل", opts: ["أ) خشب : ورق", "ب) حديد : صلب", "ج) طين : خزف", "د) جلد : حذاء"], ans: 2, exp: "القطن مادة خام للغزل والطين مادة خام للخزف." },
-                    { q: "خشب : طاولة", opts: ["أ) حديد : مسمار", "ب) ماء : نهر", "ج) طين : جبل", "د) نفط : شمس"], ans: 0, exp: "الخشب يصنع منه الطاولة والحديد يصنع منه المسمار." },
-                    { q: "قمح : دقيق", opts: ["أ) زيتون : زيت", "ب) تمر : نخيل", "ج) ثلج : بَرد", "د) عسل : شمع"], ans: 0, exp: "القمح ينتج منه الدقيق والزيتون ينتج منه الزيت." },
+                    { q: "خشب : طولة", opts: ["أ) حديد : مسمار", "ب) ماء : نهر", "ج) طين : جبل", "د) نفط : شمس"], ans: 0, exp: "الخشب يصنع منه الطاولة والحديد يصنع منه المسمار." },
+                    { q: "قمح : دقيق", opts: ["أ) زبتون : زيت", "ب) تمر : نخيل", "ج) ثلج : بَرد", "د) عسل : شمع"], ans: 0, exp: "القمح ينتج منه الدقيق والزيتون ينتج منه الزيت." },
                     { q: "جلد : حذاء", opts: ["أ) صوف : رداء", "ب) مطاط : شجرة", "ج) بلاستيك : نفط", "د) خشب : غابة"], ans: 0, exp: "الجلد مادة خام للحذاء والصوف مادة خام للرداء." },
                     { q: "زيتون : زيت", opts: ["أ) سمسم : طحينة", "ب) نخلة : بلح", "ج) برتقال : شجرة", "د) ماء : سحاب"], ans: 0, exp: "عصر الزيتون ينتج الزيت وعصر السمسم ينتج الطحينة." },
                     { q: "طين : خزف", opts: ["أ) رمل : زجاج", "ب) حجارة : بيوت", "ج) حديد : صدأ", "د) ورق : كتاب"], ans: 0, exp: "الطين مادة تصنيع الخزف والرمل مادة تصنيع الزجاج." },
@@ -754,26 +792,40 @@
                 ] 
             },
             r7: { 
+                idNum: 7,
+                icon: "fa-solid fa-arrow-trend-up",
+                themeClass: "notebook-card",
+                titleColor: "text-blue-900",
+                badgeBg: "bg-blue-100 text-blue-800 border-blue-400",
+                tagBg: "text-blue-800 bg-blue-50 border-blue-200",
+                linkColor: "text-blue-600",
                 name: "7. المراحل والتحولات", 
-                desc: "التدرج التعاقبي الزمني الذي يطرأ على الكائن أو الظاهرة ليتطور من مرحلة أولى إلى مرحلة لاحقة مكتملة. الجملة: (الـ... يتطور ليصبح بمرور الوقت...).", 
-                ex: "مثال شارح ومحلول: [هلال : بدر] ➔ [طفل : رجل]. التحليل: الهلال ينمو ويكتمل ليصبح بدراً، والطفل ينشأ ليكبر فيصبح رجلاً.", 
+                desc: "التدرج الزمني أو التحول من حالة لأخرى (مثل: نطفة : جنين).", 
+                ex: "مثال: [هلال : بدر] ➔ [طفل : رجل].", 
                 questions: [
-                    { q: "بلح : تمر", opts: ["أ) هلال : بدر", "ب) دقيق : قمح", "ج) صلاة : ركوع", "د) صيام : سحور"], ans: 0, exp: "البلح ينضج ليصبح تمراً والهلال يكتمل ليصبح بدراً." },
-                    { q: "طفل : شاب", opts: ["أ) رطب : تمر", "ب) بذرة : شجرة", "ج) شتاء : صيف", "د) فجر : ظهر"], ans: 1, exp: "مرحلة نمو تلي مرحلة بالتدرج الزمني البيولوجي." },
-                    { q: "يرقة : فراشة", opts: ["أ) شرنقة : حشرة", "ب) بيضة : كتكوت", "ج) زهرة : ثمرة", "د) ماء : بَخار"], ans: 1, exp: "تحول مرحلي نمائي من اليرقة للفراشة ومن البيضة للكتكوت." },
-                    { q: "نطفة : علقة", opts: ["أ) عجين : خبز", "ب) شبل : أسد", "ج) قطرة : بحر", "د) فجر : شروق"], ans: 0, exp: "مرحلة نمو جنيني تلي الأولى مباشرة." },
-                    { q: "هلال : بدر", opts: ["أ) بداية : نهاية", "ب) بذرة : نبات", "ج) شرارة : حريق", "د) طفولة : شباب"], ans: 3, exp: "مرحلة اكتمال وتدرج زمني متصل." },
+                    { q: "بلح : تمر", opts: ["أ) هلال : بدر", "ب) دقيق : قمح", "ج) صلاة : ركوع", "د) صيام : سحور"], ans: 0, exp: "البلح يصبح تمراً والهلال يصبح بدراً." },
+                    { q: "طفل : شاب", opts: ["أ) رطب : تمر", "ب) بذرة : شجرة", "ج) شتاء : صيف", "د) فجر : ظهر"], ans: 1, exp: "مرحلة تلي مرحلة بالتدرج النموذجي." },
+                    { q: "يرقة : فراشة", opts: ["أ) شرنقة : حشرة", "ب) بيضة : كتكوت", "ج) زهرة : ثمرة", "د) ماء : بَخار"], ans: 1, exp: "تحول مرحلي من اليرقة للفراشة ومن البيضة للكتكوت." },
+                    { q: "نطفة : علقة", opts: ["أ) عجين : خبز", "ب) شبل : أسد", "ج) قطرة : بحر", "د) فجر : شروق"], ans: 0, exp: "مرحلة نمو تلي الأولى مباشرة." },
+                    { q: "هلال : بدر", opts: ["أ) بداية : نهاية", "ب) بذرة : نبات", "ج) شرارة : حريق", "د) طفولة : شباب"], ans: 3, exp: "مرحلة اكتمال وتدرج زمني." },
                     { q: "بذرة : شجرة", opts: ["أ) نطفة : إنسان", "ب) ثمرة : زهرة", "ج) ورق : شجر", "د) ماء : مطر"], ans: 0, exp: "البذرة تنمو لتصبح شجرة والنطفة تنمو لتصبح إنساناً." },
-                    { q: "زهرة : ثمرة", opts: ["أ) بيضة : دجاجة", "ب) غصن : شجرة", "ج) شمس : ضوء", "د) ليل : فجر"], ans: 0, exp: "مرحلة تليها مرحلة التكون النهائي في دورة الحياة." },
+                    { q: "زهرة : ثمرة", opts: ["أ) بيضة : دجاجة", "ب) غصن : شجرة", "ج) شمس : ضوء", "د) ليل : فجر"], ans: 0, exp: "مرحلة تليها مرحلة التكون النهائي." },
                     { q: "عجين : خبز", opts: ["أ) طين : فخار", "ب) قمح : حقل", "ج) ماء : نهر", "د) دقيق : مخبز"], ans: 0, exp: "العجين يخبز فيصبح خبزاً والطين يشكل فيصبح فخاراً." },
-                    { q: "فجر : ظهر", opts: ["أ) طفولة : كهولة", "ب) سبت : أسبوع", "ج) محرم : صفر", "د) شتاء : صيف"], ans: 2, exp: "تدرج تعاقبي وزمني للشهر واليوم." },
-                    { q: "شرنقة : فراشة", opts: ["أ) بيضة : صوص", "ب) نسر : طير", "ج) زهرة : عطر", "د) ماء : سائل"], ans: 0, exp: "تحول نمائي من مرحلة الحضانة إلى مرحلة الخروج." }
+                    { q: "فجر : ظهر", opts: ["أ) طفولة : كهولة", "ب) سبت : أسبوع", "ج) محرم : صفر", "د) شتاء : صيف"], ans: 2, exp: "تدرج تعاقبي وزمني." },
+                    { q: "شرنقة : فراشة", opts: ["أ) بيضة : صوص", "ب) نسر : طير", "ج) زهرة : عطر", "د) ماء : سائل"], ans: 0, exp: "تحول من مرحلة الحضانة إلى مرحلة الخروج للحي." }
                 ] 
             },
             r8: { 
+                idNum: 8,
+                icon: "fa-solid fa-puzzle-piece",
+                themeClass: "notebook-card notebook-card-purple",
+                titleColor: "text-purple-900",
+                badgeBg: "bg-purple-100 text-purple-800 border-purple-400",
+                tagBg: "text-purple-800 bg-purple-50 border-purple-200",
+                linkColor: "text-purple-600",
                 name: "8. الجزء والكل", 
-                desc: "توضح أن المفردة الأولى جزء بنائي ومكون أساسي يندرج تحت الكيان الإجمالي المعبر عنه بالمفردة الثانية. مفتاح الحل: (الـ... هو جزء أساسي من الـ...).", 
-                ex: "مثال شارح ومحلول: [فصل : مدرسة] ➔ [غرفة : فندق]. التحليل: الفصل هو جزء بنائي من الكل وهو المدرسة، والغرفة جزء بنائي من الفندق.", 
+                desc: "العلاقة التركيبية بين جزء والكل (مثل: غرفة : منزل).", 
+                ex: "مثال: [فصل : مدرسة] ➔ [غرفة : فندق].", 
                 questions: [
                     { q: "غصن : شجرة", opts: ["أ) يد : كوع", "ب) أنف : وجه", "ج) يوم : سنة", "د) دولة : عاصمة"], ans: 1, exp: "الأنف جزء من الوجه والغصن جزء من الشجرة." },
                     { q: "صفحة : كتاب", opts: ["أ) درهم : دينار", "ب) آية : سورة", "ج) كلمة : حرف", "د) قارة : دولة"], ans: 1, exp: "الصفحة جزء من الكتاب والآية جزء من السورة." },
@@ -788,50 +840,71 @@
                 ] 
             },
             r9: { 
+                idNum: 9,
+                icon: "fa-solid fa-code-fork",
+                themeClass: "notebook-card notebook-card-red",
+                titleColor: "text-red-900",
+                badgeBg: "bg-red-100 text-red-800 border-red-400",
+                tagBg: "text-red-800 bg-red-50 border-red-200",
+                linkColor: "text-red-600",
                 name: "9. السبب والنتيجة", 
-                desc: "العلاقة التي يكون فيها الطرف الأول هو المحرك والسبب المباشر الذي يترتب عليه وقوع الطرف الثاني كنتيجة حتمية منطقية. مفتاح الحل: (الـ... يؤدي حتماً إلى الـ...).", 
-                ex: "مثال شارح ومحلول: [سرعة : حادث] ➔ [إهمال : رسوب]. التحليل: السرعة هي السبب المباشر الحاصل الذي ينتج عنه الحادث، والإهمال هو السبب الذي ينتج عنه الرسوب[span_17](start_span)[span_17](end_span).", 
+                desc: "حدث يؤدي لنتيجة حتمية (مثل: فيروس : مرض).", 
+                ex: "مثال: [سرعة : حادث] ➔ [إهمال : رسوب].", 
                 questions: [
-                    { q: "حادث : سرعة", opts: ["أ) انشراح : سعادة", "ب) حريق : شرارة", "ج) طائرة : كبينة", "د) قطار : سكة"], ans: 1, exp: "الشرارة سبب الحريق والسرعة سبب الحادث." },
-                    { q: "إهمال : رسوب", opts: ["أ) اجتهاد : نجاح", "ب) ممارسة : إتقان", "ج) طعام : شبع", "د) كسل : فشل"], ans: 0, exp: "السبب المباشر يؤدي إلى النتيجة الحتمية." },
+                    { q: "حادث : سرعة", opts: ["أ) انشراح : سعادة", "ب) حريق : شرارة", "ج) طائرة : كبينة", "د) قطار : سكة"], ans: 1, exp: "الشرارة سبب الحريق والسرعة سبب الححادث." },
+                    { q: "إهمال : رسوب", opts: ["أ) اجتهاد : نجاح", "ب) ممارسة : إتقان", "ج) طعام : شبع", "د) كسل : فشل"], ans: 0, exp: "السبب يؤدي إلى النتيجة المباشرة." },
                     { q: "فيروس : مرض", opts: ["أ) تطعيم : مناعة", "ب) دواء : شفاء", "ج) قلق : أرق", "د) غضب : ندم"], ans: 1, exp: "الفيروس يسبب المرض والدواء يسبب الشفاء." },
                     { q: "اجتهاد : تفوق", opts: ["أ) كسل : فشل", "ب) سرعة : وصول", "ج) تدريب : مهارة", "د) كل ما سبق صحيح"], ans: 3, exp: "علاقة السبب والنتيجة الإيجابية أو السلبية." },
                     { q: "غضب : ندم", opts: ["أ) صبر : فرج", "ب) حزن : بكاء", "ج) خوف : هرب", "د) حلم : عفو"], ans: 0, exp: "الغضب يؤدي للندم والصبر يؤدي للفرج." },
                     { q: "طعام : شبع", opts: ["أ) ماء : ري", "ب) نوم : راحة", "ج) دواء : تعافي", "د) جميع ما ذكر صحيح"], ans: 3, exp: "علاقة المدخل والنتيجة المباشرة." },
                     { q: "جفاف : قحط", opts: ["أ) مطر : خصوبة", "ب) نار : رماد", "ج) زلزال : دمار", "د) كل الخيارات صحيحة"], ans: 3, exp: "علاقات سبب ونتيجة بيئية وطبيعية." },
                     { q: "ممارسة : إتقان", opts: ["أ) قراءة : معرفة", "ب) حركة : نشاط", "ج) تنظيم : نجاح", "د) جميع الإجابات مطابقة"], ans: 3, exp: "السبب يولد النتيجة المرجوة." },
-                    { q: "حريق : شرارة", opts: ["أ) غرق : سيول", "ب) زكام : برودة", "ج) اصطدام : غفلة", "د) كل ما سبق صحيح"], ans: 3, exp: "تحديد السبب المولد للحدث بنفس الترتيب." },
-                    { q: "قلق : أرق", opts: ["أ) طمأنينة : نوم", "ب) خوف : ارتجاف", "ج) حزن : كآبة", "د) جميع ما ذكر صحيح"], ans: 3, exp: "السبب النفسي والنتيجة الجسدية المترتبة." }
+                    { q: "حريق : شرارة", opts: ["أ) غرق : سيول", "ب) زكام : برودة", "ج) اصطدام : غفلة", "د) كل ما سبق صحيح"], ans: 3, exp: "تحديد السبب المولد للحدث." },
+                    { q: "قلق : أرق", opts: ["أ) طمأنينة : نوم", "ب) خوف : ارتجاف", "ج) حزن : كآبة", "د) جميع ما ذكر صحيح"], ans: 3, exp: "السبب النفسي والنتيجة الجسدية." }
                 ] 
             },
             r10: { 
+                idNum: 10,
+                icon: "fa-solid fa-equals",
+                themeClass: "notebook-card notebook-card-amber",
+                titleColor: "text-amber-900",
+                badgeBg: "bg-amber-100 text-amber-800 border-amber-400",
+                tagBg: "text-amber-800 bg-amber-50 border-amber-200",
+                linkColor: "text-amber-600",
                 name: "10. الترادف (نفس المعنى)", 
-                desc: "علاقة بين لفظين مختلفين في البنية والتركيب اللغوي ولكنهما يتطابقان تماماً في المعنى والدلالة الذهنية. مفتاح الحل: (الـ... يعني بنفس المعنى الـ...).", 
-                ex: "مثال شارح ومحلول: [إخفاق : فشل] ➔ [بأس : شدة]. التحليل والتفصيل: الإخفاق مطبق ومترادف مع الفشل، والبأس مطبق ومترادف مع الشدة والقوة.", 
+                desc: "كلمتان لهما نفس المعنى التام (مثل: جود : كرم).", 
+                ex: "مثال: [إخفاق : فشل] ➔ [بأس : شدة].", 
                 questions: [
-                    { q: "جود : كرم", opts: ["أ) إقدام : شجاعة", "ب) بخل : شح", "ج) خوف : هلع", "د) علم : عمل"], ans: 0, exp: "الجود هو الكرم والإقدام هو الشجاعة، ترادف الصفات المحمودة." },
-                    { q: "إخفاق : فشل", opts: ["أ) نصر : هزيمة", "ب) غنى : ثراء", "ج) غضب : حلم", "د) حب : بغض"], ans: 1, exp: "علاقة ترادف تام بين اللفظين المعبرين عن المعنى." },
+                    { q: "جود : كرم", opts: ["أ) إقدام : شجاعة", "ب) بخل : شح", "ج) خوف : هلع", "د) علم : عمل"], ans: 0, exp: "الجود هو الكرم والإقدام هو الشجاعة." },
+                    { q: "إخفاق : فشل", opts: ["أ) نصر : هزيمة", "ب) غنى : ثراء", "ج) غضب : حلم", "د) حب : بغض"], ans: 1, exp: "علاقة ترادف تام بين اللفظين." },
                     { q: "خوف : هلع", opts: ["أ) حزن : كآبة", "ب) سرور : فرح", "ج) صمت : سكوت", "د) كل ما سبق صحيح"], ans: 3, exp: "جميع الثنائيات المذكورة هي علاقات ترادف معنوي." },
-                    { q: "أسى : حزن", opts: ["أ) حبور : سرور", "ب) غبطة : حسد", "ج) رغبة : رهبة", "د) شح : بخل"], ans: 3, exp: "الأسى هو الحزن والشح هو البخل." },
+                    { q: "أسى : حزن", opts: ["أ) حبول : سرور", "ب) غبطة : حسد", "ج) رغبة : رهبة", "د) شح : بخل"], ans: 3, exp: "الأسى هو الحزن والشح هو البخل." },
                     { q: "إقدام : شجاعة", opts: ["أ) جبن : خوف", "ب) حلم : غضب", "ج) صدق : كذب", "د) تواضع : كبر"], ans: 0, exp: "علاقة ترادف في الصفات المحمودة والمذمومة." },
                     { q: "صمت : وجوم", opts: ["أ) سكوت : إنصات", "ب) كلام : حديث", "ج) هروب : فرار", "د) كل ما سبق صحيح"], ans: 3, exp: "مترادفات تشير لحالة السكون والتعبير." },
-                    { q: "بأس : شدة", opts: ["أ) لين : رفق", "ب) غنى : ثراء", "ج) قسوة : رحمة", "د) عجز : قدرة"], ans: 1, exp: "البأس هو الشدة والغنى هو الثراء." },
+                    { q: "بأس : شدة", opts: ["أ) لين : رفق", "ب) غنى : ثراء", "ج) قسوة : رحمة", "د) عجز : قدرة"], ans: 1, exp: "البأس هو الشدة والغتنى هو الثراء." },
                     { q: "غيث : مطر", opts: ["أ) سحاب : غمام", "ب) شمس : ضياء", "ج) قمر : نور", "د) جميع الخيارات معتمدة"], ans: 3, exp: "الأسماء المترادفة للظواهر الطبيعية." },
                     { q: "حسام : سيف", opts: ["أ) مهند : سيف", "ب) ليث : أسد", "ج) رماد : هباء", "د) كل ما سبق صحيح"], ans: 3, exp: "مترادفات المسميات والأوصاف اللغوية." },
                     { q: "فرح : سرور", opts: ["أ) ابتهاج : حبور", "ب) ضحك : بكاء", "ج) شقاء : تعاسة", "د) أ و ج كلاهما صحيح ترادف"], ans: 3, exp: "الفرح والسرور مترادفان وكذلك الابتهاج والحبور والشقاء والتعاسة." }
                 ] 
             },
             r11: { 
+                idNum: 11,
+                icon: "fa-solid fa-arrows-left-right-to-line",
+                themeClass: "notebook-card notebook-card-teal",
+                titleColor: "text-teal-900",
+                badgeBg: "bg-teal-100 text-teal-800 border-teal-400",
+                tagBg: "text-teal-800 bg-teal-50 border-teal-200",
+                linkColor: "text-teal-600",
                 name: "11. التضاد (عكس المعنى)", 
-                desc: "العلاقة التضادية التي يكون فيها اللفظ الأول معاكساً ومضاداً ومقابلاً للفظ الثاني في المعنى والمدلول بشكل كامل. مفتاح الحل: (الـ... هو العكس التام للـ...).", 
-                ex: "مثال شارح ومحلول: [تفاؤل : تشاؤم] ➔ [ربح : خسارة]. التحليل: التفاؤل مضاد تماماً للتشاؤم في السلوك والنفسية، والربح مضاد تماماً للخسارة.", 
+                desc: "كلمتان عكس بعضهما تماماً (مثل: علم : جهل).", 
+                ex: "مثال: [تفاؤل : تشاؤم] ➔ [ربح : خسارة].", 
                 questions: [
                     { q: "علم : جهل", opts: ["أ) إيمان : كفر", "ب) نور : ظلام", "ج) حياة : موت", "د) بداية : نهاية"], ans: 0, exp: "العلم عكس الجهل والإيمان عكس الكفر." },
                     { q: "تفاؤل : تشاؤم", opts: ["أ) ربح : خسارة", "ب) أمل : يأس", "ج) شجاعة : جبن", "د) جميع ما سبق"], ans: 3, exp: "كافة الثنائيات المعروضة تحمل علاقة تضاد عكسية." },
                     { q: "تواضع : تكبر", opts: ["أ) صدق : كذب", "ب) إحسان : إساءة", "ج) وفاء : غدر", "د) كرم : جود"], ans: 0, exp: "التواضع ضد التكبر والصدق ضد الكذب." },
                     { q: "نور : ظلام", opts: ["أ) حق : باطل", "ب) عدل : ظلم", "ج) خير : شر", "د) جميع ما ذكر صحيح"], ans: 3, exp: "علاقات التضاد الثنائي المطلق." },
                     { q: "قوة : ضعف", opts: ["أ) شباب : هرم", "ب) صحة : مرض", "ج) غنى : فقر", "د) كل الإجابات صحيحة"], ans: 3, exp: "التضاد في أحوال الإنسان والجسد." },
-                    { q: "بداية : نهاية", opts: ["أ) أول : آخر", "ب) شروق : غروب", "ج) ذهاب : إياب", "د) جميع الخيارات تضاد"], ans: 3, exp: "علاقات تضاد زمانية ومكانية." },
+                    { q: "بداية : نهاية", opts: ["أ) أول : آخر", "ب) شروق : غروب", "ج) ذهاب : إياد", "د) جميع الخيارات تضاد"], ans: 3, exp: "علاقات تضاد زمانية ومكانية." },
                     { q: "شجاعة : جبن", opts: ["أ) كرم : بخل", "ب) صيانة : إهدار", "ج) عفة : فجور", "د) كل ما سبق صحيح"], ans: 3, exp: "التضاد في الأخلاق والخصال." },
                     { q: "قريب : بعيد", opts: ["أ) دنيا : آخرة", "ب) فوق : تحت", "ج) يمين : يسار", "د) جميع الإجابات مطابقة"], ans: 3, exp: "التضاد في اتجاهات ومواقع الأشياء." },
                     { q: "بناء : هدم", opts: ["أ) إصلاح : إفساد", "ب) تشييد : تدمير", "ج) إحياء : إماتة", "د) كل ما سبق صحيح"], ans: 3, exp: "التضاد في الأفعال والعمليات." },
@@ -839,29 +912,43 @@
                 ] 
             },
             r12: { 
+                idNum: 12,
+                icon: "fa-solid fa-location-dot",
+                themeClass: "notebook-card notebook-card-rose",
+                titleColor: "text-rose-900",
+                badgeBg: "bg-rose-100 text-rose-800 border-rose-400",
+                tagBg: "text-rose-800 bg-rose-50 border-rose-200",
+                linkColor: "text-rose-600",
                 name: "12. العلاقات المكانية", 
-                desc: "تربط بين الكائن الحقيقي أو الشيء والموقعية الجغرافية والمكانية المخصصة لتواجده أو ممارسة نشاطه. مفتاح الحل: (الـ... يتواجد ويتم في الـ...).", 
-                ex: "مثال شارح ومحلول: [طواف : كعبة] ➔ [سعي : صفا ومروة]. التحليل: الطواف موقعه المكاني عند الكعبة، والسعي موقعه المكاني بين الصفا والمروة.", 
+                desc: "مكان تواجد الشيء أو الحدث (مثل: نقود : بنك).", 
+                ex: "مثال: [طواف : كعبة] ➔ [سعي : صفا ومروة].", 
                 questions: [
                     { q: "طواف : كعبة", opts: ["أ) صلاة : مسجد", "ب) سعي : صفا ومروة", "ج) سفر : مطار", "د) قراءة : مكتبة"], ans: 1, exp: "الطواف موقعه الكعبة والسعي موقعه الصفا والمروة." },
-                    { q: "عرين : أسد", opts: ["أ) وجار : كلب", "ب) غابة : أشجار", "ج) مدرسة : طلاب", "د) معسكر : جنود"], ans: 0, exp: "المأوى المكاني الكائن ومسكنه بنفس الترتيب." },
-                    { q: "بضاعة : دكان", opts: ["أ) كتاب : مكتبة", "ب) وقود : محطة", "ج) سمك : بحر", "د) جميع ما سبق"], ans: 3, exp: "جميع الخيارات تمثل تواجد الشيء في مكانه المخصص." },
+                    { q: "عرين : أسد", opts: ["أ) وجار : كلب", "ب) غابة : أشجار", "ج) مدرسة : طلاب", "د) معسكر : جنود"], ans: 0, exp: "المأوى المكاني الكائن ومسكنه." },
+                    { q: "بضاعة : دكان", opts: ["أ) كتاب : مكتبة", "ب) وقود : محطة", "ج) سمك : بحر", "د) جميع ما سبق"], ans: 3, exp: "جميع الخيارات تمثل تواجد الشي في مكانه المخصص." },
                     { q: "صلاة : محراب", opts: ["أ) خطبة : منبر", "ب) دراسة : كتاب", "ج) سفر : تذكرة", "د) نوم : وسادة"], ans: 0, exp: "موقع أداء الصلاة بالمحراب وموقع أداء الخطبة على المنبر." },
                     { q: "حرم : مكة", opts: ["أ) أقصى : قدس", "ب) نبي : مدين", "ج) جبل : عرفات", "د) كل ما سبق صحيح"], ans: 3, exp: "تحديد المقامات في أماكنها الجغرافية." },
                     { q: "طائرات : مطار", opts: ["أ) سفن : ميناء", "ب) قطارات : محطة", "ج) سيارات : موقف", "د) جميع ما ذكر صحيح"], ans: 3, exp: "أماكن توقف وانطلاق وسائل النقل." },
                     { q: "مريض : مستشفى", opts: ["أ) طالب : مدرسة", "ب) مسافر : مطار", "ج) مصلي : مسجد", "د) كل الإجابات صحيحة"], ans: 3, exp: "تواجد الأشخاص في مؤسساتهم المكانية الخاصة." },
                     { q: "مباريات : ملعب", opts: ["أ) عروض : مسرح", "ب) سباق : حلبة", "ج) دراسة : فصل", "د) جميع الخيارات صحيحة"], ans: 3, exp: "أماكن إقامة الأنشطة والفعاليات." },
-                    { q: "لوحة : متحف", opts: ["أ) كتاب : مكتبة", "ب) آثار : معرض", "ج) بضاعة : مخزن", "د) كل ما سبق صحيح"], ans: 3, exp: "أماكن حفظ ومقتنيات الأشياء." },
+                    { q: "لوحة : متحف", opts: ["أ) كتاب : مكتبة", "ب) آثار : معرض", "ج) بضاعة : مخزن", "د) كل ما سبق صحيح"], ans: 3, exp: "أماكن حفظ وحفظ ومقتنيات الأشياء." },
                     { q: "تجربة : مختبر", opts: ["أ) جراحة : غرفة عمليات", "ب) زراعة : حقل", "ج) صناعة : مصنع", "د) جميع الإجابات مطابقة"], ans: 3, exp: "أماكن إجراء وتنفيذ المهام." }
                 ] 
             },
             r13: { 
+                idNum: 13,
+                icon: "fa-solid fa-clock",
+                themeClass: "notebook-card",
+                titleColor: "text-blue-900",
+                badgeBg: "bg-blue-100 text-blue-800 border-blue-400",
+                tagBg: "text-blue-800 bg-blue-50 border-blue-200",
+                linkColor: "text-blue-600",
                 name: "13. العلاقات الزمانية", 
-                desc: "العلاقة التوقيتية والاقترانية بين حدث أو مظاهرة طبيعية والوقت التوقيتي الذي تحدث فيه وتتزامن معه. مفتاح الحل: (الـ... زمانه ووقت حدوثه في الـ...).", 
-                ex: "مثال شارح ومحلول: [عاشوراء : محرم] ➔ [حج : ذو الحجة]. التحليل: يوم عاشوراء يتحدد زمانه في شهر محرم الهجري، والحج يتحدد زمانه في ذو الحجة.", 
+                desc: "وقت حدوث الشيء أو ارتبطه بزمن (مثل: صوم : رمضان).", 
+                ex: "مثال: [عاشوراء : محرم] ➔ [حج : ذو الحجة].", 
                 questions: [
-                    { q: "صوم : رمضان", opts: ["أ) صلاة : مسجد", "ب) حج : ذو الحجة", "ج) نوم : ليل", "د) عمل : نهار"], ans: 1, exp: "الصوم وقته شهر رمضان والحج وقته شهر ذو الحجة." },
-                    { q: "نوم : ليل", opts: ["أ) استيقاظ : صباح", "ب) ظلام : قمر", "ج) شمس : ضياء", "د) فطور : غداء"], ans: 0, exp: "علاقة الاقتران بالزمن المخصص." },
+                    { q: "صوم : رمضان", opts: ["أ) صلاة : مسجد", "ب) حج : ذو الحجة", "ج) نوم : ليل", "د) عمل : نهار"], ans: 1, exp: "الصوم وقته رمضان والحج وقته ذو الحجة." },
+                    { q: "نوم : ليل", opts: ["أ) استيقاظ : صباح", "ب) ظلام : قمر", "ج) شمس : ضياء", "د) فطور : غداء"], ans: 0, exp: "علاقة الاقتران بالزمن المحدد." },
                     { q: "ربيع : أزهار", opts: ["أ) خريف : تساقط", "ب) شتاء : مطر", "ج) صيف : حر", "د) كل ما ذكر صحيح"], ans: 3, exp: "كل فصل اقترن بزمن وخاصية مناخية مرتبطة به." },
                     { q: "عاشوراء : محرم", opts: ["أ) عرفة : ذو الحجة", "ب) بدر : رمضان", "ج) أضحى : شوال", "د) أ و ب صحيحان"], ans: 3, exp: "ارتباط المناسبة بالزمن والشهر الهجري." },
                     { q: "شمس : نهار", opts: ["أ) قمر : ليل", "ب) نجوم : ظلام", "ج) أنداء : فجر", "د) كل ما سبق صحيح"], ans: 3, exp: "اقتران المعالم بالطبيعة الزمانية." },
@@ -873,9 +960,16 @@
                 ] 
             },
             r14: { 
+                idNum: 14,
+                icon: "fa-solid fa-ring",
+                themeClass: "notebook-card notebook-card-purple",
+                titleColor: "text-purple-900",
+                badgeBg: "bg-purple-100 text-purple-800 border-purple-400",
+                tagBg: "text-purple-800 bg-purple-50 border-purple-200",
+                linkColor: "text-purple-600",
                 name: "14. الإحاطة والملابس", 
-                desc: "العلاقة الفيزيائية التي تعبر عن كائن أو أداة تحيط بالكامل بعضو جسدي أو مجسم جمادي من الخارج لتغطيتها أو تزيينها. مفتاح الحل: (الـ... يحيط إحاطة كاملة بالـ...).", 
-                ex: "مثال شارح ومحلول: [خاتم : إصبع] ➔ [إطار : صورة]. التحليل والتفصيل: الخاتم دائرية تحيط بالإصبع، والإطار خشب يحيط بالصورة الخارجية.", 
+                desc: "شيء يحيط بآخر من الخرج (مثل: سوار : معصم).", 
+                ex: "مثال: [خاتم : إصبع] ➔ [إطار : صورة].", 
                 questions: [
                     { q: "سوار : معصم", opts: ["أ) حزام : بطن", "ب) حذاء : قدم", "ج) عمامة : رأس", "د) إطار : صورة"], ans: 3, exp: "السوار يحيط بالمعصم والإطار يحيط بالصورة." },
                     { q: "قلادة : عنق", opts: ["أ) خاتم : إصبع", "ب) حزام : خصر", "ج) سور : حدائق", "د) جميع ما سبق"], ans: 3, exp: "علاقة الإحاطة الشاملة للشيء." },
@@ -883,18 +977,25 @@
                     { q: "خاتم : إصبع", opts: ["أ) قرط : أذن", "ب) ساعة : معصم", "ج) حزام : خصر", "د) كل الخيارات إحاطة"], ans: 3, exp: "علاقة الإحاطة في الحلي والمستلزمات." },
                     { q: "سور : حديقة", opts: ["أ) إطار : صورة", "ب) جدار : غرفة", "ج) سياج : مزرعة", "د) جميع ما سبق"], ans: 3, exp: "إحاطة المعالم الإنشائية بالمحيط." },
                     { q: "عمامة : رأس", opts: ["أ) قبعة : رأس", "ب) جورب : قدم", "ج) قفاز : يد", "د) كل ما سبق صحيح"], ans: 3, exp: "إحاطة الملابس بالجسد." },
-                    { q: "حزام : خصر", opts: ["أ) مشد : معصم", "ب) رباط : حذاء", "ج) طوق : عنق", "د) جميع الخيارات صحيحة"], ans: 3, exp: "إحاطة الأربطة بأجزائها." },
+                    { q: "حزام : خصر", opts: ["أ) مشد : معصم", "ب) رباط : حذاء", "ج) طوق : عنق", "د) جميع الخيارات صحيحة"], ans: 3, exp: "إحاطة الرُّبُط والأربطة بأجزائها." },
                     { q: "إطار : لوحة", opts: ["أ) غلاف : مجلة", "ب) غمد : سيف", "ج) حذاء : قدم", "د) أ و ب كلاهما صحيح"], ans: 3, exp: "الإحاطة والحفظ الخارجي للجمادات." },
                     { q: "غمد : سيف", opts: ["أ) كنانة : سهام", "ب) محفظة : نقود", "ج) جِراب : مسدس", "د) جميع ما سبق"], ans: 3, exp: "إحاطة وأوعية الحفظ والاستيعاب." },
                     { q: "قشرة : بيضة", opts: ["أ) لحاء : شجرة", "ب) غشاء : خلية", "ج) جلد : جسم", "د) كل الإجابات مطابقة"], ans: 3, exp: "علاقة الإحاطة والغطاء الطبيعي الحامي." }
                 ] 
             },
             r15: { 
+                idNum: 15,
+                icon: "fa-solid fa-layer-group",
+                themeClass: "notebook-card notebook-card-red",
+                titleColor: "text-red-900",
+                badgeBg: "bg-red-100 text-red-800 border-red-400",
+                tagBg: "text-red-800 bg-red-50 border-red-200",
+                linkColor: "text-red-600",
                 name: "15. النوع والفئة", 
-                desc: "انتماء عنصر فردي أو جزئي محدد إلى المجموعة والفئة التصنيفية الكبرى الجامعة له ولأقرانه. مفتاح الحل: (الـ... ينتمي لفئة ونوع الـ...).", 
-                ex: "مثال شارح ومحلول: [ريال : عملات] ➔ [جبر : رياضيات]. التحليل: الريال نوع وفرد ينتمي لفئة العملات، والجبر فرع ينتمي لفئة علم الرياضيات.", 
+                desc: "انتماء الفرد للمجموعة الأم (مثل: تفاح : فواكه).", 
+                ex: "مثال: [ريال : عملات] ➔ [جبر : رياضيات].", 
                 questions: [
-                    { q: "تفاح : فواكه", opts: ["أ) جرجير : ورقيات", "ب) نخلة : سعف", "ج) صقر : طيور", "د) سيارة : باب"], ans: 2, exp: "التفاح نوع ينتمي للفواكه والصقر نوع ينتمي للطيور." },
+                    { q: "تفاح : فواكه", opts: ["أ) جرجير : ورقيات", "ب) نخلة : سعف", "ج) صقر : طيور", "د) سيارة : باب"], ans: 2, exp: "التفاح نوع من الفواكه والصقر نوع من الطيور." },
                     { q: "ياسمين : ورد", opts: ["أ) نسر : جوارح", "ب) أرز : حبوب", "ج) نحاس : معادن", "د) كل ما سبق صحيح"], ans: 3, exp: "جميع المفردات تندرج تحت فئتها الرئيسية." },
                     { q: "أحمر : ألوان", opts: ["أ) شتاء : فصول", "ب) سبت : أيام", "ج) مكة : مدن", "د) جميع الخيارات معتمدة"], ans: 3, exp: "علاقة المفرد وفئته الجامعة." },
                     { q: "ريال : عملة", opts: ["أ) خيار : خضروات", "ب) دينار : عملة", "ج) ليرة : عملة", "د) جميع ما سبق"], ans: 0, exp: "الريال نوع من العملات والخيار نوع من الخضروات." },
@@ -907,9 +1008,16 @@
                 ] 
             },
             r16: { 
+                idNum: 16,
+                icon: "fa-solid fa-mars-venus",
+                themeClass: "notebook-card notebook-card-amber",
+                titleColor: "text-amber-900",
+                badgeBg: "bg-amber-100 text-amber-800 border-amber-400",
+                tagBg: "text-amber-800 bg-amber-50 border-amber-200",
+                linkColor: "text-amber-600",
                 name: "16. الذكر والأنثى", 
-                desc: "العلاقة التناظرية التي تربط بين اسم الذكر واسم الأنثى المخصص له والمطابق في معجم اللغة العربية للكائنات الحية. جملة التناظر: (أنثى الـ... تسمى الـ...).", 
-                ex: "مثال شارح ومحلول: [جمل : ناقة] ➔ [ثور : بقرة]. التحليل: الناقة هي أنثى الجمل، والبقرة هي أنثى الثور.", 
+                desc: "الجنس والنوع للكائنات (مثل: أسد : لبؤة).", 
+                ex: "مثال: [جمل : ناقة] ➔ [ثور : بقرة].", 
                 questions: [
                     { q: "أسد : لبؤة", opts: ["أ) غابة : حيوانات", "ب) جمل : ناقة", "ج) زئير : صوت", "د) حمار : أتان"], ans: 1, exp: "اللبؤة أنثى الأسد والناقة أنثى الجمل." },
                     { q: "ثور : بقرة", opts: ["أ) كبش : نعجة", "ب) ديك : دجاجة", "ج) رجل : امرأة", "د) جميع ما سبق"], ans: 3, exp: "جميع الخيارات تمثل الثنائية الذكر والأنثى." },
@@ -924,9 +1032,16 @@
                 ] 
             },
             r17: { 
-                name: "17. الأسماء والمترادفات اللغوية", 
-                desc: "توضح تعدد الألفاظ والتسميات العربية المعجمية ذات المدلول الواحد الشامل (كأسماء الأسد، أو السيف، أو المطر). مفتاح الحل: (الـ... هو اسم آخر للـ...).", 
-                ex: "مثال شارح ومحلول: [مهند : حسام] ➔ [ليث : أسد]. التحليل: المهند والحسام اسمان من أسماء السيف، والليث والأسد اسمان لنفس الكائن.", 
+                idNum: 17,
+                icon: "fa-solid fa-language",
+                themeClass: "notebook-card notebook-card-teal",
+                titleColor: "text-teal-900",
+                badgeBg: "bg-teal-100 text-teal-800 border-teal-400",
+                tagBg: "text-teal-800 bg-teal-50 border-teal-200",
+                linkColor: "text-teal-600",
+                name: "17. الأسماء والمترادفات", 
+                desc: "المسميات العديدة للشيء الواحد (مثل: فلاة : صحراء).", 
+                ex: "مثال: [مهند : حسام] ➔ [ليث : أسد].", 
                 questions: [
                     { q: "فلاة : صحراء", opts: ["أ) أعمى : بصير", "ب) صحة : لياقة", "ج) مهند : حسام", "د) سابق : حصان"], ans: 2, exp: "الفلاة هي الصحراء والمهند هو الحسام (السيف)." },
                     { q: "ليث : أسد", opts: ["أ) حسام : سيف", "ب) عُقاب : طير", "ج) غيث : مطر", "د) جميع ما ذكر"], ans: 3, exp: "أسماء مختلفة لنفس المسمى الذاتي." },
@@ -941,15 +1056,22 @@
                 ] 
             },
             r18: { 
+                idNum: 18,
+                icon: "fa-solid fa-users-viewfinder",
+                themeClass: "notebook-card notebook-card-rose",
+                titleColor: "text-rose-900",
+                badgeBg: "bg-rose-100 text-rose-800 border-rose-400",
+                tagBg: "text-rose-800 bg-rose-50 border-rose-200",
+                linkColor: "text-rose-600",
                 name: "18. أسماء الجماعات", 
-                desc: "الاسم الفصيح الشامل المخصص في معاجم اللغة للجموع والمجموعات المحددة من الكائنات أو الجمادات (مثل جماعات الإبل أو الخيل أو الطيور). مفتاح الحل: (يطلق اسم الـ... على مجموعة من الـ...).", 
-                ex: "مثال شارح ومحلول: [قطيع : غنم] ➔ [سرب : طيور]. التحليل: القطيع اسم مجموعة الغنم والسرب اسم مجموعة الطيور.", 
+                desc: "الاسم اللغوي لمجموعة معينة (مثل: سرب : طيور).", 
+                ex: "مثال: [قطيع : غنم] ➔ [أداء : إبل].", 
                 questions: [
                     { q: "سرب : طير", opts: ["أ) أوبة : رجوع", "ب) قبيلة : رجل", "ج) جماعة : قوم", "د) شبل : أسد"], ans: 2, exp: "السرب مجموعة الطيور والجماعة مجموعة القوم." },
                     { q: "قطيع : غنم", opts: ["أ) كوكبة : فرسان", "ب) حزمة : حطب", "ج) فوج : حجاج", "د) جميع ما سبق"], ans: 3, exp: "مسميات لغوية تجمع أفراد الفئة." },
                     { q: "عصابة : أشرار", opts: ["أ) كوكبة : علماء", "ب) أسطول : سفن", "ج) ثلة : مؤمنين", "د) جميع الإجابات مطابقة"], ans: 3, exp: "الاسم المجموع لكل فئة من البشر أو الأشياء." },
                     { q: "كوكبة : فرسان", opts: ["أ) ثلة : أولين", "ب) كوكبة : شهداء", "ج) فوج : زوار", "د) كل الخيارات أسماء جماعات"], ans: 3, exp: "تحديد الاسم الدقيق للجمع والمجموعة." },
-                    { q: "أربد : إبل", opts: ["أ) ذود : إبل", "ب) هجمة : إبل", "ج) صيعر : إبل", "د) جميع ما سبق مسميات لمجاميع الإبل"], ans: 3, exp: "ألفاظ الجمع الخاصة بالإبل في الفصيح." },
+                    { q: "أربد : إبل", opts: ["أ) ذود : إبل", "ب) هجمة : إبل", "ج) صيعر : إبل", "د) جميع ما سبق mسميات لمجاميع الإبل"], ans: 3, exp: "ألفاظ الجمع الخاصة بالإبل في الفصيح." },
                     { q: "حزمة : حطب", opts: ["أ) باقة : ورد", "ب) كُمَّة : كتب", "ج) صُرَّة : دراهم", "د) كل الإجابات صحيحة"], ans: 3, exp: "أسماء المجاميع للجمادات والنبات." },
                     { q: "أسطول : سفن", opts: ["أ) سرب : طائرات", "ب) موكب : سيارات", "ج) قافلة : نوق", "د) جميع الخيارات صحيحة"], ans: 3, exp: "أسماء الجماعات في آلات النقل والركايب." },
                     { q: "خلية : نحل", opts: ["أ) قرية : نمل", "ب) خشرَم : دَبْر", "ج) جند : جراد", "د) كل ما سبق صحيح"], ans: 3, exp: "أسماء مجاميع ومستعمرات الحشرات." },
@@ -958,9 +1080,16 @@
                 ] 
             },
             r19: { 
+                idNum: 19,
+                icon: "fa-solid fa-earth-americas",
+                themeClass: "notebook-card",
+                titleColor: "text-blue-900",
+                badgeBg: "bg-blue-100 text-blue-800 border-blue-400",
+                tagBg: "text-blue-800 bg-blue-50 border-blue-200",
+                linkColor: "text-blue-600",
                 name: "19. الدول والعواصم والعملات", 
-                desc: "تربط بين الجغرافيا السياسية العالمية المعتمدة: الربط بين الدولة وعاصمتها السياسية، أو الدولة وعملتها النقدية الرسمية. مفتاح الحل: (الـ... هي عاصمة/عملة الدولة...)", 
-                ex: "مثال شارح ومحلول: [العراق : بغداد] ➔ [مصر : القاهرة]. التحليل: بغداد العاصمة الرسمية للعراق والقاهرة العاصمة الرسمية لمصر.", 
+                desc: "المعلومات الجغرافية والسياسية (مثل: سعودية : ريال).", 
+                ex: "مثال: [العراق : بغداد] ➔ [مصر : القاهرة].", 
                 questions: [
                     { q: "سعودية : ريال", opts: ["أ) كويت : دينار", "ب) سيارة : بنزين", "ج) معلم : مدرسة", "د) طبيب : دواء"], ans: 0, exp: "الريال عملة السعودية والدينار عملة الكويت." },
                     { q: "مصر : القاهرة", opts: ["أ) فرنسا : باريس", "ب) اليابان : طوكيو", "ج) الأردن : عمان", "د) جميع ما سبق"], ans: 3, exp: "جميع الثنائيات تمثل الدولة وعاصمتها الرسمية." },
@@ -975,9 +1104,16 @@
                 ] 
             },
             r20: { 
+                idNum: 20,
+                icon: "fa-solid fa-shapes",
+                themeClass: "notebook-card notebook-card-purple",
+                titleColor: "text-purple-900",
+                badgeBg: "bg-purple-100 text-purple-800 border-purple-400",
+                tagBg: "text-purple-800 bg-purple-50 border-purple-200",
+                linkColor: "text-purple-600",
                 name: "20. الرموز والدلالات", 
-                desc: "تربط بين الكائن الحسي أو الشكل الفيزيائي والمفهوم التجريدي والمعنوي الذي يعبر عنه ثقافياً ولغوياً. مفتاح الحل: (الـ... يرمز دلالياً إلى الـ...).", 
-                ex: "مثال شارح ومحلول: [الحمامة : السلام] ➔ [الأبيض : النقاء]. التحليل: الحمامة رمز حسّي للسلام، واللون الأبيض رمز حسي للنقاء.", 
+                desc: "الرمز والمعنى المعنوي المفاهيمي (مثل: العدل : الميزان).", 
+                ex: "مثال: [الحمامة : السلام] ➔ [الأبيض : النقاء].", 
                 questions: [
                     { q: "العدل : الميزان", opts: ["أ) المطرقة : القاضي", "ب) القوة : الشجاعة", "ج) السلام : الحمامة", "د) الليل : السواد"], ans: 2, exp: "الميزان رمز العدل والحمامة رمز السلام." },
                     { q: "أبيض : نقاء", opts: ["أ) أسود : حزن", "ب) أحمر : خطر", "ج) أخضر : نماء", "د) كل ما سبق"], ans: 3, exp: "جميع الألوان ترمز لدلالات معنوية معروفة." },
@@ -994,89 +1130,100 @@
         };
 
         const completionData = [
-            { id: 1, text: "من الحكمة أن تكون ........... في مواقف الغضب، لأن القرارات العاطفية غالباً ما تكون ...........", opts: ["أ) متسرعاً - صائبة", "ب) هادئاً - خاطئة", "ج) حازماً - نادرة", "د) صامتاً - دقيقة"], ans: 1, exp: "الشرح التفصيلي: المفهوم يدعو إلى التريث أثناء الغضب لمنع الوقوع في القرارات الخاطئة الناتجة عن الانفعال العاطفي." },
-            { id: 2, text: "يجب عليك أن ........... من أخطاء غيرك، فالحياة أقصر من أن تجعلها ........... للتجارب الشخصية فقط.", opts: ["أ) تتعلم - حقلًا", "ب) تحذر - مصدرًا", "ج) تتجاهل - ملتقى", "د) تخاف - دليلًا"], ans: 0, exp: "الشرح التفصيلي: الحكمة توصي بالاستفادة والتعلم من زلات الآخرين بدلاً من جعل الحياة حقل تجارب يستنزف الوقت." },
-            { id: 3, text: "إن النجاح لا يأتي بـ ........... بل يتطلب ........... ومثابرة مستمرة.", opts: ["أ) التمني - عملاً", "ب) الكسل - راحة", "ج) التخطيط - نومًا", "د) الحظ - غباءً"], ans: 0, exp: "الشرح التفصيلي: النجاح يحتاج للعمل الفعلي الميداني والمثابرة، ولا يتحقق بمجرد الأماني والأحلام." },
-            { id: 4, text: "حسن الخلق يستر الكثير من ........... كما أن سوء الخلق يغطي الكثير من ...........", opts: ["أ) السيئات - الحسنات", "ب) العيوب - الفضائل", "ج) الأخطاء - الصواب", "د) الذنوب - الطاعات"], ans: 1, exp: "الشرح التفصيلي: حسنات الأخلاق تحجب عيوب الإنسان وتغطيها، بينما سوء الخلق يحجب الفضائل والمحاسن." },
-            { id: 5, text: "لا تمازح الشريف فيحنق عليك، ولا تمازح الدنيء فيـ ........... عليك.", opts: ["أ) يتجرأ", "ب) يكرم", "ج) يحترِم", "د) يصبر"], ans: 0, exp: "الشرح التفصيلي: الحكمة تحذر من المزاح المفرط؛ لأنه يسقط الهيبة ويجعل الدنياء يتجرأون على قدرك." },
-            { id: 6, text: "إذا أردت أن تنجح في حياتك، فاجعل ........... صديقك المفضل، و.......... مرشدك الدائم.", opts: ["أ) الصبر - العمل", "ب) الكسل - النوم", "ج) التردد - الخوف", "د) اليأس - التجاهل"], ans: 0, exp: "الشرح التفصيلي: الصبر والعمل الدؤوب هما الموجهان الأساسيان في طريق الإنجاز والتفوق." },
-            { id: 7, text: "إن الشخص الذي لا يقرأ الكُتب لا يمتلك أي ........... على الشخص الذي لا يستطيع ...........", opts: ["أ) ميزة - القراءة", "ب) فضل - الكتابة", "ج) عذر - الكلام", "د) حق - الاستماع"], ans: 0, exp: "الشرح التفصيلي: القارئ الممتنع عن القراءة يتساوى في النتيجة والميزة مع من يفتقد القدرة على القراءة أصلًا." },
-            { id: 8, text: "العلم كنز لا ...........، والحكمة نور لا ...........", opts: ["أ) ينفد - ينطفئ", "ب) ينتهي - يكتمل", "ج) يكبر - يظهر", "د) يقل - يعود"], ans: 0, exp: "الشرح التفصيلي: صفة العلم والكنز المعرفي أنه دائم لا ينفد، والحكمة نور مستمر لا ينطفئ." },
-            { id: 9, text: "قد يرى الناس الجرح الذي في ...........، لكنهم لا يشعرون بالألم الذي ...........", opts: ["أ) رأسك - تعانيه", "ب) يدك - تراه", "ج) جسدك - تلمسه", "د) عينك - تسمعه"], ans: 0, exp: "الشرح التفصيلي: التفرقة بين رؤية المظهر الخارجي للجرح وبين المعاناة والشعور الداخلي بألمه." },
-            { id: 10, text: "خير الإخوان من نسِيَ ........... في حقك، وذَكَر ........... منك إليه.", opts: ["أ) تقصيرك - إحسانك", "ب) فضلك - إساءتك", "ج) وجودك - غيابك", "د) حديثك - صمتك"], ans: 0, exp: "الشرح التفصيلي: الأخ الصادق هو من يتغاضى عن الزلات والتقصير ويحفظ الإحسان والجميل." }
+            { id: 1, text: "من الحكمة أن تكون ........... في مواقف الغضب، لأن القرارات العاطفية غالباً ما تكون ...........", opts: ["أ) متسرعاً - صائبة", "ب) هادئاً - خاطئة", "ج) حازماً - نادرة", "د) صامتاً - دقيقة"], ans: 1, exp: "من الحكمة الهدوء في الغضب، لأن قرارات الانفعال تكون خاطئة." },
+            { id: 2, text: "يجب عليك أن ........... من أخطاء غيرك، فالحياة أقصر من أن تجعلها ........... للتجارب الشخصية فقط.", opts: ["أ) تتعلم - حقلًا", "ب) تحذر - مصدرًا", "ج) تتجاهل - ملتقى", "د) تخاف - دليلًا"], ans: 0, exp: "تتعلم من أخطاء الآخرين بدلاً من جعل حياتك حقل تجارب." },
+            { id: 3, text: "إن النجاح لا يأتي بـ ........... بل يتطلب ........... ومثابرة مستمرة.", opts: ["أ) التمني - عملاً", "ب) الكسل - راحة", "ج) التخطيط - نومًا", "د) الحظ - غباءً"], ans: 0, exp: "النجاح يتحقق بالعمل الدؤوب والمثابرة وليس التمني." },
+            { id: 4, text: "حسن الخلق يستر الكثير من ........... كما أن سوء الخلق يغطي الكثير من ...........", opts: ["أ) السيئات - الحسنات", "ب) العيوب - الفضائل", "ج) الأخطاء - الصواب", "د) الذنوب - الطاعات"], ans: 1, exp: "حسن الخلق يستر عيوب المرء وسوء الخلق يحجب فضائله." },
+            { id: 5, text: "لا تمازح الشريف فيحنق عليك، ولا تمازح الدنيء فيـ ........... عليك.", opts: ["أ) يتجرأ", "ب) يكرم", "ج) يحترِم", "د) يصبر"], ans: 0, exp: "ملاطفة وممازحة الدنيء تجعله يتجرأ عليك." },
+            { id: 6, text: "إذا أردت أن تنجح في حياتك، فاجعل ........... صديقك المفضل، و.......... مرشدك الدائم.", opts: ["أ) الصبر - العمل", "ب) الكسل - النوم", "ج) التردد - الخوف", "د) اليأس - التجاهل"], ans: 0, exp: "الصبر والعمل هما مقومات النجاح الأساسية." },
+            { id: 7, text: "إن الشخص الذي لا يقرأ الكُتب لا يمتلك أي ........... على الشخص الذي لا يستطيع ...........", opts: ["أ) ميزة - القراءة", "ب) فضل - الكتابة", "ج) عذر - الكلام", "د) حق - الاستماع"], ans: 0, exp: "من يملك القدرة على القراءة ولا يقرأ يتساوى مع من لا يعرف القراءة." },
+            { id: 8, text: "العلم كنز لا ...........، والحكمة نور لا ...........", opts: ["أ) ينفد - ينطفئ", "ب) ينتهي - يكتمل", "ج) يكبر - يظهر", "د) يقل - يعود"], ans: 0, exp: "العلم لا ينفد والحكمة نور لا ينطفئ." },
+            { id: 9, text: "قد يرى الناس الجرح الذي في ...........، لكنهم لا يشعرون بالألم الذي ...........", opts: ["أ) رأسك - تعانيه", "ب) يدك - تراه", "ج) جسدك - تلمسه", "د) عينك - تسمعه"], ans: 0, exp: "معاينة الجرح الظاهري لا تعني مشاركة الشعور بالألم الداخلي." },
+            { id: 10, text: "خير الإخوان من نسِيَ ........... في حقك، وذَكَر ........... منك إليه.", opts: ["أ) تقصيرك - إحسانك", "ب) فضلك - إساءتك", "ج) وجودك - غيابك", "د) حديثك - صمتك"], ans: 0, exp: "الصديق الحقيقي يتغاضى عن التقصير ويذكر الإحسان والفضل." }
         ];
 
         const contextData = [
-            { id: 1, text: "إنسان بلا هدف كَسَفِينَةٍ بلا دَفَّة، كِلاهُما يَبْدَأُ بِهِ الأَمْرُ إِلى النَّهَايَةِ السَّلِيمَةِ.", opts: ["أ) هدف", "ب) دفّة", "ج) ينتهي", "د) السليمة"], ans: 3, exp: "الشرح التفصيلي: السفينة بدون دفة والإنسان بدون هدف لا يصلان إلى نهاية سليمة بل يتيهان؛ لذا فالكلمة الخاطئة هي (السليمة) وتصحيحها: الهالكة أو الضائعة[span_18](start_span)[span_18](end_span)." },
-            { id: 2, text: "محادثة الأخوان تزيد الود وتقتل الضغينة وتورث العداوة بين القلوب.", opts: ["أ) محادثة", "ب) الود", "ج) الضغينة", "د) العداوة"], ans: 3, exp: "الشرح التفصيلي: محادثة الإخوان أمر إيجابي ينشر المحبة والتآلف والتصحيح: وتورث (المحبة/الصفاء) بدلاً من العداوة." },
-            { id: 3, text: "الرجل الصالح هو من يرفع نفسه عن الدنايا، ويبتعد عن المعالي.", opts: ["أ) الصالح", "ب) الدنايا", "ج) يبتعد", "د) المعالي"], ans: 2, exp: "الشرح التفصيلي: الرجل الصالح يبتعد عن الدنايا ويسعى نحو المعالي؛ وتصحيح (يبتعد): ويسعى إلى." },
-            { id: 4, text: "من كثر استشاره قل خطؤه، ومن استبد برأيه كثرت صوابه.", opts: ["أ) استشاره", "ب) خطؤه", "ج) استبد", "د) صوابه"], ans: 3, exp: "الشرح التفصيلي: المستبد برأيه تزداد أخطاؤه لعدم الاستفادة من تجارب الآخرين، وتصحيح (صوابه): كثرت أخطاؤه." },
-            { id: 5, text: "من أعظم الفضائل أن تعفو عمن ظلمك، وتصل من قطعك، وتسيء إلى من أحسن إليك.", opts: ["أ) الفضائل", "ب) تعفو", "ج) تصل", "د) تسيء"], ans: 3, exp: "الشرح التفصيلي: السياق يتحدث عن الفضائل الأخلاقية العليا وتصحيح (تسيء): وتحسن إلى من أحسن إليك." },
-            { id: 6, text: "الأنشطة المدرسية الترفيهية تساعد الطلاب على تبديد الطاقات السلبية وتثبيط مهاراتهم.", opts: ["أ) الترفيهية", "ب) تبديد", "ج) السلبية", "د) تثبيط"], ans: 3, exp: "الشرح التفصيلي: الأنشطة تنمي وتصقل مهارات الطلاب، وتصحيح (تثبيط): تنمية/تنشيط." },
-            { id: 7, text: "المعلم الناجح هو من يزرع الخوف في نفوس طلابه ليضمن انضباطهم الدراسي.", opts: ["أ) الناجح", "ب) يزرع", "ج) الخوف", "د) انضباطهم"], ans: 2, exp: "الشرح التفصيلي: المعلم المتميز يغرس الاحترام والمحبة ليدفعهم للانضباط وتصحيح (الخوف): المحبة/الثقة." },
-            { id: 8, text: "تستطيع الشجرة الصامدة أن تقاوم العواصف الهوجاء طالما أن جذورها ضعيفة.", opts: ["أ) الصامدة", "ب) العواصف", "ج) طالما", "د) ضعيفة"], ans: 3, exp: "الشرح التفصيلي: صمود الشجرة أمام الرياح يعتمد على قوة وثبات جذورها وتصحيح (ضعيفة): قوية/ثابتة." },
-            { id: 9, text: "إن التغاضي عن الهفوات الصغيرة يفسد العلاقات ويزيد الكراهية بين الأصدقاء.", opts: ["أ) التغاضي", "ب) الهفوات", "ج) يفسد", "د) الكراهية"], ans: 2, exp: "الشرح التفصيلي: أدب التغاضي عن الزلات يحفظ المودة ولا يفسدها، وتصحيح (يفسد): يصلح/يحفظ." },
-            { id: 10, text: "الاستثمار في العقول هو أقل انواع الاستثمار نفعاً وأكثرها تكلفة على الدولة.", opts: ["أ) العقول", "ب) أقل", "ج) نفعاً", "د) تكلفة"], ans: 1, exp: "الشرح التفصيلي: الاستثمار البشري والفكري هو الاستثمار الأعلى فائدة وأثراً وتصحيح (أقل): أنفع/أعظم." }
+            { id: 1, text: "إنسان بلا هدف كَسَفِينَةٍ بلا دَفَّة، كِلاهُما يَبْدَأُ بِهِ الأَمْرُ إِلى النَّهَايَةِ السَّلِيمَةِ.", opts: ["أ) هدف", "ب) دفّة", "ج) ينتهي", "د) السليمة"], ans: 3, exp: "التصحيح: إلى النهاية (المجهولة أو الهالكة)." },
+            { id: 2, text: "محادثة الأخوان تزيد الود وتقتل الضغينة وتورث العداوة بين القلوب.", opts: ["أ) محادثة", "ب) الود", "ج) الضغينة", "د) العداوة"], ans: 3, exp: "التصحيح: وتورث المحبة والصفاء وليس العداوة." },
+            { id: 3, text: "الرجل الصالح هو من يرفع نفسه عن الدنايا، ويبتعد عن المعالي.", opts: ["أ) الصالح", "ب) الدنايا", "ج) يبتعد", "د) المعالي"], ans: 2, exp: "التصحيح: ويسعى إلى (المعالي) بدلاً من يبتعد." },
+            { id: 4, text: "من كثر استشاره قل خطؤه، ومن استبد برأيه كثرت صوابه.", opts: ["أ) استشاره", "ب) خطؤه", "ج) استبد", "د) صوابه"], ans: 3, exp: "التصحيح: كثرت (أخطاؤه) وليس صوابه." },
+            { id: 5, text: "من أعظم الفضائل أن تعفو عمن ظلمك، وتصل من قطعك، وتسيء إلى من أحسن إليك.", opts: ["أ) الفضائل", "ب) تعفو", "ج) تصل", "د) تسيء"], ans: 3, exp: "التصحيح: وتحسن إلى من أحسن إليك." },
+            { id: 6, text: "الأنشطة المدرسية الترفيهية تساعد الطلاب على تبديد الطاقات السلبية وتثبيط مهاراتهم.", opts: ["أ) الترفيهية", "ب) تبديد", "ج) السلبية", "د) تثبيط"], ans: 3, exp: "التصحيح: وتنشيط/تنمية مهاراتهم بدلاً من تثبيط." },
+            { id: 7, text: "المعلم الناجح هو من يزرع الخوف في نفوس طلابه ليضمن انضباطهم الدراسي.", opts: ["أ) الناجح", "ب) يزرع", "ج) الخوف", "د) انضباطهم"], ans: 2, exp: "التصحيح: يزرع الثقة أو الاحترام وليس الخوف." },
+            { id: 8, text: "تستطيع الشجرة الصامدة أن تقاوم العواصف الهوجاء طالما أن جذورها ضعيفة.", opts: ["أ) الصامدة", "ب) العواصف", "ج) طالما", "د) ضعيفة"], ans: 3, exp: "التصحيح: طالما أن جذورها (قوية/ثابتة)." },
+            { id: 9, text: "إن التغاضي عن الهفوات الصغيرة يفسد العلاقات ويزيد الكراهية بين الأصدقاء.", opts: ["أ) التغاضي", "ب) الهفوات", "ج) يفسد", "د) الكراهية"], ans: 2, exp: "التصحيح: التغاضي (يحفظ/يصلح) العلاقات." },
+            { id: 10, text: "الاستثمار في العقول هو أقل أنواع الاستثمار نفعاً وأكثرها تكلفة على الدولة.", opts: ["أ) العقول", "ب) أقل", "ج) نفعاً", "د) تكلفة"], ans: 1, exp: "التصحيح: هو (أكثر/أعظم) أنواع الاستثمار نفعاً." }
         ];
 
         const readingData = [
-            { id: 1, text: "النص: 'تُعد الشجرة الرئة الطبيعية للتربة والبيئة؛ إذ تقوم بامتصاص ثاني أكسيد الكربون وإنتاج الأكسجين.'\nالسؤال: علاقة جملة 'إذ تقوم بامتصاص ثاني أكسيد الكربون' بما قبلها:", opts: ["أ) نتيجة", "ب) تعليل / سبب", "ج) تضاد", "د) إجمال"], ans: 1, exp: "الشرح والتفصيل: الحرف 'إذ' يمثل رابطاً تعليلياً يفسر ويشرح العلة والسبب في إطلاق وصف الرئة الطبيعية." },
-            { id: 2, text: "النص: 'أنشئت قياس لتطوير المعايير التعليمية واختبارات القبول بالجامعات بطريقة موضوعية شائعة في القرن الـ 21.'\nالسؤال: المقصود بالقرن الـ 21 هو الفترة بين عامي:", opts: ["أ) 1900 - 1999", "ب) 2000 - 2099", "ج) 2100 - 2199", "د) 1800 - 1899"], ans: 1, exp: "القاعدة التقويمية: القرن الحادي والعشرون يبدأ من عام 2000م وينتهي في نهاية عام 2099م." },
-            { id: 3, text: "النص: 'المياه العذبة تشكل أقل من 3% من إجمالي المياه على كوكب الأرض، ومعظمها مجمد في الجليديات.'\nالسؤال: يستنتج من النص أن المياه الصالحة للشرب المباشرة:", opts: ["أ) تشكل معظم مياه الأرض", "ب) نسبة ضئيلة جداً ومحدودة", "ج) تزداد بشكل مستمر", "د) تساوي مياه البحار"], ans: 1, exp: "الاستنباط: إذا كانت النسبة الإجمالية للمياه العذبة 3% ومعظمها مجمد، فالصالح المباشر أعداده قليلة جداً." },
-            { id: 4, text: "النص: 'تُعد القراءة التفاعلية وسيلة ممتازة لتنشيط الخلايا العصبية فور البدء في معالجة المفردات.'\nالسؤال: كلمة 'فور' تفيد:", opts: ["أ) التراخي والبطء", "ب) المباشرة والسرعة", "ج) التردد", "د) التوقف"], ans: 1, exp: "المدلول اللغوي: لفظ الفورية يدل في المعجم والاستعمال على المباشرة والسرعة الفائقة." },
-            { id: 5, text: "النص: 'ولد العلامة ابن خلدون عام 732 هـ وتوفي عام 808 هـ بعد أن أسس علم الاجتماع.'\nالسؤال: عاش ابن خلدون تقريباً:", opts: ["أ) 76 عاماً", "ب) 50 عاماً", "ج) 90 عاماً", "د) 100 عام"], ans: 0, exp: "طريقة الحساب الرياضية: نطرح سنة الميلاد من سنة الوفاة (808 - 732 = 76 عاماً)." },
-            { id: 6, text: "النص: 'تعتبر الألياف الغذائية ضرورية للهضم؛ لأنها تبطئ امتصاص السكريات وتمنع الارتفاع المفاجئ للانسولين.'\nالسؤال: الفائدة الرئيسية للألياف طبقاً للنص هي:", opts: ["أ) تنظيم مستوى السكر", "ب) زيادة الوزن", "ج) حرق الأكسجين", "د) تسريع امتصاص السكر"], ans: 0, exp: "الشرح التفصيلي: إبطاء امتصاص السكريات يمنع صعود الانسولين المفاجئ وبالتالي ينظم السكر." },
-            { id: 7, text: "النص: 'حققت المملكة العربية السعودية في العقود الأخيرة قفزات تقنية هائلة في الخدمات الرقمية.'\nالسؤال: كلمة 'العقود' تعني فترات زمنية مدة كل منها:", opts: ["أ) 100 سنة", "ب) 10 سنوات", "ج) 50 سنة", "د) 5 سنوات"], ans: 1, exp: "المعيار الزمني: العقد في اللغة والحساب يساوي عشر سنوات بالتمام." },
-            { id: 8, text: "النص: 'على الرغم من تنوع وسائل التواصل الحديثة، إلا أنها قد تسبب العزلة الاجتماعية إذا أسيء استخدامها.'\nالسؤال: تظهر في عبارة 'على الرغم من... إلا أنها' علاقة:", opts: ["أ) سبب ونتيجة", "ب) تضاد ومقابلة معنوية", "ج) توافق تام", "د) تفصيل بعد إجمال"], ans: 1, exp: "الشرح اللغوي: التركيب (على الرغم من... إلا) يستعمل في الاستدراك والمقابلة التضادية بين أمرين." },
-            { id: 9, text: "النص: 'تعتبر المهارات اللفظية حجر الزاوية في اختبارات القدرات؛ حيث تقيس قدرة الطالب على التفكير التحليلي.'\nالسؤال: العبارة 'حجر الزاوية' تعني أنها:", opts: ["أ) شيء ثانوي", "ب) الركيزة والأساس المحوري", "ج) خيار هامشي", "د) جزء غير مهم"], ans: 1, exp: "الدلالة المجازية: حجر الزاوية مصطلح يرمز للركيزة الجوهرية والأساس المبني عليه البناء." },
-            { id: 10, text: "النص: 'اخترع Gutenberg المطبعة في منتصف القرن الخامس عشر الميلادي.'\nالسؤال: الفترة الزمنية لمنتصف القرن الخامس عشر هي تقريباً عام:", opts: ["أ) 1450م", "ب) 1550م", "ج) 1350م", "د) 1650م"], ans: 0, exp: "الحساب التقويمي: القرن 15 هو السنوات بين (1400 - 1499)، ومنتصفه يوافق عام 1450م." }
+            { id: 1, text: "النص: 'تُعد الشجرة الرئة الطبيعية للتربة والبيئة؛ إذ تقوم بامتصاص ثاني أكسيد الكربون وإنتاج الأكسجين.'\nالسؤال: علاقة جملة 'إذ تقوم بامتصاص ثاني أكسيد الكربون' بما قبلها:", opts: ["أ) نتيجة", "ب) تعليل / سبب", "ج) تضاد", "د) إجمال"], ans: 1, exp: "الحرف 'إذ' يفيد التعليل والتوضيح لمسمى الرئة الطبيعية." },
+            { id: 2, text: "النص: 'أنشئت قياس لتطوير المعايير التعليمية وااختبارات القبول بالجامعات بطريقة موضوعية شائعة في القرن الـ 21.'\nالسؤال: المقصود بالقرن الـ 21 هو الفترة بين عامي:", opts: ["أ) 1900 - 1999", "ب) 2000 - 2099", "ج) 2100 - 2199", "د) 1800 - 1899"], ans: 1, exp: "القرن 21 يبدأ من عام 2000 حتى 2099." },
+            { id: 3, text: "النص: 'المياه العذبة تشكل أقل من 3% من إجمالي المياه على كوكب الأرض، ومعظمها مجمد في الجليديات.'\nالسؤال: يستنتج من النص أن المياه الصالحة للشرب المباشرة:", opts: ["أ) تشكل معظم مياه الأرض", "ب) نسبة ضئيلة جداً ومحدودة", "ج) تزداد بشكل مستمر", "د) تساوي مياه البحار"], ans: 1, exp: "بما أن 3% مجمدة في أغلبها، فالنسبة الصالحة للشرب ضئيلة للغاية." },
+            { id: 4, text: "النص: 'تُعد القراءة التفاعلية وسيلة ممتازة لتنشيط الخلايا العصبية فور البدء في معالجة المفردات.'\nالسؤال: كلمة 'فور' تفيد:", opts: ["أ) التراخي والبطء", "ب) المباشرة والسرعة", "ج) التردد", "د) التوقف"], ans: 1, exp: "كلمة فور تدل على الفورية والسرعة المباشرة." },
+            { id: 5, text: "النص: 'ولد العلامة ابن خلدون عام 732 هـ وتوفي عام 808 هـ بعد أن أسس علم الاجتماع.'\nالسؤال: عاش ابن خلدون تقريباً:", opts: ["أ) 76 عاماً", "ب) 50 عاماً", "ج) 90 عاماً", "د) 100 عام"], ans: 0, exp: "الحساب: 808 - 732 = 76 عاماً." },
+            { id: 6, text: "النص: 'تعتبر الألياف الغذائية ضرورية للهضم؛ لأنها تبطئ امتصاص السكريات وتمنع الارتفاع المفاجئ للانسولين.'\nالسؤال: الفائدة الرئيسية للألياف طبقاً للنص هي:", opts: ["أ) تنظيم مستوى السكر", "ب) زيادة الوزن", "ج) حرق الأكسجين", "د) تسريع امتصاص السكر"], ans: 0, exp: "إبطاء امتصاص السكريات يؤدي لمنع ارتفاع الانسولين أي تنظيم السكر." },
+            { id: 7, text: "النص: 'حققت المملكة العربية السعودية في العقود الأخيرة قفزات تقنية هائلة في الخدمات الرقمية.'\nالسؤال: كلمة 'العقود' تعني فترات زمنية مدة كل منها:", opts: ["أ) 100 سنة", "ب) 10 سنوات", "ج) 50 سنة", "د) 5 سنوات"], ans: 1, exp: "العقد زمنيّاً يساوي 10 سنوات." },
+            { id: 8, text: "النص: 'على الرغم من تنوع وسائل التواصل الحديثة، إلا أنها قد تسبب العزلة الاجتماعية إذا أسيء استخدامها.'\nالسؤال: تظهر في عبارة 'على الرغم من... إلا أنها' علاقة:", opts: ["أ) سبب ونتيجة", "ب) تضاد ومقابلة معنوية", "ج) توافق تام", "د) تفصيل بعد إجمال"], ans: 1, exp: "التركيب اللغوي (على الرغم من... إلا أن) يوضح التضاد والاستدراك." },
+            { id: 9, text: "النص: 'تعتبر المهارات اللفظية حجر الزاوية في اختبارات القدرات؛ حيث تقيس قدرة الطالب على التفكير التحليلي.'\nالسؤال: العبارة 'حجر الزاوية' تعني أنها:", opts: ["أ) شيء ثانوي", "ب) الركيزة والأساس المحوري", "ج) خيار هامشي", "د) جزء غير مهم"], ans: 1, exp: "حجر الزاوية تعبير مجازي يرمز للأساس والمركز الرئيسي." },
+            { id: 10, text: "النص: 'اخترع Gutenberg المطبعة في منتصف القرن الخامس عشر الميلادي.'\nالسؤال: الفترة الزمنية لمنتصف القرن الخامس عشر هي تقريباً عام:", opts: ["أ) 1450م", "ب) 1550م", "ج) 1350م", "د) 1650م"], ans: 0, exp: "القرن 15 هو سنوات (1400 - 1499)، ومنتصفه يكون حدود 1450م." }
         ];
 
         const oddData = [
-            { id: 1, text: "حدد الكلمة الشاذة المختلفة عن باقي الخيارات:", opts: ["أ) الرياض", "ب) القاهرة", "ج) دبي", "د) بغداد"], ans: 2, exp: "التحليل والتصنيف: الرياض والقاهرة وبغداد عواصم دول رسمية، بينما دبي مدينة إمارة وليست عاصمة الدولة." },
-            { id: 2, text: "حدد المفردة الشاذة من بين الأسماء التالية:", opts: ["أ) أسد", "ب) نمر", "ج) فهد", "د) خروف"], ans: 3, exp: "الفرز الفئوي: الخروف حيوان أليف عشبي زراعي، بينما بقية الخيارات من المفترسات والسباع اللواحم." },
-            { id: 3, text: "حدد الكلمة المخالفة لبقية المجموعة:", opts: ["أ) تفاح", "ب) موز", "ج) برتقال", "د) خيار"], ans: 3, exp: "التصنيف الغذائي: التفاح والموز والبرتقال تنتمي للفواكه، بينما الخيار ينتمي للخضروات." },
-            { id: 4, text: "اختر المفردة الشاذة من الأرقام والترتيب:", opts: ["أ) السبت", "ب) الأحد", "ج) الاثنين", "د) محرم"], ans: 3, exp: "الفرز الزمني: السبت والأحد والاثنين أيام أسبوع، بينما محرم شهر هجري." },
-            { id: 5, text: "حدد الكلمة المخالفة في المجموعة:", opts: ["أ) شمس", "ب) قمر", "ج) نجم", "د) سيارة"], ans: 3, exp: "التصنيف الكوني: السيارة جماد أرضي مصنع، بينما بقية الخيارات أجرام وأجسام سماوية طبيعية." },
-            { id: 6, text: "استخرج المفردة الشاذة فيما يلي:", opts: ["أ) صهيل", "ب) نهيق", "ج) خرير", "د) زئير"], ans: 2, exp: "الفرز الصوتي: الخرير صوت طبيعي للماء الجماد، بينما بقية الأصوات تصدر عن كائنات حية حيوانية." },
-            { id: 7, text: "حدد الكلمة المختلفة بين العناوين التالية:", opts: ["أ) مكة", "ب) المدينة", "ج) جدة", "د) القدس"], ans: 3, exp: "التصنيف الجغرافي: مكة والمدينة وجدة مدن داخل المملكة العربية السعودية، بينما القدس تقع في فلسطين." },
-            { id: 8, text: "اختر المفردة الشاذة من الخيارات اللغوية:", opts: ["أ) فعل", "ب) اسم", "ج) حرف", "د) كتاب"], ans: 3, exp: "التصنيف النحوي: الاسم والفعل والحرف هي أركان وأقسام الكلمة النحوية الثلاثة، بينما الكتاب مسمى جامع." },
-            { id: 9, text: "استخرج الكلمة المختلفة في الخيارات:", opts: ["أ) طائرة", "ب) قطار", "ج) حافلة", "د) هاتف"], ans: 3, exp: "التصنيف الوظيفي: الطائرة والقطار والحافلة وسائل نقل ومواصلات، بينما الهاتف جهاز اتصالات." },
-            { id: 10, text: "اختر الكلمة الشاذة غير المتناسقة مع البقية:", opts: ["أ) ذهب", "ب) فضة", "ج) ألماس", "د) حديد"], ans: 3, exp: "الفرز المعدني: الذهب والفضة والألماس من الأحجار والمعادن النفيسة الحلي، بينما الحديد معدن صناعي." }
+            { id: 1, text: "حدد الكلمة الشاذة المختلفة عن باقي الخيارات:", opts: ["أ) الرياض", "ب) القاهرة", "ج) دبي", "د) بغداد"], ans: 2, exp: "دبي ليست عاصمة دولة، بينما الرياض والقاهرة وبغداد عواصم." },
+            { id: 2, text: "حدد المفردة الشاذة من بين الأسماء التالية:", opts: ["أ) أسد", "ب) نمر", "ج) فهد", "د) خروف"], ans: 3, exp: "الخروف حيوان أليف عشبي، بينما بقية الخيارات مفترسات جبلية وبرية." },
+            { id: 3, text: "حدد الكلمة المخالفة لبقية المجموعة:", opts: ["أ) تفاح", "ب) موز", "ج) برتقال", "د) خيار"], ans: 3, exp: "الخيار من الخضروات، بينما باقي الخيارات فواكه." },
+            { id: 4, text: "اختر المفردة الشاذة من الأرقام والترتيب:", opts: ["أ) السبت", "ب) الأحد", "ج) الاثنين", "د) محرم"], ans: 3, exp: "محرم شهر هجري، بينما البقية من أيام الأسبوع." },
+            { id: 5, text: "حدد الكلمة المخالفة في المجموعة:", opts: ["أ) شمس", "ب) قمر", "ج) نجم", "د) سيارة"], ans: 3, exp: "السيارة وسيلة نقل جماد، بينما الخيارات الأخرى أجرام سماوية." },
+            { id: 6, text: "استخرج المفردة الشاذة فيما يلي:", opts: ["أ) صهيل", "ب) نهيق", "ج) خرير", "د) زئير"], ans: 2, exp: "الخرير صوت ماء جماد، بينما بقية الأصوات لكائنات حية (حصان، حمار، أسد)." },
+            { id: 7, text: "حدد الكلمة المختلفة بين العناوين التالية:", opts: ["أ) مكة", "ب) المدينة", "ج) جدة", "د) القدس"], ans: 3, exp: "القدس تقع خارج المملكة العربية السعودية." },
+            { id: 8, text: "اختر المفردة الشاذة من الخيارات اللغوية:", opts: ["أ) فعل", "ب) اسم", "ج) حرف", "د) كتاب"], ans: 3, exp: "الكتاب مسمى وليس قسماً من أقسام الكلمة في النحو." },
+            { id: 9, text: "استخرج الكلمة المختلفة في الخيارات:", opts: ["أ) طائرة", "ب) قطار", "ج) حافلة", "د) هاتف"], ans: 3, exp: "الهاتف جهاز اتصالات وليس وسيلة مواصلات ونقل." },
+            { id: 10, text: "اختر الكلمة الشاذة غير المتناسقة مع البقية:", opts: ["أ) ذهب", "ب) فضة", "ج) ألماس", "د) حديد"], ans: 3, exp: "الحديد معدن رخيص وصناعي، بينما بقية الخيارات من النفائس والمجوهرات." }
         ];
 
         const relationTypeData = [
-            { id: 1, word: "مدرسة", opts: ["أ) فصل", "ب) مستشفى", "ج) طريق", "د) حديقة"], ans: 0, exp: "الشرح: الفصل الدراسي هو المكون الجزئي المباشر والأكثر ملازمة وتواجعاً بكيان المدرسة." },
-            { id: 2, word: "طائرة", opts: ["أ) مدرج", "ب) محيط", "ج) قطار", "د) منزل"], ans: 0, exp: "الشرح: المدرج هو المرفق المكاني المباشر المخصص لإقلاع وهبوط وتواجد الطائرات." },
-            { id: 3, word: "طبيب", opts: ["أ) سماعة", "ب) قلم", "ج) سيارة", "د) كتاب"], ans: 0, exp: "الشرح: السماعة الطبية هي الأداة الشعارية والأكثر تلازماً وظيفياً مع شخيص الطبيب." },
-            { id: 4, word: "سفينة", opts: ["أ) مرساة", "ب) مطار", "ج) محراث", "د) خوذة"], ans: 0, exp: "الشرح: المرساة هي أداة التثبيت البحرية الخاصة بالسفينة في الميناء والمياه." },
-            { id: 5, word: "قاضي", opts: ["أ) محكمة", "ب) مستشفى", "ج) مصنع", "د) مزرعة"], ans: 0, exp: "الشرح: المحكمة هي المؤسسة والمقر المكاني المباشر المخصص لعمل وسلطة القاضي." },
-            { id: 6, word: "نحل", opts: ["أ) عسل", "ب) حليب", "ج) صوف", "د) حرير"], ans: 0, exp: "الشرح: العسل هو المنتج والرحيق الطبيعي الأصلي الناجم عن عمل مملكة النحل." },
-            { id: 7, word: "صلاة", opts: ["أ) وضوء", "ب) نوم", "ج) أكل", "د) سفر"], ans: 0, exp: "الشرح: الوضوء هو الشرط الأساسي والأكثر تلازماً وارتباطاً بصحة وجودة أداء الصلاة." },
-            { id: 8, word: "شجرة", opts: ["أ) جذور", "ب) عجلة", "ج) جدار", "د) محرك"], ans: 0, exp: "الشرح: الجذور هي الجزء التأسيسي الحيوي المباشر الملازم لتغذية وتثبيت الشجرة." },
-            { id: 9, word: "سيارة", opts: ["أ) وقود", "ب) شراع", "ج) سرج", "د) حبل"], ans: 0, exp: "الشرح: الوقود هو الطاقة والمحرك الحركي الأكثر ملازمة وتشغيلاً للسيارة." },
-            { id: 10, word: "كتاب", opts: ["أ) صفحات", "ب) عجلات", "ج) أزرار", "د) أسلاك"], ans: 0, exp: "الشرح: الصفحات الورقية هي المكون المادي الأساسي والمباشر الذي ينشأ منه الكتاب." }
+            { id: 1, word: "مدرسة", opts: ["أ) فصل", "ب) مستشفى", "ج) طريق", "د) حديقة"], ans: 0, exp: "الفصل هو المكون المباشر والأكثر ارتباطاً بالمدرسة." },
+            { id: 2, word: "طائرة", opts: ["أ) مدرج", "ب) محيط", "ج) قطار", "د) منزل"], ans: 0, exp: "المدرج هو المكان المخصص لهبوط وإقلاع الطائرة." },
+            { id: 3, word: "طبيب", opts: ["أ) سماعة", "ب) قلم", "ج) سيارة", "د) كتاب"], ans: 0, exp: "السماعة الطبية هي الأداة المباشرة والأكثر ارتباطاً بالطبيب." },
+            { id: 4, word: "سفينة", opts: ["أ) مرساة", "ب) مطار", "ج) محراث", "د) خوذة"], ans: 0, exp: "المرساة أداة تثبيت السفينة في الميناء وهي الأكثر ارتباطاً بها." },
+            { id: 5, word: "قاضي", opts: ["أ) محكمة", "ب) مستشفى", "ج) مصنع", "د) مزرعة"], ans: 0, exp: "المحكمة هي مقر عمل القاضي وتمرس وظيفته." },
+            { id: 6, word: "نحل", opts: ["أ) عسل", "ب) حليب", "ج) صوف", "د) حرير"], ans: 0, exp: "العسل هو المنتج المباشر والرئيسي للنحل." },
+            { id: 7, word: "صلاة", opts: ["أ) وضوء", "ب) نوم", "ج) أكل", "د) سفر"], ans: 0, exp: "الوضوء شرط وأكثر الأفعال ارتباطاً بالصلاة." },
+            { id: 8, word: "شجرة", opts: ["أ) جذور", "ب) عجلة", "ج) جدار", "د) محرك"], ans: 0, exp: "الجذور جزء غريزي ورئيسي بالشجرة." },
+            { id: 9, word: "سيارة", opts: ["أ) وقود", "ب) شراع", "ج) سرج", "د) حبل"], ans: 0, exp: "الوقود مصدر الطاقة المشغل للسيارة." },
+            { id: 10, word: "كتاب", opts: ["أ) صفحات", "ب) عجلات", "ج) أزرار", "د) أسلاك"], ans: 0, exp: "الصفحات هي المكون الأساسي والمباشر للكتاب." }
         ];
 
         let currentActiveRelId = null;
         let answeredQuestions = new Set();
         let currentScore = 0;
-        const totalQuestions = 600;
+        const totalQuestions = 250;
 
         function loadAnalogyCards() {
             const grid = document.getElementById('relations-cards-grid');
             grid.innerHTML = '';
             Object.keys(realRelationsData).forEach((key) => {
                 const rel = realRelationsData[key];
-                const card = `<div onclick="playSound('click'); openRelationQuiz('${key}')" class="bg-blue-50/60 hover:bg-blue-100/80 p-3.5 rounded-xl border border-blue-200 cursor-pointer transition flex flex-col justify-between">
-                    <div class="space-y-1">
-                        <span class="text-[10px] font-black text-blue-800 bg-blue-200 px-2 py-0.5 rounded-md">علاقة معتمدة</span>
-                        <h4 class="font-black text-blue-900 text-xs sm:text-sm">${rel.name}</h4>
-                        <p class="text-[11px] text-slate-600 font-bold truncate">${rel.desc}</p>
+                const card = `
+                <div onclick="playSound('click'); openRelationQuiz('${key}')" class="${rel.themeClass} p-5 cursor-pointer flex flex-col justify-between">
+                    <div class="space-y-3">
+                        <div class="flex items-center justify-between">
+                            <span class="w-8 h-8 rounded-full ${rel.badgeBg} font-black flex items-center justify-center text-xs border-2 shadow-sm">${rel.idNum}</span>
+                            <span class="text-xs font-black ${rel.tagBg} px-2.5 py-1 rounded-lg border">10 أسئلة معتمدة</span>
+                        </div>
+                        <div class="flex items-start gap-2.5">
+                            <div class="mt-1 text-slate-700 text-base">
+                                <i class="${rel.icon}"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-base font-black ${rel.titleColor}">${rel.name}</h3>
+                                <p class="text-xs text-slate-600 font-bold leading-relaxed mt-1 line-clamp-2">${rel.desc}</p>
+                            </div>
+                        </div>
                     </div>
-                    <div class="mt-3 text-[11px] font-black text-blue-700 flex items-center justify-between border-t border-blue-200/60 pt-2">
-                        <span>افتح الشرح الموسع والاختبار 📝</span>
-                        <i class="fa-solid fa-chevron-left text-[10px]"></i>
+                    <div class="mt-4 pt-3 border-t border-slate-100 flex items-center justify-between text-xs font-black ${rel.linkColor}">
+                        <span>استعرض الشرح والاختبار 📌</span>
+                        <i class="fa-solid fa-arrow-left"></i>
                     </div>
                 </div>`;
                 grid.innerHTML += card;
@@ -1155,7 +1302,7 @@
                 btnEl.classList.remove('opacity-70', 'border-slate-200', 'bg-white');
                 btnEl.classList.add('bg-emerald-200', 'border-emerald-600', 'text-emerald-950', 'opacity-100');
                 expDiv.className = "border border-emerald-300 bg-emerald-50/90 p-2.5 rounded-lg text-emerald-900 text-xs font-bold leading-relaxed";
-                expDiv.innerHTML = `<strong>تغذية راجعة وتحليل الإجابة:</strong> إجابة صحيحة وممتازة! (${qObj.exp})`;
+                expDiv.innerHTML = `<strong>تغذية راجعة:</strong> إجابة صحيحة! (${qObj.exp})`;
                 expDiv.classList.remove('hidden');
 
                 if (!answeredQuestions.has(`${relId}-${qIdx}`)) { currentScore++; answeredQuestions.add(`${relId}-${qIdx}`); }
@@ -1166,7 +1313,7 @@
                 btnEl.classList.remove('opacity-70', 'border-slate-200', 'bg-white');
                 btnEl.classList.add('bg-rose-100', 'border-rose-500', 'text-rose-950', 'opacity-100');
                 expDiv.className = "border border-rose-300 bg-rose-50/90 p-2.5 rounded-lg text-rose-900 text-xs font-bold leading-relaxed";
-                expDiv.innerHTML = `<strong>تغذية راجعة وتحليل الإجابة:</strong> إجابة غير صحيحة. الإجابة الصحيحة هي (${qObj.opts[correctIdx]}). الشرح والتعليل: ${qObj.exp}`;
+                expDiv.innerHTML = `<strong>تغذية راجعة:</strong> إجابة غير صحيحة. الإجابة الصحيحة هي (${qObj.opts[correctIdx]}). الشرح: ${qObj.exp}`;
                 expDiv.classList.remove('hidden');
                 answeredQuestions.add(`${relId}-${qIdx}`);
             }
@@ -1267,7 +1414,7 @@
                 btnEl.classList.remove('opacity-70', 'border-slate-200', 'bg-white');
                 btnEl.classList.add('bg-emerald-200', 'border-emerald-600', 'text-emerald-950', 'opacity-100');
                 expDiv.className = "border border-emerald-300 bg-emerald-50/90 p-2.5 rounded-lg text-emerald-900 text-xs font-bold leading-relaxed";
-                expDiv.innerHTML = `<strong>تغذية راجعة وتحليل:</strong> إجابة صحيحة وممتازة! (${expText})`;
+                expDiv.innerHTML = `<strong>تغذية راجعة:</strong> إجابة صحيحة وممتازة! (${expText})`;
                 expDiv.classList.remove('hidden');
 
                 if (!answeredQuestions.has(containerId)) { currentScore++; answeredQuestions.add(containerId); }
@@ -1278,7 +1425,7 @@
                 btnEl.classList.remove('opacity-70', 'border-slate-200', 'bg-white');
                 btnEl.classList.add('bg-rose-100', 'border-rose-500', 'text-rose-950', 'opacity-100');
                 expDiv.className = "border border-rose-300 bg-rose-50/90 p-2.5 rounded-lg text-rose-900 text-xs font-bold leading-relaxed";
-                expDiv.innerHTML = `<strong>تغذية راجعة وتحليل:</strong> إجابة غير صحيحة. (${expText})`;
+                expDiv.innerHTML = `<strong>تغذية راجعة:</strong> إجابة غير صحيحة. الشرح: ${expText}`;
                 expDiv.classList.remove('hidden');
                 answeredQuestions.add(containerId);
             }
