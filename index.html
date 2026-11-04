@@ -1,4 +1,3 @@
-```html
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
@@ -332,7 +331,7 @@
             
             <div class="p-6 space-y-4 overflow-y-auto max-h-[70vh]">
                 
-<!-- Card 1: كتاب التأسيس التناظر اللفظي -->
+                <!-- Card 1: كتاب التأسيس التناظر اللفظي -->
                 <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between p-4 bg-slate-50 border border-slate-200 rounded-2xl hover:border-emerald-500 transition gap-4">
                     <div class="flex items-center gap-3">
                         <i class="fa-solid fa-file-pdf text-red-500 text-3xl"></i>
@@ -637,6 +636,13 @@
             <div id="rel-modal-body" class="hidden space-y-4"></div>
         </div>
     </div>
+
+    <!-- Footer / حقوق الطبع والنشر -->
+    <footer class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 text-center border-t border-slate-200 mt-10">
+        <p class="text-xs sm:text-sm font-bold text-slate-600">
+            جميع الحقوق محفوظة © 2026 • إعداد وتطوير الأستاذ: <span class="text-blue-600 font-black">عبدالعزيز الفيفي</span> ✏️
+        </p>
+    </footer>
 
     <!-- Data & Script Logic -->
     <script>
@@ -1435,24 +1441,6 @@
             document.getElementById('score').innerText = `0 / ${totalQuestions}`;
             loadModalContent();
         }
-
-<!-- Footer / حقوق الطبع والنشر -->
-    <footer class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 text-center border-t border-slate-200 mt-10">
-        <p class="text-xs sm:text-sm font-bold text-slate-600">
-            جميع الحقوق محفوظة © 2026 • إعداد وتطوير الأستاذ: <span class="text-blue-600 font-black">عبدالعزيز الفيفي</span> ✏️
-        </p>
-    </footer>
-
-    <!-- Data & Script Logic -->
-    <script>
-        // ... (باقي الكود البرمجي كما هو)
-
-        let currentActiveRelId = null;
-        let answeredQuestions = new Set();
-        let currentScore = 0;
-        const totalQuestions = 250; // تم تحديثها لتتوافق مع المجموع الصحيح
-
-        // ... (باقي دوال الجافاسكربت)
 
         window.onload = function() { loadModalContent(); }
     </script>
