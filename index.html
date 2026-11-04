@@ -1,4 +1,3 @@
-```html
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
@@ -57,6 +56,7 @@
             border-radius: 18px;
             background-color: #fffbeb;
             transition: all 0.2s ease-in-out;
+            position: relative;
         }
         .scallop-bubble:hover {
             background-color: #fef3c7;
@@ -69,6 +69,18 @@
             50% { transform: scale(1.02); box-shadow: 0 0 0 6px rgba(217, 119, 6, 0); }
         }
         .guide-pulse { animation: pulse-glow 2s infinite; }
+
+        @keyframes spin-slow {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+        .spin-icon { animation: spin-slow 4s linear infinite; }
+
+        @keyframes bounce-badge {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-4px); }
+        }
+        .bounce-badge { animation: bounce-badge 1.5s ease-in-out infinite; }
 
         @keyframes shake {
             0%, 100% { transform: translateX(0); }
@@ -189,14 +201,23 @@
                         يحتوي قسم التناظر اللفظي على 20 علاقة أساسية بأسئلة حقيقية ومعتمدة من اختبارات القدرات. نوافذ الاختبارات تظهر فوراً في المقدمة لتجربة حل ممتعة.
                     </p>
                 </div>
-                <!-- التعديل هنا: جعل الأيقونة رابطاً متفاعلاً ينقل للموقع الخارجي عند الضغط عليه -->
-                <a href="https://aztlaztl1512-bit.github.io/MAHME-/" target="_blank" onclick="playSound('click');" class="scallop-bubble p-4 text-xs font-bold text-amber-900 min-w-[230px] block cursor-pointer group shadow-sm">
-                    <span class="flex items-center justify-between font-black text-amber-900 text-sm mb-1 group-hover:text-amber-700">
-                        <span>💡 بنك الأسئلة الشامل! 🙂</span>
-                        <i class="fa-solid fa-arrow-up-right-from-square text-xs text-amber-700"></i>
-                    </span>
-                    أسئلة حقيقية ومعتمدة بالكامل مع الشرح الفوري والتغذية الراجعة.
-                </a>
+                
+                <!-- زر بنك الأسئلة الشامل مع الشارة المتحركة -->
+                <div class="relative pt-3">
+                    <div class="absolute -top-3 right-4 z-10 bounce-badge">
+                        <span class="bg-gradient-to-r from-red-600 to-amber-600 text-white text-[10px] font-black px-3 py-1 rounded-full shadow-lg border-2 border-white flex items-center gap-1">
+                            <i class="fa-solid fa-hand-pointer spin-icon text-amber-200"></i>
+                            <span>اضغط هنا أو ادخل هنا! 🚀</span>
+                        </span>
+                    </div>
+                    <a href="https://aztlaztl1512-bit.github.io/MAHME-/" target="_blank" onclick="playSound('click');" class="scallop-bubble p-4 text-xs font-bold text-amber-900 min-w-[230px] block cursor-pointer group shadow-sm">
+                        <span class="flex items-center justify-between font-black text-amber-900 text-sm mb-1 group-hover:text-amber-700">
+                            <span>💡 بنك الأسئلة الشامل! 🙂</span>
+                            <i class="fa-solid fa-arrow-up-right-from-square text-xs text-amber-700"></i>
+                        </span>
+                        أسئلة حقيقية ومعتمدة بالكامل مع الشرح الفوري والتغذية الراجعة.
+                    </a>
+                </div>
             </div>
         </section>
 
@@ -554,7 +575,7 @@
                     <button onclick="playSound('click'); closeModal('modal-analogy')" class="w-8 h-8 rounded-lg bg-slate-100 hover:bg-slate-200 text-slate-600 flex items-center justify-center font-bold">✕</button>
                 </div>
             </div>
-            <p class="text-xs text-slate-600 font-bold mb-4">اختر أي علاقة أدناه لفتح بطاقتها وااختبارها الحقيقي بنفس نمط كشكول المذاكرة:</p>
+            <p class="text-xs text-slate-600 font-bold mb-4">اختر أي علاقة أدناه لفتح بطاقتها واختبارها الحقيقي بنفس نمط كشكول المذاكرة:</p>
             <div id="relations-cards-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5"></div>
         </div>
     </div>
@@ -1124,7 +1145,7 @@
                     { q: "حزمة : حطب", opts: ["أ) باقة : ورد", "ب) كُمَّة : كتب", "ج) صُرَّة : دراهم", "د) كل الإجابات صحيحة"], ans: 3, exp: "أسماء المجاميع للجمادات والنبات." },
                     { q: "أسطول : سفن", opts: ["أ) سرب : طائرات", "ب) موكب : سيارات", "ج) قافلة : نوق", "د) جميع الخيارات صحيحة"], ans: 3, exp: "أسماء الجماعات في آلات النقل والركايب." },
                     { q: "خلية : نحل", opts: ["أ) قرية : نمل", "ب) خشرَم : دَبْر", "ج) جند : جراد", "د) كل ما سبق صحيح"], ans: 3, exp: "أسماء مجاميع ومستعمرات الحشرات." },
-                    { q: "ثلة : مؤمنين", opts: ["أ) عصبة :رجال", "ب) رهط : إنس", "ج) شلّة : أصحاب", "د) جميع الإجابات مطابقة"], ans: 3, exp: "جموع ومجاميع البشر في القرآن واللغة." },
+                    { q: "ثلة : مؤمنين", opts: ["أ) عصبة : رجال", "ب) رهط : إنس", "ج) شلّة : أصحاب", "د) جميع الإجابات مطابقة"], ans: 3, exp: "جموع ومجاميع البشر في القرآن واللغة." },
                     { q: "قطيع : بقار", opts: ["أ) سرب : أسماك", "ب) رعية : غنم", "ج) صوار : ظباء", "د) كل ما ذكر صحيح"], ans: 3, exp: "الأسماء اللغوية الفصيحة لجماعات الحيوانات." }
                 ] 
             },
@@ -1495,4 +1516,3 @@
     </script>
 </body>
 </html>
-```
