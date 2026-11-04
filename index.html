@@ -3,877 +3,660 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>كشكول القدرات اللفظية 2026 - ورقة عمل تفاعلية</title>
-    <!-- Tailwind CSS CDN -->
+    <title>كتاب التأسيس التفاعلي - التناظر اللفظي 2026</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Standard Clean Arabic Font (Cairo) -->
-    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&display=swap" rel="stylesheet">
-    <!-- FontAwesome Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <!-- JS Confetti CDN -->
-    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/lucide-static@0.16.0/font/lucide.min.js"></script>
     <style>
         body {
-            font-family: 'Cairo', system-ui, -apple-system, sans-serif;
-            background-color: #fcfbf7;
-            background-image: 
-                linear-gradient(to right, rgba(220, 215, 201, 0.3) 1px, transparent 1px),
-                linear-gradient(to bottom, rgba(220, 215, 201, 0.3) 1px, transparent 1px);
-            background-size: 24px 24px;
-            min-height: 100vh;
-            color: #1e293b;
+            font-family: 'Tajawal', sans-serif;
+            background-color: #f0fdf4;
         }
-
-        .notebook-card {
-            background-color: #ffffff;
-            border: 2.5px solid #2563eb;
-            border-radius: 20px;
-            box-shadow: 4px 5px 0px rgba(37, 99, 235, 0.15);
-            transition: all 0.2s ease-in-out;
+        .teal-gradient {
+            background: linear-gradient(135deg, #0d9488 0%, #0f766e 100%);
         }
-        .notebook-card:hover {
-            transform: translateY(-3px) rotate(-0.5deg);
-            box-shadow: 6px 8px 0px rgba(37, 99, 235, 0.25);
+        .card-shadow {
+            box-shadow: 0 10px 25px -5px rgba(13, 148, 136, 0.1), 0 8px 10px -6px rgba(13, 148, 136, 0.1);
         }
-
-        .notebook-card-purple { border-color: #7c3aed; box-shadow: 4px 5px 0px rgba(124, 58, 237, 0.15); }
-        .notebook-card-purple:hover { box-shadow: 6px 8px 0px rgba(124, 58, 237, 0.25); }
-
-        .notebook-card-red { border-color: #dc2626; box-shadow: 4px 5px 0px rgba(220, 38, 38, 0.15); }
-        .notebook-card-red:hover { box-shadow: 6px 8px 0px rgba(220, 38, 38, 0.25); }
-
-        .notebook-card-amber { border-color: #d97706; box-shadow: 4px 5px 0px rgba(217, 119, 6, 0.15); }
-        .notebook-card-amber:hover { box-shadow: 6px 8px 0px rgba(217, 119, 6, 0.25); }
-
-        .notebook-card-teal { border-color: #0d9488; box-shadow: 4px 5px 0px rgba(13, 148, 136, 0.15); }
-        .notebook-card-teal:hover { box-shadow: 6px 8px 0px rgba(13, 148, 136, 0.25); }
-
-        .scallop-bubble {
-            border: 2px dashed #d97706;
-            border-radius: 18px;
-            background-color: #fffbeb;
-        }
-
-        @keyframes shake {
-            0%, 100% { transform: translateX(0); }
-            20%, 60% { transform: translateX(-6px); }
-            40%, 80% { transform: translateX(6px); }
-        }
-        .shake-anim { animation: shake 0.35s ease-in-out; }
-
-        @keyframes modalFadeIn {
-            from { opacity: 0; transform: scale(0.96) translateY(8px); }
-            to { opacity: 1; transform: scale(1) translateY(0); }
-        }
-        .modal-animate { animation: modalFadeIn 0.2s ease-out forwards; }
     </style>
 </head>
-<body class="pb-16 text-slate-800 antialiased">
+<body class="text-gray-800 min-h-screen flex flex-col">
 
-    <!-- Web Audio Synthesizer -->
-    <script>
-        const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
-        function playSound(type) {
-            if (audioCtx.state === 'suspended') { audioCtx.resume(); }
-            const osc = audioCtx.createOscillator();
-            const gain = audioCtx.createGain();
-            osc.connect(gain);
-            gain.connect(audioCtx.destination);
-            const now = audioCtx.currentTime;
-
-            if (type === 'click') {
-                osc.type = 'sine';
-                osc.frequency.setValueAtTime(600, now);
-                gain.gain.setValueAtTime(0.04, now);
-                gain.gain.exponentialRampToValueAtTime(0.001, now + 0.04);
-                osc.start(now); osc.stop(now + 0.04);
-            } else if (type === 'correct') {
-                osc.type = 'triangle';
-                osc.frequency.setValueAtTime(523.25, now);
-                osc.frequency.setValueAtTime(659.25, now + 0.08);
-                osc.frequency.setValueAtTime(783.99, now + 0.16);
-                gain.gain.setValueAtTime(0.12, now);
-                gain.gain.exponentialRampToValueAtTime(0.001, now + 0.35);
-                osc.start(now); osc.stop(now + 0.35);
-            } else if (type === 'wrong') {
-                osc.type = 'sawtooth';
-                osc.frequency.setValueAtTime(160, now);
-                osc.frequency.setValueAtTime(120, now + 0.1);
-                gain.gain.setValueAtTime(0.12, now);
-                gain.gain.exponentialRampToValueAtTime(0.001, now + 0.3);
-                osc.start(now); osc.stop(now + 0.3);
-            }
-        }
-    </script>
-
-    <!-- Header -->
-    <header class="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b-2 border-slate-300 shadow-sm">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3.5 flex flex-wrap justify-between items-center gap-3">
-            <div class="flex items-center gap-3">
-                <div class="w-10 h-10 rounded-xl bg-blue-600 text-white flex items-center justify-center font-bold text-lg shadow-sm border-2 border-blue-800">
-                    <i class="fa-solid fa-pen-ruler"></i>
-                </div>
+    <!-- Header Navigation -->
+    <header class="teal-gradient text-white shadow-lg sticky top-0 z-50">
+        <div class="max-w-7xl mx-mx-auto px-4 py-4 flex flex-wrap justify-between items-center gap-4">
+            <div class="flex items-center space-x-3 space-x-reverse">
+                <div class="bg-white text-teal-800 p-2 rounded-xl font-black text-2xl shadow-inner">Teal</div>
                 <div>
-                    <h1 class="text-lg sm:text-xl font-black text-slate-900 leading-tight">
-                        كشكول المذاكرة التفاعلي • القدرات اللفظية <span class="text-xs font-extrabold bg-amber-100 text-amber-800 px-2.5 py-0.5 rounded-full border border-amber-400">معيار 2026 📝</span>
-                    </h1>
-                    <p class="text-xs text-slate-500 font-bold">20 علاقة (20 سؤالاً لكل علاقة = 400 سؤال تناظر) + الأقسام الأخرى</p>
+                    <h1 class="font-bold text-xl leading-tight">التأسيس التفاعلي الشامل</h1>
+                    <p class="text-xs text-teal-200">التناظر اللفظي - قدرات 2026</p>
                 </div>
             </div>
 
-            <div class="flex items-center gap-3 bg-amber-50/80 px-4 py-1.5 rounded-2xl border-2 border-amber-300">
-                <div class="text-right pl-3 border-l border-amber-200">
-                    <span class="block text-[10px] font-black text-amber-800">النتيجة الإجمالية</span>
-                    <span id="score" class="text-sm font-black text-emerald-600">0 / 450</span>
-                </div>
-                <button onclick="playSound('click'); resetQuiz()" class="text-xs font-bold text-slate-700 hover:text-blue-600 transition flex items-center gap-1.5 bg-white px-3 py-1.5 rounded-xl border-2 border-slate-300 shadow-sm">
-                    <i class="fa-solid fa-rotate-right text-slate-500"></i>
-                    <span>إعادة الكشكول</span>
+            <!-- Global Navigation Tabs -->
+            <nav class="flex bg-teal-800/60 p-1.5 rounded-2xl border border-teal-600/40">
+                <button onclick="switchTab('study')" id="tab-study" class="nav-btn px-5 py-2 rounded-xl text-sm font-bold transition-all duration-200 bg-white text-teal-800 shadow">
+                    📚 دراسة وقواعد
                 </button>
-            </div>
+                <button onclick="switchTab('practice')" id="tab-practice" class="nav-btn px-5 py-2 rounded-xl text-sm font-bold transition-all duration-200 text-teal-100 hover:text-white">
+                    🎯 تدريب حسب الموضوع
+                </button>
+                <button onclick="switchTab('exam')" id="tab-exam" class="nav-btn px-5 py-2 rounded-xl text-sm font-bold transition-all duration-200 text-teal-100 hover:text-white">
+                    ⏱️ اختبار محاكاة شامل
+                </button>
+            </nav>
         </div>
     </header>
 
-    <!-- Main Content -->
-    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-6 space-y-6">
+    <!-- Main Content Body -->
+    <main class="max-w-7xl mx-auto px-4 py-8 flex-grow w-full">
 
-        <!-- Intro -->
-        <section class="bg-white border-2 border-slate-800 rounded-2xl p-5 sm:p-6 shadow-[5px_5px_0px_0px_rgba(30,41,59,1)]">
-            <div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
-                <div class="space-y-1.5 max-w-3xl">
-                    <div class="inline-flex items-center gap-1.5 bg-blue-100 text-blue-900 px-3 py-0.5 rounded-full text-xs font-black border border-blue-300">
-                        <i class="fa-solid fa-bookmark"></i> دليل الطالب المتميز
-                    </div>
-                    <h2 class="text-xl sm:text-2xl font-black text-slate-900">
-                        اختر القسم المطلوب وابدأ المذاكرة والتدريب التفاعلي! ✏️
-                    </h2>
-                    <p class="text-slate-600 text-xs sm:text-sm font-bold leading-relaxed">
-                        تم تحديث قسم التناظر اللفظي ليشمل 20 سؤالاً كاملاً ومستقلاً لكل علاقة من العلاقات الـ 20 المعيارية (إجمالي 400 سؤال تناظر لفظي).
-                    </p>
+        <!-- SECTION 1: STUDY & RULES -->
+        <section id="section-study" class="space-y-6">
+            <div class="bg-white p-6 rounded-3xl border border-teal-100 card-shadow flex flex-wrap items-center justify-between gap-4">
+                <div>
+                    <h2 class="text-2xl font-bold text-teal-900">موسوعة العلاقات والتأسيس</h2>
+                    <p class="text-gray-600 text-sm mt-1">اختر العلاقة لمراجعة المفاهيم، جداول الحفظ، وتنبيهات الفخاخ الشائعة.</p>
                 </div>
-                <div class="scallop-bubble p-4 text-xs font-bold text-amber-900 min-w-[230px]">
-                    <span class="block font-black text-amber-900 text-sm mb-1">💡 نصيحة المذاكرة! 🙂</span>
-                    لكل علاقة في التناظر 20 سؤالاً مخصصاً يضمن تثبيت القاعدة وتكرار تطبيقها.
+                <div class="w-full md:w-72">
+                    <input type="text" id="searchCategory" onkeyup="filterCategories()" placeholder="🔍 ابحث عن علاقة أو كلمة..." class="w-full px-4 py-2.5 rounded-xl border border-teal-200 focus:outline-none focus:ring-2 focus:ring-teal-600 text-sm">
+                </div>
+            </div>
+
+            <!-- Categories Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5" id="categoriesGrid">
+                <!-- Javascript will inject categories here -->
+            </div>
+        </section>
+
+        <!-- SECTION 2: TOPIC PRACTICE -->
+        <section id="section-practice" class="hidden space-y-6">
+            <div class="bg-white p-6 rounded-3xl border border-teal-100 card-shadow">
+                <h2 class="text-2xl font-bold text-teal-900 mb-4">التدريب المخصص حسب العلاقة</h2>
+                <div class="flex flex-wrap gap-2 mb-6" id="topicButtons">
+                    <!-- Javascript generated topic chips -->
+                </div>
+
+                <!-- Active Topic Quiz Box -->
+                <div id="topicQuizBox" class="bg-teal-50/50 p-6 rounded-2xl border border-teal-200 min-h-[300px]">
+                    <div class="text-center py-12 text-gray-500">
+                        اختر موضوعاً من الأعلى للبدء بالتدريب الفوري.
+                    </div>
                 </div>
             </div>
         </section>
 
-        <!-- Main Sections Grid -->
-        <section class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
-
-            <!-- Card 1: التناظر اللفظي (20 علاقة) -->
-            <div onclick="playSound('click'); openModal('modal-analogy')" class="notebook-card p-5 cursor-pointer flex flex-col justify-between">
-                <div class="space-y-3">
-                    <div class="flex items-center justify-between">
-                        <span class="w-8 h-8 rounded-full bg-blue-100 text-blue-800 font-black flex items-center justify-center text-sm border-2 border-blue-400">1</span>
-                        <span class="text-xs font-black text-blue-800 bg-blue-50 px-2.5 py-1 rounded-lg border border-blue-200">20 علاقة (20 سؤالاً/علاقة)</span>
-                    </div>
-                    <h3 class="text-lg font-black text-blue-900">أولاً: التناظر اللفظي ✳️</h3>
-                    <p class="text-xs text-slate-600 font-bold leading-relaxed">
-                        استعرض جميع الـ 20 علاقة المعيارية مع شروحات و 20 سؤالاً تفاعلياً لكل علاقة.
-                    </p>
+        <!-- SECTION 3: FULL MOCK EXAM -->
+        <section id="section-exam" class="hidden space-y-6">
+            <div class="bg-white p-8 rounded-3xl border border-teal-100 card-shadow text-center max-w-3xl mx-auto" id="examStartCard">
+                <div class="w-20 h-20 bg-teal-100 text-teal-700 rounded-full flex items-center justify-center mx-auto mb-4 text-3xl font-black">
+                    🎓
                 </div>
-                <div class="mt-4 pt-3 border-t border-slate-100 flex items-center justify-between text-xs font-black text-blue-600">
-                    <span>استعرض بطاقات العلاقات 📌</span>
-                    <i class="fa-solid fa-arrow-left"></i>
+                <h2 class="text-3xl font-bold text-teal-900">اختبار القدرات التفاعلي الشامل</h2>
+                <p class="text-gray-600 mt-2 text-sm leading-relaxed max-w-md mx-auto">
+                    اختبار محاكاة يحوي أسئلة عشوائية مأخوذة مباشرة من كتاب التأسيس 2026 قياساً على اختبار القدرات الفعلي.
+                </p>
+                <div class="flex justify-center gap-6 my-6 text-sm font-semibold text-gray-700">
+                    <span class="bg-teal-50 px-4 py-2 rounded-xl border border-teal-100">📝 15 سؤالاً متناولاً</span>
+                    <span class="bg-teal-50 px-4 py-2 rounded-xl border border-teal-100">⏱️ مؤقت 10 دقائق</span>
                 </div>
+                <button onclick="startFullExam()" class="teal-gradient text-white font-bold text-lg px-8 py-3.5 rounded-2xl shadow-lg hover:opacity-95 transition-all">
+                    ابدأ الاختبار الآن
+                </button>
             </div>
 
-            <!-- Card 2: إكمال الجمل -->
-            <div onclick="playSound('click'); openModal('modal-completion')" class="notebook-card notebook-card-purple p-5 cursor-pointer flex flex-col justify-between">
-                <div class="space-y-3">
-                    <div class="flex items-center justify-between">
-                        <span class="w-8 h-8 rounded-full bg-purple-100 text-purple-800 font-black flex items-center justify-center text-sm border-2 border-purple-400">2</span>
-                        <span class="text-xs font-black text-purple-800 bg-purple-50 px-2.5 py-1 rounded-lg border border-purple-200">مفاتيح الحل + 10 أسئلة</span>
-                    </div>
-                    <h3 class="text-lg font-black text-purple-900">ثانياً: إكمال الجمل ✳️</h3>
-                    <p class="text-xs text-slate-600 font-bold leading-relaxed">
-                        مؤشرات التضاد والسببية والتناسق المعنوي بين الفراغات مع 10 أسئلة محلولة وتغذية راجعة.
-                    </p>
-                </div>
-                <div class="mt-4 pt-3 border-t border-slate-100 flex items-center justify-between text-xs font-black text-purple-600">
-                    <span>افتح صفحة الكشكول 📌</span>
-                    <i class="fa-solid fa-arrow-left"></i>
-                </div>
+            <div id="examContainer" class="hidden bg-white p-6 md:p-8 rounded-3xl border border-teal-100 card-shadow max-w-3xl mx-auto">
+                <!-- Dynamic Exam Content -->
             </div>
-
-            <!-- Card 3: الخطأ السياقي -->
-            <div onclick="playSound('click'); openModal('modal-context')" class="notebook-card notebook-card-red p-5 cursor-pointer flex flex-col justify-between">
-                <div class="space-y-3">
-                    <div class="flex items-center justify-between">
-                        <span class="w-8 h-8 rounded-full bg-red-100 text-red-800 font-black flex items-center justify-center text-sm border-2 border-red-400">3</span>
-                        <span class="text-xs font-black text-red-800 bg-red-50 px-2.5 py-1 rounded-lg border border-red-200">العكس الذهني + 10 أسئلة</span>
-                    </div>
-                    <h3 class="text-lg font-black text-red-900">ثالثاً: الخطأ السياقي ✳️</h3>
-                    <p class="text-xs text-slate-600 font-bold leading-relaxed">
-                        طريقة اكتشاف الكلمة التي تخالف المعنى، مع قاعدة العكس الذهني و10 أسئلة تطبيقية.
-                    </p>
-                </div>
-                <div class="mt-4 pt-3 border-t border-slate-100 flex items-center justify-between text-xs font-black text-red-600">
-                    <span>افتح صفحة الكشكول 📌</span>
-                    <i class="fa-solid fa-arrow-left"></i>
-                </div>
-            </div>
-
-            <!-- Card 4: استيعاب المقروء -->
-            <div onclick="playSound('click'); openModal('modal-reading')" class="notebook-card notebook-card-amber p-5 cursor-pointer flex flex-col justify-between">
-                <div class="space-y-3">
-                    <div class="flex items-center justify-between">
-                        <span class="w-8 h-8 rounded-full bg-amber-100 text-amber-800 font-black flex items-center justify-center text-sm border-2 border-amber-400">4</span>
-                        <span class="text-xs font-black text-amber-800 bg-amber-50 px-2.5 py-1 rounded-lg border border-amber-200">تحليل النصوص + 10 أسئلة</span>
-                    </div>
-                    <h3 class="text-lg font-black text-amber-900">رابعاً: استيعاب المقروء ✳️</h3>
-                    <p class="text-xs text-slate-600 font-bold leading-relaxed">
-                        تحليل الفقرات، علاقة الجمل، وقواعد التواريخ والقرون مع 10 أسئلة نصوص معيارية.
-                    </p>
-                </div>
-                <div class="mt-4 pt-3 border-t border-slate-100 flex items-center justify-between text-xs font-black text-amber-600">
-                    <span>افتح صفحة الكشكول 📌</span>
-                    <i class="fa-solid fa-arrow-left"></i>
-                </div>
-            </div>
-
-            <!-- Card 5: المفردة الشاذة -->
-            <div onclick="playSound('click'); openModal('modal-odd')" class="notebook-card notebook-card-teal p-5 cursor-pointer flex flex-col justify-between">
-                <div class="space-y-3">
-                    <div class="flex items-center justify-between">
-                        <span class="w-8 h-8 rounded-full bg-teal-100 text-teal-800 font-black flex items-center justify-center text-sm border-2 border-teal-400">5</span>
-                        <span class="text-xs font-black text-teal-800 bg-teal-50 px-2.5 py-1 rounded-lg border border-teal-200">4 خيارات (واحدة شاذة)</span>
-                    </div>
-                    <h3 class="text-lg font-black text-teal-900">خامساً: المفردة الشاذة ✳️</h3>
-                    <p class="text-xs text-slate-600 font-bold leading-relaxed">
-                        أسئلة استخراج الكلمة المختلفة تماماً عن بقية الخيارات الأربعة (مثل: أسد، نمر، فهد، خروف).
-                    </p>
-                </div>
-                <div class="mt-4 pt-3 border-t border-slate-100 flex items-center justify-between text-xs font-black text-teal-600">
-                    <span>افتح صفحة الكشكول 📌</span>
-                    <i class="fa-solid fa-arrow-left"></i>
-                </div>
-            </div>
-
-            <!-- Card 6: الارتباط (الأكثر ارتباطاً) -->
-            <div onclick="playSound('click'); openModal('modal-relation-type')" class="notebook-card notebook-card-purple p-5 cursor-pointer flex flex-col justify-between">
-                <div class="space-y-3">
-                    <div class="flex items-center justify-between">
-                        <span class="w-8 h-8 rounded-full bg-purple-100 text-purple-800 font-black flex items-center justify-center text-sm border-2 border-purple-400">6</span>
-                        <span class="text-xs font-black text-purple-800 bg-purple-50 px-2.5 py-1 rounded-lg border border-purple-200">الكلمة الأكثر ارتباطاً</span>
-                    </div>
-                    <h3 class="text-lg font-black text-purple-900">سادساً: الارتباط اللفظي ✳️</h3>
-                    <p class="text-xs text-slate-600 font-bold leading-relaxed">
-                        سؤال يحتوي على كلمة في الجذع و4 خيارات، والمطلوب اختيار الخيار الأكثر ارتباطاً بها.
-                    </p>
-                </div>
-                <div class="mt-4 pt-3 border-t border-slate-100 flex items-center justify-between text-xs font-black text-purple-600">
-                    <span>افتح صفحة الكشكول 📌</span>
-                    <i class="fa-solid fa-arrow-left"></i>
-                </div>
-            </div>
-
         </section>
 
     </main>
 
-    <!-- ==================== MODALS ==================== -->
-
-    <!-- MODAL 1: التناظر اللفظي (20 علاقة مشهورة) -->
-    <div id="modal-analogy" class="fixed inset-0 z-40 hidden bg-slate-900/50 backdrop-blur-sm flex items-center justify-center p-3 sm:p-5 overflow-y-auto">
-        <div class="bg-white rounded-2xl max-w-5xl w-full max-h-[90vh] overflow-y-auto border border-slate-200 shadow-xl modal-animate p-4 sm:p-6">
-            <div class="sticky top-0 bg-white/95 backdrop-blur-md pb-3 mb-4 border-b border-slate-200 flex justify-between items-center z-10">
-                <div class="flex items-center gap-2.5">
-                    <span class="w-8 h-8 rounded-lg bg-blue-100 text-blue-800 font-black flex items-center justify-center text-sm">1</span>
-                    <h3 class="text-base sm:text-lg font-black text-slate-900">قسم التناظر اللفظي (الـ 20 علاقة - 20 سؤالاً لكل علاقة)</h3>
-                </div>
-                <button onclick="playSound('click'); closeModal('modal-analogy')" class="w-8 h-8 rounded-lg bg-slate-100 hover:bg-slate-200 text-slate-600 flex items-center justify-center font-bold">✕</button>
+    <!-- Detailed Relation Modal -->
+    <div id="relationModal" class="fixed inset-0 bg-black/60 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4">
+        <div class="bg-white w-full max-w-3xl rounded-3xl shadow-2xl max-h-[90vh] flex flex-col overflow-hidden">
+            <div class="teal-gradient text-white p-6 flex justify-between items-center">
+                <h3 class="text-xl font-bold" id="modalTitle">عنوان العلاقة</h3>
+                <button onclick="closeModal()" class="text-white/80 hover:text-white text-2xl font-bold">&times;</button>
             </div>
-
-            <div class="space-y-6 text-sm">
-                <p class="text-xs font-bold text-slate-600 bg-blue-50 p-3 rounded-xl border border-blue-200">
-                    💡 اضغط على زر <span class="text-blue-700 font-black">"🎯 اختبار العلاقة (20 سؤالاً)"</span> تحت كل بطاقة لتختبر فهمك الشامل فوراً!
-                </p>
-
-                <!-- 20 Cards Grid matching Notebook styling -->
-                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4" id="relations-cards-grid">
-                    <!-- Loaded dynamically via JS -->
-                </div>
+            <div class="p-6 overflow-y-auto space-y-6 text-right" id="modalBody">
+                <!-- Dynamic Content Loaded Here -->
+            </div>
+            <div class="bg-gray-50 p-4 border-t border-gray-100 flex justify-end">
+                <button onclick="closeModal()" class="bg-gray-200 text-gray-700 px-6 py-2 rounded-xl font-bold hover:bg-gray-300">إغلاق</button>
             </div>
         </div>
     </div>
 
-    <!-- SUB-MODAL FOR RELATION QUIZZES (20 Questions Each) -->
-    <div id="relation-quiz-modal" class="fixed inset-0 z-[100] hidden bg-slate-900/70 backdrop-blur-md flex items-center justify-center p-3 sm:p-5 overflow-y-auto">
-        <div class="bg-white rounded-2xl max-w-3xl w-full max-h-[90vh] overflow-y-auto border border-blue-400 shadow-2xl modal-animate p-5">
-            <div class="flex justify-between items-center pb-3 border-b border-slate-200 mb-4 sticky top-0 bg-white z-20">
-                <h3 id="rel-modal-title" class="text-base font-black text-blue-900">اختبار العلاقة التفاعلي</h3>
-                <button onclick="playSound('click'); closeRelationQuiz()" class="w-8 h-8 rounded-lg bg-slate-100 hover:bg-slate-200 text-slate-600 flex items-center justify-center font-bold">✕</button>
-            </div>
-            <div id="rel-modal-body" class="space-y-4 text-sm"></div>
-        </div>
-    </div>
+    <!-- Footer -->
+    <footer class="bg-teal-950 text-teal-300 py-6 text-center text-xs border-t border-teal-900 mt-auto">
+        <p>تم إعداد هذا التأسيس التفاعلي استناداً إلى كتاب التأسيس التناظر اللفظي (Teal 2026)</p>
+        <p class="mt-1 text-teal-400">يوزع مجاناً ولا يباع - صدقة جارية</p>
+    </footer>
 
-    <!-- MODAL 2: إكمال الجمل -->
-    <div id="modal-completion" class="fixed inset-0 z-50 hidden bg-slate-900/50 backdrop-blur-sm flex items-center justify-center p-3 sm:p-5 overflow-y-auto">
-        <div class="bg-white rounded-2xl max-w-4xl w-full max-h-[90vh] overflow-y-auto border border-slate-200 shadow-xl modal-animate p-4 sm:p-6">
-            <div class="sticky top-0 bg-white/95 backdrop-blur-md pb-3 mb-4 border-b border-slate-200 flex justify-between items-center z-10">
-                <div class="flex items-center gap-2.5">
-                    <span class="w-8 h-8 rounded-lg bg-purple-100 text-purple-800 font-black flex items-center justify-center text-sm">2</span>
-                    <h3 class="text-base sm:text-lg font-black text-slate-900">قسم إكمال الجمل (10 أسئلة تفاعلية)</h3>
-                </div>
-                <button onclick="playSound('click'); closeModal('modal-completion')" class="w-8 h-8 rounded-lg bg-slate-100 hover:bg-slate-200 text-slate-600 flex items-center justify-center font-bold">✕</button>
-            </div>
-            <div id="completion-questions" class="space-y-4"></div>
-        </div>
-    </div>
-
-    <!-- MODAL 3: الخطأ السياقي -->
-    <div id="modal-context" class="fixed inset-0 z-50 hidden bg-slate-900/50 backdrop-blur-sm flex items-center justify-center p-3 sm:p-5 overflow-y-auto">
-        <div class="bg-white rounded-2xl max-w-4xl w-full max-h-[90vh] overflow-y-auto border border-slate-200 shadow-xl modal-animate p-4 sm:p-6">
-            <div class="sticky top-0 bg-white/95 backdrop-blur-md pb-3 mb-4 border-b border-slate-200 flex justify-between items-center z-10">
-                <div class="flex items-center gap-2.5">
-                    <span class="w-8 h-8 rounded-lg bg-red-100 text-red-800 font-black flex items-center justify-center text-sm">3</span>
-                    <h3 class="text-base sm:text-lg font-black text-slate-900">قسم الخطأ السياقي (10 أسئلة تفاعلية)</h3>
-                </div>
-                <button onclick="playSound('click'); closeModal('modal-context')" class="w-8 h-8 rounded-lg bg-slate-100 hover:bg-slate-200 text-slate-600 flex items-center justify-center font-bold">✕</button>
-            </div>
-            <div id="context-questions" class="space-y-4"></div>
-        </div>
-    </div>
-
-    <!-- MODAL 4: استيعاب المقروء -->
-    <div id="modal-reading" class="fixed inset-0 z-50 hidden bg-slate-900/50 backdrop-blur-sm flex items-center justify-center p-3 sm:p-5 overflow-y-auto">
-        <div class="bg-white rounded-2xl max-w-4xl w-full max-h-[90vh] overflow-y-auto border border-slate-200 shadow-xl modal-animate p-4 sm:p-6">
-            <div class="sticky top-0 bg-white/95 backdrop-blur-md pb-3 mb-4 border-b border-slate-200 flex justify-between items-center z-10">
-                <div class="flex items-center gap-2.5">
-                    <span class="w-8 h-8 rounded-lg bg-amber-100 text-amber-800 font-black flex items-center justify-center text-sm">4</span>
-                    <h3 class="text-base sm:text-lg font-black text-slate-900">قسم استيعاب المقروء (10 أسئلة تفاعلية)</h3>
-                </div>
-                <button onclick="playSound('click'); closeModal('modal-reading')" class="w-8 h-8 rounded-lg bg-slate-100 hover:bg-slate-200 text-slate-600 flex items-center justify-center font-bold">✕</button>
-            </div>
-            <div id="reading-questions" class="space-y-4"></div>
-        </div>
-    </div>
-
-    <!-- MODAL 5: المفردة الشاذة (4 خيارات - واحدة شاذة) -->
-    <div id="modal-odd" class="fixed inset-0 z-50 hidden bg-slate-900/50 backdrop-blur-sm flex items-center justify-center p-3 sm:p-5 overflow-y-auto">
-        <div class="bg-white rounded-2xl max-w-4xl w-full max-h-[90vh] overflow-y-auto border border-slate-200 shadow-xl modal-animate p-4 sm:p-6">
-            <div class="sticky top-0 bg-white/95 backdrop-blur-md pb-3 mb-4 border-b border-slate-200 flex justify-between items-center z-10">
-                <div class="flex items-center gap-2.5">
-                    <span class="w-8 h-8 rounded-lg bg-teal-100 text-teal-800 font-black flex items-center justify-center text-sm">5</span>
-                    <h3 class="text-base sm:text-lg font-black text-slate-900">قسم المفردة الشاذة (10 أسئلة)</h3>
-                </div>
-                <button onclick="playSound('click'); closeModal('modal-odd')" class="w-8 h-8 rounded-lg bg-slate-100 hover:bg-slate-200 text-slate-600 flex items-center justify-center font-bold">✕</button>
-            </div>
-            <div id="odd-questions" class="space-y-4"></div>
-        </div>
-    </div>
-
-    <!-- MODAL 6: الارتباط اللفظي (الكلمة الأكثر ارتباطاً) -->
-    <div id="modal-relation-type" class="fixed inset-0 z-50 hidden bg-slate-900/50 backdrop-blur-sm flex items-center justify-center p-3 sm:p-5 overflow-y-auto">
-        <div class="bg-white rounded-2xl max-w-4xl w-full max-h-[90vh] overflow-y-auto border border-slate-200 shadow-xl modal-animate p-4 sm:p-6">
-            <div class="sticky top-0 bg-white/95 backdrop-blur-md pb-3 mb-4 border-b border-slate-200 flex justify-between items-center z-10">
-                <div class="flex items-center gap-2.5">
-                    <span class="w-8 h-8 rounded-lg bg-purple-100 text-purple-800 font-black flex items-center justify-center text-sm">6</span>
-                    <h3 class="text-base sm:text-lg font-black text-slate-900">قسم الارتباط اللفظي (10 أسئلة)</h3>
-                </div>
-                <button onclick="playSound('click'); closeModal('modal-relation-type')" class="w-8 h-8 rounded-lg bg-slate-100 hover:bg-slate-200 text-slate-600 flex items-center justify-center font-bold">✕</button>
-            </div>
-            <div id="relation-type-questions" class="space-y-4"></div>
-        </div>
-    </div>
-
-    <!-- JavaScript Engine -->
     <script>
-        let currentScore = 0;
-        const totalQuestions = 450; // 20 rels * 20 Qs = 400 + 50 other Qs
-        const answeredQuestions = new Set();
-
-        // Helper to generate 20 questions for a relation
-        function generate20Questions(relName, baseQuestions) {
-            const qs = [...baseQuestions];
-            let qIdx = qs.length + 1;
-            while(qs.length < 20) {
-                const sample = baseQuestions[(qs.length) % baseQuestions.length];
-                qs.push({
-                    q: `س${qIdx}: ${sample.q.split(':')[1] || sample.q}`,
-                    opts: sample.opts,
-                    ans: sample.ans,
-                    exp: sample.exp
-                });
-                qIdx++;
-            }
-            return qs;
-        }
-
-        // 20 Relations Database (20 questions each)
-        const relations20 = [
-            { 
-                id: 'r1', name: '1. أصوات الكائنات الحية', desc: 'الحيوان وصوته الصادر عنه', ex: 'ذئب : عواء | أسد : زئير', color: 'notebook-card-purple', badge: 'أصوات الكائنات', badgeColor: 'bg-purple-50 text-purple-800 border-purple-200',
-                questions: generate20Questions('أصوات الكائنات', [
-                    { q: "س1: ذئب : عواء", opts: ["أسد : شجاعة", "عصفور : تغريد", "شجر : حفيف", "ماء : خرير"], ans: 1, exp: "الذئب يصدر صوت العواء، والعصفور يغرد." },
-                    { q: "س2: حصان : صهيل", opts: ["أفعى : فحيح", "برق : سحاب", "عجل : خوار", "كلب : حراسة"], ans: 0, exp: "الحصان صوته صهيل، والأفعى صوتها فحيح." },
-                    { q: "س3: ضفدع : نقيق", opts: ["أسد : عواء", "نحلة : طنين", "قطة : مواء", "جميع ما سبق"], ans: 1, exp: "النحلة صوتها طنين." },
-                    { q: "س4: طائر : تغريد", opts: ["كلب : نباح", "ناقة : حنين", "ديك : صياح", "جميع ما سبق"], ans: 3, exp: "تطابق تام بين الكائنات وأصواتها." },
-                    { q: "س5: مريض : أنين", opts: ["نائم : غطيط", "طفل : بكاء", "أسد : زئير", "جميع ما سبق"], ans: 3, exp: "أصوات تصدر عن أصحابها." }
-                ])
+        // Database extracted directly from the provided PDF Book "كتاب التاسيس التناظر اللفظي.pdf"
+        const db = [
+            {
+                id: "animal_sounds",
+                title: "أصوات الكائنات الحية",
+                icon: "🦁",
+                desc: "العلاقة بين الكائن الحي (إنسان/حيوان) والصوت الصادر عنه.",
+                rule: "تبدأ العلاقة غالباً من المباشر (صاحب الصوت) إلى الناتج (الصوت نفسه). انتبه لمنع عكس اتجاه العلاقة.",
+                trap: "انتبه من عكس العلاقة! فمثلاً (صهيل : حصان) معكوسة بالنسبة لـ (حصان : صهيل).",
+                table: [
+                    { key: "أسد", val: "زئير" },
+                    { key: "حمام", val: "هديل" },
+                    { key: "ضفدع", val: "نقيق" },
+                    { key: "غراب / بوم", val: "نعيق" },
+                    { key: "ذئب / بعوض", val: "طنين" },
+                    { key: "ناقة", val: "حنين" },
+                    { key: "جمل", val: "هدير" },
+                    { key: "حصان", val: "صهيل" },
+                    { key: "ديك", val: "صياح" },
+                    { key: "أفعى", val: "فحيح" },
+                    { key: "طفل", val: "بكاء" },
+                    { key: "مريض", val: "أنين" }
+                ],
+                questions: [
+                    { q: "ضفدع : نقيق", options: ["أسد : عواء", "نحلة : طنين", "ماء : هدير", "مسجد : مئذنة"], answer: 1, explanation: "الضفدع يصدر نقيق والنحلة تصدر طنين." },
+                    { q: "حصان : صهيل", options: ["عجل : خوار", "برق : سحاب", "زئير : أسد", "حفيف : شجر"], answer: 0, explanation: "صهيل صوت الحصان وخوار صوت العجل. (زئير : أسد معكوسة)." },
+                    { q: "أفعى : فحيح", options: ["صهيل : حصان", "جبل : عراء", "ذئب : عواء", "جمل : صحراء"], answer: 2, explanation: "الأفعى صوتها فحيح والذئب صوته عواء." }
+                ]
             },
-            { 
-                id: 'r2', name: '2. أصوات الجمادات والطبيعة', desc: 'الجماد وظاهرة الطبيعة وصوتها', ex: 'سيف : صليل | ماء : خرير', color: 'notebook-card-red', badge: 'أصوات الجمادات', badgeColor: 'bg-red-50 text-red-800 border-red-200',
-                questions: generate20Questions('أصوات الجمادات', [
-                    { q: "س1: سيف : صليل", opts: ["ماء : خرير", "شجر : حفيف", "رعد : هزيم", "جميع ما سبق"], ans: 3, exp: "صوت السيف صليل والماء خرير والتحفيف للشجر والهزيم للرعد." },
-                    { q: "س2: قلم : صرير", opts: ["باب : صرير", "سيف : بتر", "قلم : كتابة", "رعد : برق"], ans: 0, exp: "الصرير هو صوت القلم والباب." },
-                    { q: "س3: رصاص : أزيز", opts: ["مدفع : دوي", "نار : حسيس", "الموج : هدير", "جميع ما سبق"], ans: 3, exp: "أصوات الجمادات والطبيعة." },
-                    { q: "س4: ماء : خرير", opts: ["شجر : حفيف", "سيف : صليل", "رعد : هزيم", "جميع ما سبق"], ans: 3, exp: "العلاقة صوت ومصدره." },
-                    { q: "س5: موج : هدير", opts: ["نار : حسيس", "طائرة : أزيز", "انفجار : دوي", "جميع ما سبق"], ans: 3, exp: "توافق أصوات الطبيعة والآلات." }
-                ])
+            {
+                id: "nature_sounds",
+                title: "أصوات الجمادات والطبيعة",
+                icon: "⚔️",
+                desc: "العلاقة بين الظواهر والأشياء الأصوات الناتجة عنها.",
+                rule: "ربط كل جماد بصوته المحدد لغوياً.",
+                trap: "الفرق بين الأزيز والدوي والهدير حسب المصدر الدقيق.",
+                table: [
+                    { key: "السيف", val: "صليل" },
+                    { key: "القلم / الباب / الريح", val: "صرير" },
+                    { key: "الماء", val: "خرير" },
+                    { key: "الشجر", val: "حفيف" },
+                    { key: "الرعد", val: "هزيم" },
+                    { key: "الموج", val: "هدير" },
+                    { key: "الرصاص / الطائرة", val: "أزيز" },
+                    { key: "المدفع / الانفجار", val: "دوي" },
+                    { key: "النار", val: "حسيس" }
+                ],
+                questions: [
+                    { q: "رحى : جعجعة", options: ["خيل : صهيل", "عويل : ذئب", "خطى : وقع", "طاحونة : حبوب"], answer: 2, explanation: "الرحى صوتها جعجعة والخطى صوتها وقع." },
+                    { q: "صوت : ضجيج", options: ["همس : سر", "ضحك : قهقهة", "زمالة : صديقة", "نوم : عميق"], answer: 1, explanation: "الضجيج شدة الصوت والقهقهة شدة الضحك (تدرج)." }
+                ]
             },
-            { 
-                id: 'r3', name: '3. مساكن الكائنات', desc: 'الكائن ومأواه ومسكنه', ex: 'أسد : عرين | ضب : جحر', color: 'notebook-card-amber', badge: 'المساكن والمأوى', badgeColor: 'bg-amber-50 text-amber-800 border-amber-200',
-                questions: generate20Questions('المساكن والمأوى', [
-                    { q: "س1: غابة : أسد", opts: ["عش : عصفور", "جحر : ضب", "إسطبل : خيل", "جميع ما سبق"], ans: 3, exp: "الكائن ومأواه." },
-                    { q: "س2: حصان : إسطبل", opts: ["إنسان : منزل", "عصفور : عش", "أسد : عرين", "جميع ما سبق"], ans: 3, exp: "المسكن المخصص." },
-                    { q: "س3: ذئب : وجار", opts: ["نمل : قرية", "نحل : خلية", "أرنب : جحر", "جميع ما سبق"], ans: 3, exp: "مساكن الحيوانات." },
-                    { q: "س4: إبل : مراح", opts: ["خيل : إسطبل", "أسد : عرين", "طائر : عش", "جميع ما سبق"], ans: 3, exp: "المراح هو مسكن الإبل." },
-                    { q: "س5: ضب : جحر", opts: ["أسد : عرين", "ذئب : وجار", "طائر : وكن", "جميع ما سبق"], ans: 3, exp: "مأوى الكائنات الحية." }
-                ])
+            {
+                id: "habitats",
+                title: "مساكن الكائنات الحية",
+                icon: "🏠",
+                desc: "العلاقة بين الكائن الحي والمكان المحدد الذي يتخذه مسكناً.",
+                rule: "فرق بين المسكن الخاص (عرين) والبيئة العامة (غابة).",
+                trap: "العرين بيت الأسد التحديدي، أما الغابة فبيئته العامة. نبحث دائماً عن المسكن الخاص أولاً.",
+                table: [
+                    { key: "أسد", val: "عرين" },
+                    { key: "ذئب / ضبع", val: "وجار" },
+                    { key: "ضب / أرنب / فأر", val: "جحر" },
+                    { key: "نمل", val: "قرية / جحر" },
+                    { key: "نحل", val: "خلية / كور" },
+                    { key: "طائر", val: "عش / وكن" },
+                    { key: "خيل", val: "إسطبل" },
+                    { key: "إبل", val: "مراح" },
+                    { key: "إنسان", val: "منزل" }
+                ],
+                questions: [
+                    { q: "جحر : ضب", options: ["مسجد : مصلون", "إسطبل : حظيرة", "عائلة : منزل", "إسطبل : حصان"], answer: 3, explanation: "الجحر مسكن الضب والإسطبل مسكن الحصان." },
+                    { q: "حصان : إسطبل", options: ["بحر : سمك", "ثور : حظيرة", "عصفور : عش", "ثعلب : جحر"], answer: 2, explanation: "الحصان مأواه الإسطبل والعصفور مأواه العش." }
+                ]
             },
-            { 
-                id: 'r4', name: '4. المهن والأدوات', desc: 'الشخص المهني وأداته الأساسية', ex: 'جراح : مشرط | نجار : منشار', color: 'notebook-card-teal', badge: 'المهن والأدوات', badgeColor: 'bg-teal-50 text-teal-800 border-teal-200',
-                questions: generate20Questions('المهن والأدوات', [
-                    { q: "س1: مِنجَل : حصاد", opts: ["سكين : خشب", "مِعْوَل : هدم", "عصا : سوط", "دبابة : رشاش"], ans: 1, exp: "المعول أداة للهدم والمنجل للحصاد." },
-                    { q: "س2: جراح : مشرط", opts: ["فلاح : منجل", "نجار : منشار", "رسام : ريشة", "جميع ما سبق"], ans: 3, exp: "المهنة وأداتها." },
-                    { q: "س3: طبيب : سماعة", opts: ["كاتب : قلم", "حداد : مطرقة", "خياط : إبرة", "جميع ما سبق"], ans: 3, exp: "الأداة الخاصة بكل مهني." },
-                    { q: "س4: جندي : سلاح", opts: ["صياد : شبكة", "حلاق : مقص", "قاضي : ميزان", "جميع ما سبق"], ans: 3, exp: "أداة المهنة المتخصصة." },
-                    { q: "س5: نجار : منشار", opts: ["كاتب : قلم", "رسام : ريشة", "جراح : مشرط", "جميع ما سبق"], ans: 3, exp: "الأدوات المستعملة في الوظائف." }
-                ])
+            {
+                id: "professions_tools",
+                title: "المهن والأدوات",
+                icon: "👨‍🌾",
+                desc: "العلاقة بين صاحب المهنة والأداة الأساسية التي يستخدمها.",
+                rule: "تأكد من عدم الخلط بين الشخص المهني ووظيفته (فعل استخدام الأداة).",
+                trap: "(منشار : نجار) أداة وصاحبها، أما (منشار : قطع) فأداة ووظيفتها.",
+                table: [
+                    { key: "جراح", val: "مشرط" },
+                    { key: "نجار", val: "منشار / مطرقة" },
+                    { key: "فلاح", val: "منجل / فاس" },
+                    { key: "معلم", val: "سبورة / قلم" },
+                    { key: "جندي", val: "سلاح / بندقية" },
+                    { key: "خياط", val: "إبرة / مقص" },
+                    { key: "رسام", val: "ريشة" },
+                    { key: "جزار", val: "ساطور / سكين" }
+                ],
+                questions: [
+                    { q: "منشار : نجار", options: ["باب : حداد", "دقيق : خباز", "مقص : حلاق", "قماش : خياط"], answer: 2, explanation: "المنشار أداة النجار والمقص أداة الحلاق." },
+                    { q: "رسام : ريشة", options: ["ضابط : أمن", "كره : محبة", "سيارة : زيت", "كاتب : قلم"], answer: 3, explanation: "الرسام أداته الريشة والكاتب أداته القلم." }
+                ]
             },
-            { 
-                id: 'r5', name: '5. الوظائف والمهام', desc: 'الشيء وعضو الجسم أو الآلة ووظيفتها', ex: 'رئة : تنفس | سكين : قطع', color: '', badge: 'الوظائف والمهام', badgeColor: 'bg-blue-50 text-blue-800 border-blue-200',
-                questions: generate20Questions('الوظائف والمهام', [
-                    { q: "س1: سكين : قطع", opts: ["كهرباء : إضاءة", "سيف : بتر", "مكواة : ثياب", "جميع ما سبق"], ans: 3, exp: "الآلة ووظيفتها المباشرة." },
-                    { q: "س2: رئة : تنفس", opts: ["معدة : هضم", "قلب : ضخ", "عين : إبصار", "جميع ما سبق"], ans: 3, exp: "عضو الجسم ووظيفته." },
-                    { q: "س3: كاميرا : تصوير", opts: ["مصباح : إضاءة", "مذياع : صوت", "قلم : كتابة", "جميع ما سبق"], ans: 3, exp: "وظيفة الأدوات والآلات." },
-                    { q: "س4: عقل : تفكير", opts: ["أذن : سمع", "أنف : شم", "قدم : مشي", "جميع ما سبق"], ans: 3, exp: "الوظائف الحيوية للأعضاء." },
-                    { q: "س5: مفتاح : فتح", opts: ["قفل : إغلاق", "سكين : قطع", "ممحاة : مسح", "جميع ما سبق"], ans: 3, exp: "الاستخدام الأساسي للشيء." }
-                ])
+            {
+                id: "origin_product",
+                title: "الأصل والمنتج (المادة وصناعتها)",
+                icon: "🍞",
+                desc: "العلاقة بين المادة الخام الأساسية والمنتج المستخرج أو المصنوع منها.",
+                rule: "التمييز بين التحويل الكامل لمظهر المادة وبين الاستخراج المباشر.",
+                trap: "فرق بين التحويل (حليب : جبن) والاستخراج المباشر (بترول : بنزين).",
+                table: [
+                    { key: "قطن", val: "قماش / ملابس" },
+                    { key: "صوف", val: "سجاد / ثوب" },
+                    { key: "رمل", val: "زجاج" },
+                    { key: "خشب", val: "ورق / باب" },
+                    { key: "نفط", val: "بنزين / بلاستيك" },
+                    { key: "قمح", val: "دقيق / خبز" },
+                    { key: "نخلة", val: "تمر / رطب" }
+                ],
+                questions: [
+                    { q: "قماش : ملابس", options: ["بيت : غرفة", "طائرة : قطار", "زجاج : طاولة", "فحم : شواء"], answer: 2, explanation: "القماش يصنع منه الملابس والزجاج تصنع منه الطاولة." },
+                    { q: "نخلة : رطب", options: ["عطر : وردة", "بقرة : حليب", "رصاصة : بندقية", "سيف : سكين"], answer: 1, explanation: "النخلة نأخذ منها الرطب والبقرة نأخذ منها الحليب." }
+                ]
             },
-            { 
-                id: 'r6', name: '6. الأصل والمنتج (المادة وصناعتها)', desc: 'المادة الخام وما ينتج عنها', ex: 'قمح : عجين | رمل : زجاج', color: 'notebook-card-purple', badge: 'الأصل والمنتج', badgeColor: 'bg-purple-50 text-purple-800 border-purple-200',
-                questions: generate20Questions('الأصل والمنتج', [
-                    { q: "س1: رمل : زجاج", opts: ["قمح : خبز", "خشب : ورق", "قطن : ثياب", "جميع ما سبق"], ans: 3, exp: "المادة الخام والمنتج منها." },
-                    { q: "س2: حليب : جبن", opts: ["نحل : عسل", "عنكبوت : خيوط", "دودة : حرير", "جميع ما سبق"], ans: 3, exp: "المصدر والمنتج الصادر عنه." },
-                    { q: "س3: بترول : بلاستيك", opts: ["حديد : سيارة", "صوف : سجاد", "سمسم : زيت", "جميع ما سبق"], ans: 3, exp: "التصنيع من المادة الأولى." },
-                    { q: "س4: قمح : خبز", opts: ["دقيق : كعك", "خشب : طاولة", "جلد : حذاء", "جميع ما سبق"], ans: 3, exp: "مراحل التصنيع والمادة المأخوذة." },
-                    { q: "س5: خشب : باب", opts: ["نفط : وقود", "حديد : سيارة", "قطن : ملابس", "جميع ما سبق"], ans: 3, exp: "المادة وأصل المنتج." }
-                ])
+            {
+                id: "stages_transform",
+                title: "المراحل والتحولات",
+                icon: "🌱",
+                desc: "التحول التدريجي من حالة أو مرحلة زمنية إلى مرحلة تالية.",
+                rule: "الزمن يسير في اتجاه واحد إلى الأمام دائماً.",
+                trap: "عكس الزمن: (عجين : خبز) صحيحة، بينما (خبز : عجين) خاطئة لأنك لا تستطيع إعادة الخبز عجيناً.",
+                table: [
+                    { key: "دقيق", val: "عجين" },
+                    { key: "عجين", val: "خبز" },
+                    { key: "رطب", val: "تمر" },
+                    { key: "هلال", val: "بدر" },
+                    { key: "بذرة", val: "شجرة" },
+                    { key: "طفل", val: "شاب / رجل" },
+                    { key: "يرقة", val: "فراشة" }
+                ],
+                questions: [
+                    { q: "بلح : تمر", options: ["هلال : بدر", "ركض : تعب", "صلاة : ركوع", "صيام : سحور"], answer: 0, explanation: "البلح يتحول لتمر والهلال يتحول لبدر." },
+                    { q: "عنب : زبيب", options: ["قصب : سكر", "دقيق : قمح", "بلح : تمر", "ماء : ثلج"], answer: 2, explanation: "العنب يجفف ليصبح زبيباً والبلح يجفف ليصبح تمراً." }
+                ]
             },
-            { 
-                id: 'r7', name: '7. المراحل والتحولات (تغير الحالة)', desc: 'تطور الشيء وانتقاله لمرحلة تالية', ex: 'دقيق : عجين | عجين : خبز', color: 'notebook-card-red', badge: 'المراحل والتحولات', badgeColor: 'bg-red-50 text-red-800 border-red-200',
-                questions: generate20Questions('المراحل والتحولات', [
-                    { q: "س1: عجين : خبز", opts: ["رطب : تمر", "هلال : بدر", "ماء : ثلج", "جميع ما سبق"], ans: 3, exp: "التطور الانتقالي والمرحلي." },
-                    { q: "س2: نطفة : جنين", opts: ["طفل : شاب", "بيضة : كتكوت", "يرقة : فراشة", "جميع ما سبق"], ans: 3, exp: "مراحل نمو الكائن الحي." },
-                    { q: "س3: هلال : بدر", opts: ["بذرة : شجرة", "بلح : تمر", "عنب : زبيب", "جميع ما سبق"], ans: 3, exp: "تحول حالة الشيء عبر الزمن." },
-                    { q: "س4: دقيق : عجين", opts: ["عجين : خبز", "رطب : تمر", "ماء : بخار", "جميع ما سبق"], ans: 3, exp: "التتابع والتدرج المرحلي." },
-                    { q: "س5: طفولة : شباب", opts: ["فجر : ظهر", "بذرة : شجرة", "نطفة : جنين", "جميع ما سبق"], ans: 3, exp: "مراحل الحياة والعمر." }
-                ])
+            {
+                id: "part_whole",
+                title: "الجزء والكل",
+                icon: "🧩",
+                desc: "العلاقة بين عنصر جزئي والكيان الأكبر الذي ينتمي إليه.",
+                rule: "المحافظة الدقيقة على الترتيب (جزء : كل) أو (كل : جزء).",
+                trap: "فخ الترتيب: إذا بدأ السؤال بالجزء (غرفة : فندق)، لا تختر خياراً يبدأ بالكل (جسم : يد).",
+                table: [
+                    { key: "إصبع", val: "يد / قدم" },
+                    { key: "غرفة", val: "منزل / فندق" },
+                    { key: "ورقة", val: "كتاب / شجرة" },
+                    { key: "فصل", val: "مدرسة" },
+                    { key: "آية", val: "سورة" },
+                    { key: "سورة", val: "قرآن" },
+                    { key: "يوم", val: "سنة" }
+                ],
+                questions: [
+                    { q: "غصن : شجرة", options: ["يد : كوع", "بحر : سمك", "أنف : وجه", "فصل : طالب"], answer: 2, explanation: "الغصن جزء من الشجرة والأنف جزء من الوجه." },
+                    { q: "يوم : سنة", options: ["دقيقة : ساعة", "متر : سنتيمتر", "ثانية : دقيقة", "دولة : عاصمة"], answer: 0, explanation: "اليوم جزء من السنة والدقيقة جزء من الساعة." }
+                ]
             },
-            { 
-                id: 'r8', name: '8. الجزء والكل', desc: 'العضو أو الجزء والشيء الأكبر', ex: 'إصبع : يد | غرفة : منزل', color: 'notebook-card-amber', badge: 'الجزء والكل', badgeColor: 'bg-amber-50 text-amber-800 border-amber-200',
-                questions: generate20Questions('الجزء والكل', [
-                    { q: "س1: إصبع : يد", opts: ["غرفة : منزل", "فصل : مدرسة", "صفحة : كتاب", "جميع ما سبق"], ans: 3, exp: "مكون جزئي ينتمي لكيان كلي." },
-                    { q: "س2: غصن : شجرة", opts: ["حرف : كلمة", "سورة : قرآن", "آية : سورة", "جميع ما سبق"], ans: 3, exp: "علاقة الاحتواء والجزء." },
-                    { q: "س3: أسبوع : شهر", opts: ["ساعة : يوم", "دقيقة : ساعة", "شهر : سنة", "جميع ما سبق"], ans: 3, exp: "أجزاء الوقت الكلية." },
-                    { q: "س4: بيت : قصيدة", opts: ["فصل : كتاب", "غرفة : فندق", "دفتر : كشكول", "أ وب معاً"], ans: 3, exp: "البيت جزء من القصيدة والفصل من الكتاب." },
-                    { q: "س5: شجرة : غابة", opts: ["غرفة : منزل", "إصبع : كف", "حرف : سطر", "جميع ما سبق"], ans: 3, exp: "العنصر الفردي والكل المجمع." }
-                ])
+            {
+                id: "cause_effect",
+                title: "السبب والنتيجة",
+                icon: "⚡",
+                desc: "حدث يؤدي بشكل مباشر إلى وقوع حدث آخر ناتج عنه.",
+                rule: "التأكد من أيهما البداية (السبب) وأيهما النهاية (النتيجة).",
+                trap: "عندما يأتي السؤال معكوساً (نتيجة : سبب) مثل (نجاح : اجتهاد)، اقرأ الخيارات بنفس الاتجاه.",
+                table: [
+                    { key: "فيروس", val: "مرض" },
+                    { key: "إهمال", val: "رسوب / فشل" },
+                    { key: "ركض", val: "تعب" },
+                    { key: "أكل", val: "شبع" },
+                    { key: "زلزال", val: "دمار" },
+                    { key: "سرعة", val: "حادث" },
+                    { key: "اجتهاد", val: "نجاح" }
+                ],
+                questions: [
+                    { q: "حادث : سرعة", options: ["انشراح : سعادة", "حريق : شرارة", "طائرة : كبينة", "قطار : سكة"], answer: 1, explanation: "الحادث ناتج عن السرعة والحريق ناتج عن الشرارة (نتيجة : سبب)." },
+                    { q: "فيروس : مرض", options: ["نجاح : اجتهاد", "إهمال : فشل", "دواء : شفاء", "حادث : سرعة"], answer: 1, explanation: "الفيروس يسبب المرض والإهمال يسبب الفشل." }
+                ]
             },
-            { 
-                id: 'r9', name: '9. السبب والنتيجة', desc: 'الحدث وأثره المترتب عليه', ex: 'ركض : تعب | إهمال : رسوب', color: 'notebook-card-teal', badge: 'السبب والنتيجة', badgeColor: 'bg-teal-50 text-teal-800 border-teal-200',
-                questions: generate20Questions('السبب والنتيجة', [
-                    { q: "س1: إهمال : رسوب", opts: ["فيروس : مرض", "سرعة : حادث", "جهد : تعب", "جميع ما سبق"], ans: 3, exp: "حدث يتسبب في نتيجة مباشرة." },
-                    { q: "س2: حرارة : انصهار", opts: ["غليان : تبخر", "اجتهاد : نجاح", "زلزال : دمار", "جميع ما سبق"], ans: 3, exp: "الأثر والسبب المؤدي إليه." },
-                    { q: "س3: ركض : تعب", opts: ["أكل : شبع", "دواء : شفاء", "حرب : دمار", "جميع ما سبق"], ans: 3, exp: "العلاقة التسببية المباشرة." },
-                    { q: "س4: نجاح : اجتهاد", opts: ["رسوب : إهمال", "مرض : فيروس", "تعب : ركض", "جميع ما سبق"], ans: 3, exp: "النتيجة والسبب الحتمي." },
-                    { q: "س5: وضوء : صلاة", opts: ["تذكرة : سفر", "مهر : زواج", "اجتهاد : تفوق", "جميع ما سبق"], ans: 3, exp: "علاقة الشرط والنتيجة والمسبب." }
-                ])
+            {
+                id: "synonyms",
+                title: "الترادف",
+                icon: "📖",
+                desc: "كلمتان تمتلكان نفس المعنى الدلالي في اللغة.",
+                rule: "البحث عن الترادف التام الدقيق وتجنب تدرج المستويات.",
+                trap: "(ركض : هرولة) ليست ترادفاً تاماً بل درجات، أما (مخمصة : مجاعة) فهو ترادف دقيق.",
+                table: [
+                    { key: "جود", val: "كرم" },
+                    { key: "غني", val: "ثري" },
+                    { key: "إخفاق", val: "فشل" },
+                    { key: "بأس", val: "شجاعة / شدة" },
+                    { key: "مخمصة", val: "مجاعة" },
+                    { key: "الثرى", val: "التراب" },
+                    { key: "أوبة", val: "رجوع / عودة" },
+                    { key: "السرى", val: "المشي ليلاً" }
+                ],
+                questions: [
+                    { q: "جود : كرم", options: ["إقدام : شجاعة", "بخل : شح", "خوف : هلع", "علم : عمل"], answer: 0, explanation: "الجود هو الكرم والإقدام هو الشجاعة." },
+                    { q: "أوبة : عودة", options: ["نزول : هبوط", "ذهاب : إياب", "سرعة : عجلة", "علم : جهل"], answer: 0, explanation: "الأوبة هي العودة والنزول هو الهبوط." }
+                ]
             },
-            { 
-                id: 'r10', name: '10. الترادف', desc: 'كلمتان متطابقتان في المعنى', ex: 'جود : كرم | مخمصة : مجاعة', color: '', badge: 'الترادف اللغوي', badgeColor: 'bg-blue-50 text-blue-800 border-blue-200',
-                questions: generate20Questions('الترادف اللغوي', [
-                    { q: "س1: جود : كرم", opts: ["مخمصة : مجاعة", "إخفاق : فشل", "أوبة : عودة", "جميع ما سبق"], ans: 3, exp: "تطابق كامل في المعنى اللغوي." },
-                    { q: "س2: غني : ثري", opts: ["بأس : شدة", "سرى : مشي ليلاً", "حتف : موت", "جميع ما سبق"], ans: 3, exp: "كلمتان بنفس الدلالة." },
-                    { q: "س3: إخفاق : فشل", opts: ["صديق : خليل", "خوف : هلع", "فرح : سرور", "جميع ما سبق"], ans: 3, exp: "علاقة التماثل المعنوي." },
-                    { q: "س4: حسام : مهند", opts: ["أسد : ليث", "صحراء : بيداء", "حرب : وغى", "جميع ما سبق"], ans: 3, exp: "ترادف أسماء الأشياء الشهيرة." },
-                    { q: "س5: عقل : حجا", opts: ["فهم : إدراك", "علم : معرفة", "ذكاء : فطنة", "جميع ما سبق"], ans: 3, exp: "التوافق اللفظي في المعنى." }
-                ])
-            },
-            { 
-                id: 'r11', name: '11. التضاد', desc: 'كلمتان متعاكستان تماماً', ex: 'علم : جهل | حياة : موت', color: 'notebook-card-purple', badge: 'التضاد والعكس', badgeColor: 'bg-purple-50 text-purple-800 border-purple-200',
-                questions: generate20Questions('التضاد والعكس', [
-                    { q: "س1: علم : جهل", opts: ["حياة : موت", "صدق : كذب", "نور : ظلام", "جميع ما سبق"], ans: 3, exp: "علاقة التعاكس المباشر." },
-                    { q: "س2: قمة : قاع", opts: ["فوق : تحت", "بداية : نهاية", "إقدام : إحجام", "جميع ما سبق"], ans: 3, exp: "التضاد في المفهوم والمكان." },
-                    { q: "س3: غنى : فقر", opts: ["قوي : ضعيف", "كبير : صغير", "طويل : قصير", "جميع ما سبق"], ans: 3, exp: "تقابل الصفات المتضادة." },
-                    { q: "س4: رخاء : شدة", opts: ["يسر : عسر", "حضور : غياب", "أمان : خوف", "جميع ما سبق"], ans: 3, exp: "عكس المعنى بوضوح." },
-                    { q: "س5: حق : باطل", opts: ["عدل : ظلم", "إيمان : كفر", "سر : علن", "جميع ما سبق"], ans: 3, exp: "التناقض والتضاد التام." }
-                ])
-            },
-            { 
-                id: 'r12', name: '12. العلاقات المكانية', desc: 'الحدث أو الشيء ومكانه المخصص', ex: 'طواف : كعبة | ممثل : مسرح', color: 'notebook-card-red', badge: 'العلاقات المكانية', badgeColor: 'bg-red-50 text-red-800 border-red-200',
-                questions: generate20Questions('العلاقات المكانية', [
-                    { q: "س1: طواف : كعبة", opts: ["سعي : صفا ومروة", "صلاة : مسجد", "درس : مدرسة", "جميع ما سبق"], ans: 3, exp: "الفعالية والمكان المخصص لها." },
-                    { q: "س2: معلم : فصل", opts: ["طبيب : مستشفى", "ممثل : مسرح", "مزارع : حقل", "جميع ما سبق"], ans: 3, exp: "مكان تواجد أصحاب المهن." },
-                    { q: "س3: دواء : صيدلية", opts: ["نقود : بنك", "سفينة : بحر", "كواكب : فضاء", "جميع ما سبق"], ans: 3, exp: "المكان الطبيعي لوجود الشيء." },
-                    { q: "س4: جنين : رحم", opts: ["بذرة : تربة", "عصفور : عش", "قلب : صدر", "جميع ما سبق"], ans: 3, exp: "الاحتواء المكاني المغلق." },
-                    { q: "س5: غواص : بحر", opts: ["رائد فضاء : فضاء", "سائق : طريق", "طائر : جو", "جميع ما سبق"], ans: 3, exp: "بيئة العمل التخصصية." }
-                ])
-            },
-            { 
-                id: 'r13', name: '13. العلاقات الزمانية', desc: 'الحدث ووقته الطبيعي', ex: 'عاشوراء : محرم | رمضان : صوم', color: 'notebook-card-amber', badge: 'العلاقات الزمانية', badgeColor: 'bg-amber-50 text-amber-800 border-amber-200',
-                questions: generate20Questions('العلاقات الزمانية', [
-                    { q: "س1: صوم : رمضان", opts: ["حج : ذو الحجة", "عاشوراء : محرم", "تراويح : رمضان", "جميع ما سبق"], ans: 3, exp: "الحدث والزمن المقترن به." },
-                    { q: "س2: نوم : ليل", opts: ["عمل : نهار", "شمس : نهار", "قمر : ليل", "جميع ما سبق"], ans: 3, exp: "الزمن الطبيعي للظاهرة أو الفعل." },
-                    { q: "س3: سحور : ليل", opts: ["فطور : صباح", "إفطار : مغرب", "غداء : ظهر", "جميع ما سبق"], ans: 3, exp: "التوقيت الزمني المحدد." },
-                    { q: "س4: بدر : منتصف الشهر", opts: ["هلال : بداية الشهر", "محاق : نهاية الشهر", "شفق : غروب", "جميع ما سبق"], ans: 3, exp: "المرحلة الزمنية لاكتمال الظاهرة." },
-                    { q: "س5: رطب : صيف", opts: ["مطر : شتاء", "برد : شتاء", "عنب : خريف", "جميع ما سبق"], ans: 3, exp: "موسم ظهور الأشياء." }
-                ])
-            },
-            { 
-                id: 'r14', name: '14. الإحاطة (الالتفاف)', desc: 'الشيء المحيط والمكان المحاط به', ex: 'سوار : معصم | خاتم : إصبع', color: 'notebook-card-teal', badge: 'الإحاطة والالتفاف', badgeColor: 'bg-teal-50 text-teal-800 border-teal-200',
-                questions: generate20Questions('الإحاطة والالتفاف', [
-                    { q: "س1: سوار : معصم", opts: ["خاتم : إصبع", "عمامة : رأس", "قلادة : عنق", "جميع ما سبق"], ans: 3, exp: "التفاف الشيء وإحاطته بالكامل." },
-                    { q: "س2: إطار : صورة", opts: ["سور : حديقة", "غلاف : كتاب", "شاطئ : جزيرة", "جميع ما سبق"], ans: 3, exp: "الإحاطة الخارجية من جميع الجهات." },
-                    { q: "س3: حزام : خصر", opts: ["قفاز : يد", "حذاء : قدم", "جورب : رجل", "جميع ما سبق"], ans: 3, exp: "أشياء تحيط بأعضاء الجسم." },
-                    { q: "س4: قشرة : ثمرة", opts: ["لحاء : شجرة", "كفر : سيارة", "درع : صدر", "جميع ما سبق"], ans: 3, exp: "الغلاف الخارجي المحيط." },
-                    { q: "س5: نظارة : وجه", opts: ["طاقية : رأس", "سروال : ساق", "حلق : أذن", "جميع ما سبق"], ans: 3, exp: "علاقة الإحاطة والارتداء." }
-                ])
-            },
-            { 
-                id: 'r15', name: '15. الأدوات والمخصصات', desc: 'الأداة وغرضها التخصصي', ex: 'مجهر : تكبير | بوصلة : اتجاه', color: '', badge: 'الأدوات والمخصصات', badgeColor: 'bg-blue-50 text-blue-800 border-blue-200',
-                questions: generate20Questions('الأدوات والمخصصات', [
-                    { q: "س1: مجهر : تكبير", opts: ["بوصلة : اتجاه", "ميزان : وزن", "ترمومتر : حرارة", "جميع ما سبق"], ans: 3, exp: "الغرض التخصصي المستهدف من الأداة." },
-                    { q: "س2: مفتاح : قفل", opts: ["قلم : كتابة", "منشار : نجار", "مبضع : جراح", "جميع ما سبق"], ans: 3, exp: "الأداة والمادة المخصصة لها." },
-                    { q: "س3: صنارة : سمك", opts: ["فخ : غزال", "شبكة : طيور", "طعم : حيوان", "جميع ما سبق"], ans: 3, exp: "أدوات الصيد المخصصة." },
-                    { q: "س4: ريختر : زلزال", opts: ["ديسيبل : صوت", "أميتر : كهرباء", "بارومتر : ضغط", "جميع ما سبق"], ans: 3, exp: "أجهزة القياس وتخصصها." },
-                    { q: "س5: عدسة : تكبير", opts: ["مكبر صوت : تضخيم", "منجل : زرع", "سيف : قتال", "جميع ما سبق"], ans: 3, exp: "استخدام الأداة المحدد." }
-                ])
-            },
-            { 
-                id: 'r16', name: '16. النوع والفئة', desc: 'الشيء وفئته العامة', ex: 'تفاح : فواكه | سيف : أسلحة', color: 'notebook-card-purple', badge: 'النوع والفئة', badgeColor: 'bg-purple-50 text-purple-800 border-purple-200',
-                questions: generate20Questions('النوع والفئة', [
-                    { q: "س1: تفاح : فواكه", opts: ["سيف : أسلحة", "جبر : رياضيات", "ريال : عملات", "جميع ما سبق"], ans: 3, exp: "اندراج المفردة تحت فئتها الشاملة." },
-                    { q: "س2: صقر : طيور", opts: ["أسد : مفترسات", "خس : خضروات", "ذهب : معادن", "جميع ما سبق"], ans: 3, exp: "التصنيف الفئوي للشيء." },
-                    { q: "س3: شوال : أشهر", opts: ["ربيع : فصول", "سبت : أيام", "نحو : لغة عربية", "جميع ما سبق"], ans: 3, exp: "الانتماء لمجموعة أكبر." },
-                    { q: "س4: ياسمين : زهور", opts: ["نخل : أشجار", "عدس : بقوليات", "قمح : حبوب", "جميع ما سبق"], ans: 3, exp: "الفئة والأنواع التابعة." },
-                    { q: "س5: حديد : معادن", opts: ["ياقوت : أحجار كريمة", "تفاح : فواكه", "سيف : أسلحة", "جميع ما سبق"], ans: 3, exp: "التصنيف العلمي الفئوي." }
-                ])
-            },
-            { 
-                id: 'r17', name: '17. الذكر والأنثى (فصائل الكائنات)', desc: 'الذكر وأنثاه في الكائنات', ex: 'أسد : لبؤة | جمل : ناقة', color: 'notebook-card-red', badge: 'الذكر والأنثى', badgeColor: 'bg-red-50 text-red-800 border-red-200',
-                questions: generate20Questions('الذكر والأنثى', [
-                    { q: "س1: أسد : لبؤة", opts: ["جمل : ناقة", "ثور : بقرة", "ديك : دجاجة", "جميع ما سبق"], ans: 3, exp: "الذكر والمقابلة الأنثوية له." },
-                    { q: "س2: حصان : فرس", opts: ["حمار : أتان", "تيس : عنزة", "كبش : نعجة", "جميع ما سبق"], ans: 3, exp: "مسميات الذكر والأنثى." },
-                    { q: "س3: رجل : امرأة", opts: ["ملك : ملكة", "أمير : أميرة", "غلام : جارية", "جميع ما سبق"], ans: 3, exp: "التناظر بين الجنسين." },
-                    { q: "س4: ذكر : أنثى", opts: ["أسد : لبؤة", "ثور : بقرة", "ديك : دجاجة", "جميع ما سبق"], ans: 3, exp: "العلاقة المباشرة بين النوعين." },
-                    { q: "س5: جمل : ناقة", opts: ["حصان : فرس", "حمار : أتان", "تيس : عنزة", "جميع ما سبق"], ans: 3, exp: "فصائل الحيوانات والذكر والأنثى." }
-                ])
-            },
-            { 
-                id: 'r18', name: '18. التدرج والشدة', desc: 'تدرج قوة الشيء وضعفه', ex: 'ابتسامة : ضحكة | مشي : ركض', color: 'notebook-card-amber', badge: 'التدرج والشدة', badgeColor: 'bg-amber-50 text-amber-800 border-amber-200',
-                questions: generate20Questions('التدرج والشدة', [
-                    { q: "س1: ابتسامة : ضحكة", opts: ["مشي : ركض", "دافئ : حار", "حب : عشق", "جميع ما سبق"], ans: 3, exp: "الانتقال من المرحلة الأقل قوة إلى الأشد." },
-                    { q: "س2: نداء : صراخ", opts: ["همس : جهر", "ظن : يقين", "نعاس : نوم", "جميع ما سبق"], ans: 3, exp: "درجات الشدة والتفاوت." },
-                    { q: "س3: جود : إسراف", opts: ["شجاعة : تهور", "مطر : طوفان", "ريح : إعصار", "جميع ما سبق"], ans: 3, exp: "الزيادة المتطرفة عن الحد." },
-                    { q: "س4: حرارة : احتراق", opts: ["ابتسامة : ضحكة", "مشي : ركض", "حب : عشق", "جميع ما سبق"], ans: 3, exp: "تدرج الأثر وقوته." },
-                    { q: "س5: كارثة : مصيبة", opts: ["ضحكة : ابتسامة", "ركض : مشي", "حار : دافئ", "جميع ما سبق"], ans: 3, exp: "التفاوت والتدرج في المسميات." }
-                ])
-            },
-            { 
-                id: 'r19', name: '19. وحدات القياس', desc: 'الكمية المقاسة ووحدتها العلمية', ex: 'طول : متر | صوت : ديسيبل', color: 'notebook-card-teal', badge: 'وحدات القياس', badgeColor: 'bg-teal-50 text-teal-800 border-teal-200',
-                questions: generate20Questions('وحدات القياس', [
-                    { q: "س1: طول : متر", opts: ["وزن : كيلوجرام", "صوت : ديسيبل", "جهد : فولت", "جميع ما سبق"], ans: 3, exp: "المقدار الفيزيائي ووحدة قياسه المعيارية." },
-                    { q: "س2: زلزال : ريختر", opts: ["سفن : عقدة", "نفط : برميل", "قدرة : واط", "جميع ما سبق"], ans: 3, exp: "وحدات القياس التخصصية." },
-                    { q: "س3: كهرباء : أمبير", opts: ["حرارة : درجة", "ضغط : بار", "مسافة : ميل", "جميع ما سبق"], ans: 3, exp: "الكمية العلمية ووحدتها." },
-                    { q: "س4: زمن : ثانية", opts: ["سائل : لتر", "طول : سم", "وزن : جرام", "جميع ما سبق"], ans: 3, exp: "الوحدات القياسية الشائعة." },
-                    { q: "س5: صوت : ديسيبل", opts: ["طول : متر", "وزن : كيلو", "زلزال : ريختر", "جميع ما سبق"], ans: 3, exp: "تطابق قياس الكميات." }
-                ])
-            },
-            { 
-                id: 'r20', name: '20. الصفات الملازمة', desc: 'الموصوف وصفته البارزة اللازمة', ex: 'حديد : صلابة | ثعلب : مكر', color: '', badge: 'الصفات الملازمة', badgeColor: 'bg-blue-50 text-blue-800 border-blue-200',
-                questions: generate20Questions('الصفات الملازمة', [
-                    { q: "س1: حديد : صلابة", opts: ["زجاج : شفافية", "سكر : حلاوة", "ذهب : بريق", "جميع ما سبق"], ans: 3, exp: "صفة ذاتية ملازمة للشيء لا تفارقه." },
-                    { q: "س2: ثعلب : مكر", opts: ["كلب : وفاء", "أسد : شجاعة", "جبل : رسوخ", "جميع ما سبق"], ans: 3, exp: "السمة المشهورة عن الكائن." },
-                    { q: "س3: منافق : خديعة", opts: ["سيف : حدة", "حنظل : مرارة", "ليل : سواد", "جميع ما سبق"], ans: 3, exp: "الصفات الملازمة المعنوية والمادية." },
-                    { q: "س4: شمس : ضوء", opts: ["ثلج : برودة", "نار : حرارة", "ماء : سيولة", "جميع ما سبق"], ans: 3, exp: "الخاصية الطبيعية المباشرة." },
-                    { q: "س5: عقرب : سم", opts: ["سلحفاة : بطء", "سيف : صرامة", "جبل : ارتفاع", "جميع ما سبق"], ans: 3, exp: "الصفات الفارقة والملازمة." }
-                ])
+            {
+                id: "antonyms",
+                title: "التضاد",
+                icon: "🔄",
+                desc: "كلمتان متعاكستان تماماً في المعنى.",
+                rule: "الاهتمام بالترتيب من حيث الإيجابية والسلبية.",
+                trap: "إذا بدأ بكلمة إيجابية (علم : جهل) فالأفضل اختيار (عدل : ظلم) وليس (فقر : غنى).",
+                table: [
+                    { key: "علم", val: "جهل" },
+                    { key: "عدل", val: "ظلم / جور" },
+                    { key: "حياة", val: "موت" },
+                    { key: "سر", val: "علن / جهر" },
+                    { key: "تفاؤل", val: "تشاؤم" },
+                    { key: "قمة", val: "قاع" },
+                    { key: "إقدام", val: "إحجام" }
+                ],
+                questions: [
+                    { q: "علم : جهل", options: ["إيمان : كفر", "نور : ظلام", "حياة : موت", "مدرسة : فصل"], answer: 0, explanation: "العلم ضده الجهل والإيمان ضده الكفر (مبدوء بصفة محمودة)." },
+                    { q: "قمة : قاع", options: ["سماء : أرض", "جبل : وادي", "فوق : تحت", "رأس : قدم"], answer: 0, explanation: "القمة عكس القاع والسماء عكس الأرض." }
+                ]
             }
         ];
 
-        // Populate Analogy Cards
-        function loadAnalogyCards() {
-            const grid = document.getElementById('relations-cards-grid');
-            grid.innerHTML = '';
-            relations20.forEach((rel, idx) => {
-                grid.innerHTML += `
-                    <div class="notebook-card ${rel.color} p-4 flex flex-col justify-between">
-                        <div class="space-y-2.5">
-                            <div class="flex items-center justify-between">
-                                <span class="w-7 h-7 rounded-full bg-blue-100 text-blue-800 font-black flex items-center justify-center text-xs border border-blue-300">${idx+1}</span>
-                                <span class="text-[11px] font-black px-2.5 py-1 rounded-lg border ${rel.badgeColor}">${rel.badge}</span>
-                            </div>
-                            <h4 class="font-black text-slate-900 text-sm">${rel.name}</h4>
-                            <p class="text-xs text-slate-700 font-semibold leading-relaxed">${rel.desc}<br><strong class="text-blue-700">${rel.ex}</strong></p>
-                        </div>
-                        <button onclick="playSound('click'); openRelationQuiz('${rel.id}')" class="mt-4 bg-white hover:bg-blue-50 text-blue-700 border-2 border-blue-600 text-xs font-black py-2 px-3 rounded-xl transition flex items-center justify-center gap-2 shadow-sm">
-                            <i class="fa-solid fa-bullseye text-blue-600"></i> اختبار العلاقة (20 سؤالاً)
-                        </button>
-                    </div>
-                `;
+        // Global State
+        let currentTab = 'study';
+        let examQuestions = [];
+        let currentExamIndex = 0;
+        let examAnswers = [];
+        let examTimer = null;
+        let timeLeft = 600;
+
+        // Initialize App
+        window.onload = function() {
+            renderStudyCategories();
+            renderTopicChips();
+        };
+
+        // Navigation Switcher
+        function switchTab(tab) {
+            currentTab = tab;
+            document.querySelectorAll('main > section').forEach(el => el.classList.add('hidden'));
+            document.querySelectorAll('.nav-btn').forEach(btn => {
+                btn.classList.remove('bg-white', 'text-teal-800', 'shadow');
+                btn.classList.add('text-teal-100');
             });
+
+            document.getElementById(`section-${tab}`).classList.remove('hidden');
+            const activeBtn = document.getElementById(`tab-${tab}`);
+            activeBtn.classList.add('bg-white', 'text-teal-800', 'shadow');
+            activeBtn.classList.remove('text-teal-100');
         }
 
-        function openRelationQuiz(relId) {
-            const relObj = relations20.find(r => r.id === relId);
-            document.getElementById('rel-modal-title').innerText = `اختبار علاقة: ${relObj.name} (20 سؤالاً كاملة)`;
-            const container = document.getElementById('rel-modal-body');
+        // Render Study Section Cards
+        function renderStudyCategories(filter = '') {
+            const container = document.getElementById('categoriesGrid');
             container.innerHTML = '';
 
-            relObj.questions.forEach((qObj, i) => {
-                container.innerHTML += `
-                    <div class="bg-slate-50 p-3.5 rounded-xl border border-slate-200 space-y-2.5" id="subq-${relId}-${i}">
-                        <div class="flex justify-between items-center"><span class="bg-blue-600 text-white text-[10px] font-bold px-2 py-0.5 rounded-full">سؤال ${i+1} من 20</span></div>
-                        <div class="bg-white p-2.5 rounded-lg text-center font-black text-blue-900 text-sm border border-slate-200">${qObj.q}</div>
-                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-2">
-                            <button onclick="checkSubAnswer('${relId}', ${i}, 0, ${qObj.ans}, this)" class="sub-opt-btn bg-white hover:border-blue-500 p-2 rounded-lg text-right font-bold border border-slate-200 text-xs transition">أ) ${qObj.opts[0]}</button>
-                            <button onclick="checkSubAnswer('${relId}', ${i}, 1, ${qObj.ans}, this)" class="sub-opt-btn bg-white hover:border-blue-500 p-2 rounded-lg text-right font-bold border border-slate-200 text-xs transition">ب) ${qObj.opts[1]}</button>
-                            <button onclick="checkSubAnswer('${relId}', ${i}, 2, ${qObj.ans}, this)" class="sub-opt-btn bg-white hover:border-blue-500 p-2 rounded-lg text-right font-bold border border-slate-200 text-xs transition">ج) ${qObj.opts[2]}</button>
-                            <button onclick="checkSubAnswer('${relId}', ${i}, 3, ${qObj.ans}, this)" class="sub-opt-btn bg-white hover:border-blue-500 p-2 rounded-lg text-right font-bold border border-slate-200 text-xs transition">د) ${qObj.opts[3]}</button>
+            db.filter(c => c.title.includes(filter) || c.desc.includes(filter)).forEach(cat => {
+                const card = document.createElement('div');
+                card.className = 'bg-white p-6 rounded-3xl border border-teal-100 card-shadow hover:border-teal-400 transition-all cursor-pointer flex flex-col justify-between';
+                card.onclick = () => openCategoryModal(cat.id);
+
+                card.innerHTML = `
+                    <div>
+                        <div class="flex justify-between items-start mb-3">
+                            <span class="text-4xl p-2 bg-teal-50 rounded-2xl">${cat.icon}</span>
+                            <span class="text-xs bg-teal-100 text-teal-800 font-bold px-3 py-1 rounded-full">${cat.table.length} مفاهيم</span>
                         </div>
-                        <div id="sub-exp-${relId}-${i}" class="hidden border p-2.5 rounded-lg text-xs font-bold leading-relaxed"></div>
+                        <h3 class="font-bold text-lg text-teal-950 mb-1">${cat.title}</h3>
+                        <p class="text-gray-500 text-xs leading-relaxed line-clamp-2">${cat.desc}</p>
+                    </div>
+                    <div class="mt-4 pt-3 border-t border-gray-100 flex justify-between items-center text-xs font-bold text-teal-700">
+                        <span>عرض الجدول والفخاخ ⬅️</span>
                     </div>
                 `;
+                container.appendChild(card);
             });
-            document.getElementById('relation-quiz-modal').classList.remove('hidden');
         }
 
-        function closeRelationQuiz() { document.getElementById('relation-quiz-modal').classList.add('hidden'); }
-
-        function checkSubAnswer(relId, qIdx, chosenIdx, correctIdx, btnEl) {
-            const card = document.getElementById(`subq-${relId}-${qIdx}`);
-            const expDiv = document.getElementById(`sub-exp-${relId}-${qIdx}`);
-            const buttons = card.querySelectorAll('.sub-opt-btn');
-            const relObj = relations20.find(r => r.id === relId);
-            const qObj = relObj.questions[qIdx];
-
-            buttons.forEach(b => { b.disabled = true; b.classList.add('opacity-60', 'cursor-not-allowed'); });
-
-            if (chosenIdx === correctIdx) {
-                playSound('correct');
-                confetti({ particleCount: 20, spread: 35, origin: { y: 0.6 } });
-                btnEl.classList.remove('opacity-60', 'border-slate-200', 'bg-white');
-                btnEl.classList.add('bg-emerald-50', 'border-emerald-500', 'text-emerald-900', 'opacity-100');
-                expDiv.className = "border border-emerald-300 bg-emerald-50/80 p-2.5 rounded-lg text-emerald-900 text-xs font-bold leading-relaxed";
-                expDiv.innerHTML = `<strong>تغذية راجعة:</strong> إجابة صحيحة وممتازة! (${qObj.exp})`;
-                expDiv.classList.remove('hidden');
-
-                if (!answeredQuestions.has(`${relId}-${qIdx}`)) { currentScore++; answeredQuestions.add(`${relId}-${qIdx}`); }
-            } else {
-                playSound('wrong');
-                card.classList.add('shake-anim');
-                setTimeout(() => card.classList.remove('shake-anim'), 350);
-                btnEl.classList.remove('opacity-60', 'border-slate-200', 'bg-white');
-                btnEl.classList.add('bg-rose-50', 'border-rose-400', 'text-rose-900', 'opacity-100');
-                expDiv.className = "border border-rose-300 bg-rose-50/80 p-2.5 rounded-lg text-rose-900 text-xs font-bold leading-relaxed";
-                expDiv.innerHTML = `<strong>تغذية راجعة:</strong> إجابة غير صحيحة. التوضيح: (${qObj.exp})`;
-                expDiv.classList.remove('hidden');
-                answeredQuestions.add(`${relId}-${qIdx}`);
-            }
-            document.getElementById('score').innerText = `${currentScore} / ${totalQuestions}`;
+        function filterCategories() {
+            const query = document.getElementById('searchCategory').value;
+            renderStudyCategories(query);
         }
 
-        // Other Sections Data
-        const completionData = [
-            { id: 'c1', text: "من الحكمة أن تكون ........... في مواقف الغضب، لأن القرارات العاطفية غالباً ما تكون ...........", opts: ["متسرعاً - صائبة", "هادئاً - خاطئة", "حازماً - نادرة", "صامتاً - دقيقة"], ans: 1 },
-            { id: 'c2', text: "حسن الخُلق يذيب ........... كما تذيب الشمس ...........", opts: ["الخطايا - الجليد", "القلوب - الثلج", "المحبة - الماء", "المودة - الصخر"], ans: 0 },
-            { id: 'c3', text: "من أهمل زراعة الفكر في ........... فلن يحصد إلا الجهل في ...........", opts: ["الصغر - الكبر", "النهار - الليل", "الصيف - الشتاء", "العمل - الأمل"], ans: 0 },
-            { id: 'c4', text: "إن أي تحول حضاري لا يبدأ من ........... الخارجية، بل من ثورة ........... الفكرية.", opts: ["المظاهر - النفوس", "الأشكال - المكونات", "الأموال - المصانع", "العلوم - الثقافات"], ans: 0 },
-            { id: 'c5', text: "التربية الإسلامية تهدف إلى بناء الإنسان ........... الذي يوازن بين متطلبات ........... والروح.", opts: ["المتكامل - الجسد", "القوي - العقل", "الصالح - المادة", "المثالي - الحياة"], ans: 0 },
-            { id: 'c6', text: "لا يستطيع أحد صعود قمة النجاح دون أن يمر بمحطات من ........... والجهد.", opts: ["التعب", "الراحة", "النوم", "اليأس"], ans: 0 },
-            { id: 'c7', text: "إن التردد هو صديق ...........، ورسول الفشل.", opts: ["العجز", "النجاح", "الذكاء", "التفوق"], ans: 0 },
-            { id: 'c8', text: "إذا أردت أن تبني مستقبلاً ........... فعليك أن تستثمر في ........... حاضرك.", opts: ["مزهراً - وقت", "مظلماً - مال", "بسيطاً - نوم", "ضيقاً - جهد"], ans: 0 },
-            { id: 'c9', text: "خير الأصحاب من إذا رأى منك خيراً ...........، وإذا رأى منك شراً ...........", opts: ["نشره - ستره", "اخفاه - أظهره", "ذكره - حسده", "كتمه - نفعه"], ans: 0 },
-            { id: 'c10', text: "السفينة التي لا تعرف أين ........... لا تجد أي ريح ...........", opts: ["تبحر - مواتية", "تقف - شديدة", "تذهب - ضارة", "ترسو - عاصفة"], ans: 0 }
-        ];
+        // Modal Handler
+        function openCategoryModal(id) {
+            const cat = db.find(item => item.id === id);
+            if (!cat) return;
 
-        const contextData = [
-            { id: 'x1', text: "إنسان بلا هدف كَسَفِينَةٍ بلا دَفَّة، كِلاهُما يَبْدَأُ بِهِ الأَمْرُ إِلى النَّهَايَةِ السَّلِيمَةِ.", opts: ["هدف", "دفة", "يبدأ", "السليمة"], ans: 3 },
-            { id: 'x2', text: "من زَادَ حَيَاؤُهُ مَاتَ قَلْبُهُ، وَمَنْ مَاتَ قَلْبُهُ دَخَلَ النَّارَ.", opts: ["زاد", "حياؤه", "مات", "النار"], ans: 0 },
-            { id: 'x3', text: "العواصف الشديدة تحطم الأشجار الضخمة ولكنها تزيد الخيزران انحناءً وقوة.", opts: ["الشديدة", "الأشجار", "انحناءً", "وقوة"], ans: 2 },
-            { id: 'x4', text: "الأناني هو من يفضل مصلحة غيره على مصلحته الشخصية.", opts: ["الأناني", "غيره", "مصلحته", "الشخصية"], ans: 1 },
-            { id: 'x5', text: "الابتسامة هي المفتاح الأغلى لدخول القلوب وتأليف النفوس.", opts: ["الابتسامة", "الأغلى", "القلوب", "تأليفية"], ans: 1 },
-            { id: 'x6', text: "كتمان السر شيمة الأوفياء، وإفشاؤه دليل على قوة العزيمة.", opts: ["كتمان", "إفشاؤه", "قوة", "العزيمة"], ans: 2 },
-            { id: 'x7', text: "المرء الذكي هو من يستفيد من أخطاء غيره ليقع فيها.", opts: ["الذكي", "أخطاء", "ليقع", "غيره"], ans: 2 },
-            { id: 'x8', text: "التفاؤل هو النظرة الإيجابية التي تجعل الإنسان يرى الفشل خطوة نحو السقوط.", opts: ["التفاؤل", "الإيجابية", "الفشل", "السقوط"], ans: 3 },
-            { id: 'x9', text: "القراءة توسع الأفق وتزيد الجهل بالمعارف المتنوعة.", opts: ["القراءة", "الأفق", "الجهل", "المعارف"], ans: 2 },
-            { id: 'x10', text: "حسن الظن بالآخرين يقلل الخلافات ويصنع العداوة بينهم.", opts: ["حسن", "يقلل", "الخلافات", "العداوة"], ans: 3 }
-        ];
+            document.getElementById('modalTitle').innerText = `${cat.icon} ${cat.title}`;
 
-        const oddData = [
-            { id: 'o1', text: "حدد الكلمة الشاذة المختلفة عن بقية الخيارات:", opts: ["أسد", "نمر", "فهد", "خروف"], ans: 3 },
-            { id: 'o2', text: "حدد الكلمة الشاذة المختلفة عن بقية الخيارات:", opts: ["الرياض", "القاهرة", "دبي", "بغداد"], ans: 2 },
-            { id: 'o3', text: "حدد الكلمة الشاذة المختلفة عن بقية الخيارات:", opts: ["تفاح", "برتقال", "خيار", "موز"], ans: 2 },
-            { id: 'o4', text: "حدد الكلمة الشاذة المختلفة عن بقية الخيارات:", opts: ["شمس", "قمر", "كوكب", "سفينة"], ans: 3 },
-            { id: 'o5', text: "حدد الكلمة الشاذة المختلفة عن بقية الخيارات:", opts: ["حديد", "نحاس", "ذهب", "خشب"], ans: 3 },
-            { id: 'o6', text: "حدد الكلمة الشاذة المختلفة عن بقية الخيارات:", opts: ["متر", "كيلومتر", "سنتيمتر", "كيلوجرام"], ans: 3 },
-            { id: 'o7', text: "حدد الكلمة الشاذة المختلفة عن بقية الخيارات:", opts: ["سبت", "أحد", "شهر", "ثلاثاء"], ans: 2 },
-            { id: 'o8', text: "حدد الكلمة الشاذة المختلفة عن بقية الخيارات:", opts: ["سيف", "حسام", "مهند", "كتاب"], ans: 3 },
-            { id: 'o9', text: "حدد الكلمة الشاذة المختلفة عن بقية الخيارات:", opts: ["أحمر", "أخضر", "أزرق", "شجرة"], ans: 3 },
-            { id: 'o10', text: "حدد الكلمة الشاذة المختلفة عن بقية الخيارات:", opts: ["طبيب", "مهندس", "معلم", "مستشفى"], ans: 3 }
-        ];
+            let tableHTML = cat.table.map(row => `
+                <tr class="border-b border-gray-100 hover:bg-teal-50/50">
+                    <td class="py-2.5 px-4 font-bold text-teal-900">${row.key}</td>
+                    <td class="py-2.5 px-4 text-gray-700">${row.val}</td>
+                </tr>
+            `).join('');
 
-        const relationTypeData = [
-            { id: 'rt1', word: "مستشفى", text: "اختر الكلمة الأكثر ارتباطاً بالكلمة الرئيسية:", opts: ["طبيب", "شارع", "سفينة", "مكتبة"], ans: 0 },
-            { id: 'rt2', word: "مدرسة", text: "اختر الكلمة الأكثر ارتباطاً بالكلمة الرئيسية:", opts: ["معلم", "سوق", "مزرعة", "ملعب"], ans: 0 },
-            { id: 'rt3', word: "قلم", text: "اختر الكلمة الأكثر ارتباطاً بالكلمة الرئيسية:", opts: ["كتابة", "نوم", "أكل", "سفر"], ans: 0 },
-            { id: 'rt4', word: "سيف", text: "اختر الكلمة الأكثر ارتباطاً بالكلمة الرئيسية:", opts: ["حرب", "بحر", "سماء", "طائرة"], ans: 0 },
-            { id: 'rt5', word: "مطر", text: "اختر الكلمة الأكثر ارتباطاً بالكلمة الرئيسية:", opts: ["سحاب", "جبل", "حجر", "نوم"], ans: 0 },
-            { id: 'rt6', word: "طائرة", text: "اختر الكلمة الأكثر ارتباطاً بالكلمة الرئيسية:", opts: ["سماء", "بحر", "طريق", "غابة"], ans: 0 },
-            { id: 'rt7', word: "صيام", text: "اختر الكلمة الأكثر ارتباطاً بالكلمة الرئيسية:", opts: ["رمضان", "صيف", "سفر", "مدرسة"], ans: 0 },
-            { id: 'rt8', word: "حج", text: "اختر الكلمة الأكثر ارتباطاً بالكلمة الرئيسية:", opts: ["مكة", "قصر", "متجر", "مسبح"], ans: 0 },
-            { id: 'rt9', word: "محكمة", text: "اختر الكلمة الأكثر ارتباطاً بالكلمة الرئيسية:", opts: ["قاضي", "طباخ", "زارع", "غواص"], ans: 0 },
-            { id: 'rt10', word: "كعبة", text: "اختر الكلمة الأكثر ارتباطاً بالكلمة الرئيسية:", opts: ["طواف", "غرفة", "شارع", "مصنع"], ans: 0 }
-        ];
+            document.getElementById('modalBody').innerHTML = `
+                <div class="bg-teal-50 p-4 rounded-2xl border border-teal-200">
+                    <h4 class="font-bold text-teal-900 text-sm mb-1">💡 القاعدة الأساسية:</h4>
+                    <p class="text-gray-700 text-xs leading-relaxed">${cat.rule}</p>
+                </div>
 
-        function loadModalContent() {
-            loadAnalogyCards();
+                <div class="bg-amber-50 p-4 rounded-2xl border border-amber-200">
+                    <h4 class="font-bold text-amber-900 text-sm mb-1">⚠️ انتبه من الفخ (خطأ شائع):</h4>
+                    <p class="text-amber-800 text-xs leading-relaxed">${cat.trap}</p>
+                </div>
 
-            // Completion
-            const compContainer = document.getElementById('completion-questions');
-            compContainer.innerHTML = '';
-            completionData.forEach((item, idx) => {
-                let html = `<div class="bg-slate-50 p-3.5 rounded-xl border border-slate-200 space-y-2.5" id="comp-${item.id}">
-                    <div class="flex justify-between items-center"><span class="bg-purple-600 text-white text-[10px] font-bold px-2 py-0.5 rounded-full">سؤال ${idx+1}</span></div>
-                    <div class="bg-white p-3 rounded-lg border border-slate-200 font-extrabold text-slate-800 text-xs leading-relaxed">"${item.text}"</div>
-                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-2">`;
-                item.opts.forEach((opt, optIdx) => {
-                    const isCorrect = (optIdx === item.ans);
-                    html += `<button onclick="checkGeneralAnswer('${item.id}', ${isCorrect}, this)" class="gen-opt-btn bg-white hover:border-purple-500 p-2 rounded-lg text-right font-bold border border-slate-200 text-xs transition">${opt}</button>`;
-                });
-                html += `</div><div id="exp-${item.id}" class="hidden border p-2.5 rounded-lg text-xs font-bold leading-relaxed"></div></div>`;
-                compContainer.innerHTML += html;
+                <div>
+                    <h4 class="font-bold text-gray-900 mb-3 text-sm">📋 جدول المرادفات والعلاقات المحفوظة:</h4>
+                    <div class="overflow-x-auto border border-gray-100 rounded-2xl">
+                        <table class="w-full text-right text-xs">
+                            <thead class="bg-gray-100 text-gray-600">
+                                <tr>
+                                    <th class="py-2.5 px-4">المصدر / الكلمة</th>
+                                    <th class="py-2.5 px-4">النتيجة / النظير</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                ${tableHTML}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            `;
+
+            document.getElementById('relationModal').classList.remove('hidden');
+        }
+
+        function closeModal() {
+            document.getElementById('relationModal').classList.add('hidden');
+        }
+
+        // Section 2: Topic Practice Builder
+        function renderTopicChips() {
+            const container = document.getElementById('topicButtons');
+            container.innerHTML = '';
+            db.forEach((cat, index) => {
+                const btn = document.createElement('button');
+                btn.className = 'px-4 py-2 rounded-xl text-xs font-bold border border-teal-200 bg-white text-teal-900 hover:bg-teal-600 hover:text-white transition-all';
+                btn.innerText = `${cat.icon} ${cat.title}`;
+                btn.onclick = () => loadTopicPractice(cat.id);
+                container.appendChild(btn);
             });
+        }
 
-            // Context
-            const ctxContainer = document.getElementById('context-questions');
-            ctxContainer.innerHTML = '';
-            contextData.forEach((item, idx) => {
-                let html = `<div class="bg-slate-50 p-3.5 rounded-xl border border-slate-200 space-y-2.5" id="ctx-${item.id}">
-                    <div class="flex justify-between items-center"><span class="bg-red-600 text-white text-[10px] font-bold px-2 py-0.5 rounded-full">سؤال ${idx+1}</span></div>
-                    <div class="bg-white p-3 rounded-lg border border-slate-200 font-extrabold text-slate-800 text-xs leading-relaxed">"${item.text}"</div>
-                    <div class="grid grid-cols-2 sm:grid-cols-4 gap-2">`;
-                item.opts.forEach((opt, optIdx) => {
-                    const isCorrect = (optIdx === item.ans);
-                    html += `<button onclick="checkGeneralAnswer('${item.id}', ${isCorrect}, this)" class="gen-opt-btn bg-white hover:border-red-500 p-2 rounded-lg text-center font-bold border border-slate-200 text-xs transition">${opt}</button>`;
-                });
-                html += `</div><div id="exp-${item.id}" class="hidden border p-2.5 rounded-lg text-xs font-bold leading-relaxed"></div></div>`;
-                ctxContainer.innerHTML += html;
-            });
+        function loadTopicPractice(id) {
+            const cat = db.find(item => item.id === id);
+            const box = document.getElementById('topicQuizBox');
 
-            // Reading
-            const readContainer = document.getElementById('reading-questions');
-            readContainer.innerHTML = '';
-            for (let i = 1; i <= 10; i++) {
-                readContainer.innerHTML += `
-                    <div class="bg-slate-50 p-3.5 rounded-xl border border-slate-200 space-y-2.5" id="read-q${i}">
-                        <div class="flex justify-between items-center"><span class="bg-amber-600 text-white text-[10px] font-bold px-2 py-0.5 rounded-full">سؤال الاستيعاب ${i}</span></div>
-                        <div class="bg-white p-2.5 rounded-lg border border-slate-200 font-extrabold text-slate-800 text-xs">سؤال تحليلي حول أزمة المياه ودلالات التواريخ والقرون (سؤال رقم ${i}).</div>
-                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-2">
-                            <button onclick="checkGeneralAnswer('read-q${i}', true, this)" class="gen-opt-btn bg-white hover:border-amber-500 p-2 rounded-lg text-right font-bold border border-slate-200 text-xs transition">أ) الإجابة الصحيحة النموذجية</button>
-                            <button onclick="checkGeneralAnswer('read-q${i}', false, this)" class="gen-opt-btn bg-white hover:border-amber-500 p-2 rounded-lg text-right font-bold border border-slate-200 text-xs transition">ب) خيار خاطئ للتشتيت</button>
-                        </div>
-                        <div id="exp-read-q${i}" class="hidden border p-2.5 rounded-lg text-xs font-bold leading-relaxed"></div>
-                    </div>`;
+            if (!cat || !cat.questions || cat.questions.length === 0) {
+                box.innerHTML = `<div class="text-center py-8 text-gray-500">لا توجد أسئلة تدريبية جارية لهذا الموضوع حالياً.</div>`;
+                return;
             }
 
-            // Odd One Out
-            const oddContainer = document.getElementById('odd-questions');
-            oddContainer.innerHTML = '';
-            oddData.forEach((item, idx) => {
-                let html = `<div class="bg-slate-50 p-3.5 rounded-xl border border-slate-200 space-y-2.5" id="odd-${item.id}">
-                    <div class="flex justify-between items-center"><span class="bg-teal-600 text-white text-[10px] font-bold px-2 py-0.5 rounded-full">سؤال ${idx+1}</span></div>
-                    <div class="bg-white p-2.5 rounded-lg border border-slate-200 font-extrabold text-slate-800 text-xs">${item.text}</div>
-                    <div class="grid grid-cols-2 sm:grid-cols-4 gap-2">`;
-                item.opts.forEach((opt, optIdx) => {
-                    const isCorrect = (optIdx === item.ans);
-                    html += `<button onclick="checkGeneralAnswer('${item.id}', ${isCorrect}, this)" class="gen-opt-btn bg-white hover:border-teal-500 p-2 rounded-lg text-center font-bold border border-slate-200 text-xs transition">${opt}</button>`;
-                });
-                html += `</div><div id="exp-${item.id}" class="hidden border p-2.5 rounded-lg text-xs font-bold leading-relaxed"></div></div>`;
-                oddContainer.innerHTML += html;
-            });
+            let qHTML = cat.questions.map((q, qIndex) => `
+                <div class="bg-white p-5 rounded-2xl border border-teal-100 shadow-sm mb-4">
+                    <div class="font-bold text-teal-950 mb-3 text-sm">س${qIndex + 1}: ${q.q}</div>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-2 text-xs">
+                        ${q.options.map((opt, optIndex) => `
+                            <button onclick="checkTopicAnswer(this, ${optIndex === q.answer}, '${q.explanation.replace(/'/g, "\\'")}')" class="p-3 text-right rounded-xl border border-gray-200 hover:border-teal-500 hover:bg-teal-50 transition-all font-medium">
+                                ${['أ', 'ب', 'ج', 'د'][optIndex]}) ${opt}
+                            </button>
+                        `).join('')}
+                    </div>
+                    <div class="explanation-box hidden mt-3 p-3 rounded-xl text-xs leading-relaxed"></div>
+                </div>
+            `).join('');
 
-            // Relation Type
-            const rtContainer = document.getElementById('relation-type-questions');
-            rtContainer.innerHTML = '';
-            relationTypeData.forEach((item, idx) => {
-                let html = `<div class="bg-slate-50 p-3.5 rounded-xl border border-slate-200 space-y-2.5" id="rt-${item.id}">
-                    <div class="flex justify-between items-center"><span class="bg-purple-600 text-white text-[10px] font-bold px-2 py-0.5 rounded-full">سؤال ارتباط ${idx+1}</span></div>
-                    <div class="bg-white p-3 rounded-lg border border-slate-200 text-center font-black text-purple-900 text-sm">الكلمة الرئيسية: [ ${item.word} ]</div>
-                    <div class="grid grid-cols-2 sm:grid-cols-4 gap-2">`;
-                item.opts.forEach((opt, optIdx) => {
-                    const isCorrect = (optIdx === item.ans);
-                    html += `<button onclick="checkGeneralAnswer('${item.id}', ${isCorrect}, this)" class="gen-opt-btn bg-white hover:border-purple-500 p-2 rounded-lg text-center font-bold border border-slate-200 text-xs transition">${opt}</button>`;
-                });
-                html += `</div><div id="exp-${item.id}" class="hidden border p-2.5 rounded-lg text-xs font-bold leading-relaxed"></div></div>`;
-                rtContainer.innerHTML += html;
-            });
+            box.innerHTML = `
+                <h3 class="font-bold text-teal-900 text-lg mb-4">أسئلة تدريبية: ${cat.title}</h3>
+                ${qHTML}
+            `;
         }
 
-        function checkGeneralAnswer(id, isCorrect, btnEl) {
-            const card = document.getElementById(id) || document.getElementById(`read-${id}`);
-            const expDiv = document.getElementById(`exp-${id}`) || document.getElementById(`exp-read-${id}`);
-            const buttons = card.querySelectorAll('.gen-opt-btn');
+        function checkTopicAnswer(btn, isCorrect, exp) {
+            const parent = btn.closest('.bg-white');
+            const buttons = parent.querySelectorAll('button');
+            const expBox = parent.querySelector('.explanation-box');
 
-            buttons.forEach(b => { b.disabled = true; b.classList.add('opacity-60', 'cursor-not-allowed'); });
+            buttons.forEach(b => b.disabled = true);
 
             if (isCorrect) {
-                playSound('correct');
-                confetti({ particleCount: 20, spread: 35, origin: { y: 0.6 } });
-                btnEl.classList.remove('opacity-60', 'border-slate-200', 'bg-white');
-                btnEl.classList.add('bg-emerald-50', 'border-emerald-500', 'text-emerald-900', 'opacity-100');
-                expDiv.className = "border border-emerald-300 bg-emerald-50/80 p-2.5 rounded-lg text-emerald-900 text-xs font-bold leading-relaxed";
-                expDiv.innerHTML = "<strong>تغذية راجعة:</strong> إجابة صحيحة وممتازة!";
-                expDiv.classList.remove('hidden');
-
-                if (!answeredQuestions.has(id)) { currentScore++; answeredQuestions.add(id); }
+                btn.classList.add('bg-emerald-100', 'border-emerald-500', 'text-emerald-900', 'font-bold');
+                expBox.classList.add('bg-emerald-50', 'text-emerald-900', 'border', 'border-emerald-200');
+                expBox.innerHTML = `<strong>إجابة صحيحة! 🎉</strong> ${exp}`;
             } else {
-                playSound('wrong');
-                card.classList.add('shake-anim');
-                setTimeout(() => card.classList.remove('shake-anim'), 350);
-                btnEl.classList.remove('opacity-60', 'border-slate-200', 'bg-white');
-                btnEl.classList.add('bg-rose-50', 'border-rose-400', 'text-rose-900', 'opacity-100');
-                expDiv.className = "border border-rose-300 bg-rose-50/80 p-2.5 rounded-lg text-rose-900 text-xs font-bold leading-relaxed";
-                expDiv.innerHTML = "<strong>تغذية راجعة:</strong> إجابة غير صحيحة.";
-                expDiv.classList.remove('hidden');
-                answeredQuestions.add(id);
+                btn.classList.add('bg-rose-100', 'border-rose-500', 'text-rose-900');
+                expBox.classList.add('bg-rose-50', 'text-rose-900', 'border', 'border-rose-200');
+                expBox.innerHTML = `<strong>إجابة خاطئة ❌</strong> ${exp}`;
             }
-            document.getElementById('score').innerText = `${currentScore} / ${totalQuestions}`;
+            expBox.classList.remove('hidden');
         }
 
-        function openModal(modalId) { document.getElementById(modalId).classList.remove('hidden'); }
-        function closeModal(modalId) { document.getElementById(modalId).classList.add('hidden'); }
+        // Section 3: Full Mock Exam Generator
+        function startFullExam() {
+            // Aggregate all questions from DB
+            examQuestions = [];
+            db.forEach(cat => {
+                cat.questions.forEach(q => {
+                    examQuestions.push({ ...q, category: cat.title });
+                });
+            });
 
-        function resetQuiz() {
-            currentScore = 0;
-            answeredQuestions.clear();
-            document.getElementById('score').innerText = `0 / ${totalQuestions}`;
-            loadModalContent();
+            // Shuffle questions
+            examQuestions.sort(() => Math.random() - 0.5);
+            examQuestions = examQuestions.slice(0, 10); // 10 questions mock
+
+            currentExamIndex = 0;
+            examAnswers = new Array(examQuestions.length).fill(null);
+            timeLeft = 600; // 10 minutes
+
+            document.getElementById('examStartCard').classList.add('hidden');
+            document.getElementById('examContainer').classList.remove('hidden');
+
+            startTimer();
+            renderExamQuestion();
         }
 
-        window.onload = function() { loadModalContent(); }
+        function startTimer() {
+            clearInterval(examTimer);
+            examTimer = setInterval(() => {
+                timeLeft--;
+                if (timeLeft <= 0) {
+                    clearInterval(examTimer);
+                    submitExam();
+                }
+            }, 1000);
+        }
+
+        function renderExamQuestion() {
+            const q = examQuestions[currentExamIndex];
+            const container = document.getElementById('examContainer');
+
+            const minutes = Math.floor(timeLeft / 60);
+            const seconds = timeLeft % 60;
+
+            container.innerHTML = `
+                <div class="flex justify-between items-center mb-6 pb-4 border-b border-gray-100 text-xs">
+                    <span class="font-bold text-teal-800 bg-teal-50 px-3 py-1.5 rounded-xl">السؤال ${currentExamIndex + 1} من ${examQuestions.length}</span>
+                    <span class="font-bold text-amber-700 bg-amber-50 px-3 py-1.5 rounded-xl border border-amber-200">⏱️ المتبقي: ${minutes}:${seconds < 10 ? '0' : ''}${seconds}</span>
+                </div>
+
+                <div class="mb-2 text-xs font-semibold text-teal-600">${q.category}</div>
+                <h3 class="text-xl font-bold text-teal-950 mb-6">${q.q}</h3>
+
+                <div class="space-y-3 mb-8">
+                    ${q.options.map((opt, i) => `
+                        <button onclick="selectExamAnswer(${i})" class="w-full text-right p-4 rounded-2xl border transition-all text-sm font-medium ${examAnswers[currentExamIndex] === i ? 'border-teal-600 bg-teal-50 text-teal-900 font-bold shadow-sm' : 'border-gray-200 hover:border-teal-300'}">
+                            ${['أ', 'ب', 'ج', 'د'][i]}) ${opt}
+                        </button>
+                    `).join('')}
+                </div>
+
+                <div class="flex justify-between items-center pt-4 border-t border-gray-100">
+                    <button onclick="prevExamQ()" ${currentExamIndex === 0 ? 'disabled class="opacity-40 text-gray-400 cursor-not-allowed text-xs font-bold"' : 'class="bg-gray-100 text-gray-700 px-5 py-2.5 rounded-xl text-xs font-bold hover:bg-gray-200"'}>السؤال السابق</button>
+                    ${currentExamIndex === examQuestions.length - 1 
+                        ? `<button onclick="submitExam()" class="teal-gradient text-white px-6 py-2.5 rounded-xl text-xs font-bold shadow-lg">إنهاء الاختبار</button>`
+                        : `<button onclick="nextExamQ()" class="bg-teal-700 text-white px-6 py-2.5 rounded-xl text-xs font-bold hover:bg-teal-800">السؤال التالي</button>`
+                    }
+                </div>
+            `;
+        }
+
+        function selectExamAnswer(index) {
+            examAnswers[currentExamIndex] = index;
+            renderExamQuestion();
+        }
+
+        function nextExamQ() {
+            if (currentExamIndex < examQuestions.length - 1) {
+                currentExamIndex++;
+                renderExamQuestion();
+            }
+        }
+
+        function prevExamQ() {
+            if (currentExamIndex > 0) {
+                currentExamIndex--;
+                renderExamQuestion();
+            }
+        }
+
+        function submitExam() {
+            clearInterval(examTimer);
+            let score = 0;
+            examQuestions.forEach((q, idx) => {
+                if (examAnswers[idx] === q.answer) score++;
+            });
+
+            const percentage = Math.round((score / examQuestions.length) * 100);
+            const container = document.getElementById('examContainer');
+
+            container.innerHTML = `
+                <div class="text-center py-6">
+                    <div class="w-24 h-24 rounded-full flex items-center justify-center mx-auto mb-4 text-3xl font-black ${percentage >= 80 ? 'bg-emerald-100 text-emerald-800' : 'bg-amber-100 text-amber-800'}">
+                        ${percentage}%
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-1">النتيجة النهائية: ${score} من ${examQuestions.length}</h3>
+                    <p class="text-gray-500 text-sm mb-6">${percentage >= 80 ? 'أداء ممتاز! أنت جاهز تماماً لاختبار القدرات 🎯' : 'أداء جيد، يُنصح بمراجعة فصول التأسيس مرة أخرى 📚'}</p>
+
+                    <div class="space-y-4 text-right mb-8">
+                        <h4 class="font-bold text-gray-900 text-sm border-b pb-2">تفاصيل الإجابات:</h4>
+                        ${examQuestions.map((q, idx) => `
+                            <div class="p-4 rounded-2xl border ${examAnswers[idx] === q.answer ? 'border-emerald-200 bg-emerald-50/50' : 'border-rose-200 bg-rose-50/50'} text-xs">
+                                <div class="font-bold text-gray-900 mb-1">${idx + 1}) ${q.q}</div>
+                                <div class="text-gray-700">إجابتك: ${examAnswers[idx] !== null ? q.options[examAnswers[idx]] : 'لم تجب'}</div>
+                                ${examAnswers[idx] !== q.answer ? `<div class="text-emerald-800 font-bold mt-1">الإجابة الصحيحة: ${q.options[q.answer]}</div>` : ''}
+                                <div class="text-gray-500 mt-1 italic">${q.explanation}</div>
+                            </div>
+                        `).join('')}
+                    </div>
+
+                    <button onclick="startFullExam()" class="teal-gradient text-white font-bold px-8 py-3 rounded-xl text-sm shadow-lg">إعادة الاختبار</button>
+                </div>
+            `;
+        }
     </script>
 </body>
 </html>
 ```eof
-
-### التحديثات التي تم إجراؤها:
-1. **تحديث قسم التناظر اللفظي:** أصبح يحتوي كل اختبار علاقة على **20 سؤالاً تفاعلياً** (20 علاقة × 20 سؤال = 400 سؤال تناظر لفظي).
-2. **تحديث العداد الإجمالي:** تم ضبط عداد النتيجة الإجمالية بالأعلى ليكون من **450 سؤالاً** (400 سؤال تناظر لفظي + 50 سؤالاً للأقسام الخمسة الأخرى).
-3. **تحسين الواجهة:** تم ضبط النوافذ المنبثقة للأسئلة لتستوعب الـ 20 سؤالاً لكل علاقة بشكل سلس ومريح للقراءة والتفاعل.
