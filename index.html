@@ -131,10 +131,10 @@
             </div>
 
             <div class="flex items-center gap-3 bg-amber-50/80 px-4 py-1.5 rounded-2xl border-2 border-amber-300">
-                <a href="https://aztlaztl1512-bit.github.io/SAML-" target="_blank" class="text-xs font-black text-amber-900 bg-amber-300/80 hover:bg-amber-400 px-3 py-1.5 rounded-xl border border-amber-500 shadow-sm flex items-center gap-1.5 guide-pulse">
+                <button onclick="playSound('click'); openModal('modal-student-guide')" class="text-xs font-black text-amber-900 bg-amber-300/80 hover:bg-amber-400 px-3 py-1.5 rounded-xl border border-amber-500 shadow-sm flex items-center gap-1.5">
                     <i class="fa-solid fa-compass text-amber-800"></i>
-                    <span>الدليل الشامل 🧭</span>
-                </a>
+                    <span>دليل الطالب الجديد 🧭</span>
+                </button>
                 <div class="text-right pl-3 border-l border-amber-200">
                     <span class="block text-[10px] font-black text-amber-800">النتيجة الإجمالية</span>
                     <span id="score" class="text-sm font-black text-emerald-600">0 / 250</span>
@@ -149,6 +149,27 @@
 
     <!-- Main Content -->
     <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-6 space-y-6">
+
+        <!-- Student Guide Welcome Banner -->
+        <section class="bg-gradient-to-r from-amber-50 via-amber-100/50 to-orange-50 border-2 border-amber-400 rounded-2xl p-5 shadow-[4px_5px_0px_0px_rgba(217,119,6,0.3)]">
+            <div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
+                <div class="space-y-2">
+                    <div class="inline-flex items-center gap-1.5 bg-amber-200 text-amber-900 px-3 py-0.5 rounded-full text-xs font-black border border-amber-400">
+                        <i class="fa-solid fa-graduation-cap"></i> دليل التأسيس والبداية للطالب الجديد 2026
+                    </div>
+                    <h2 class="text-xl sm:text-2xl font-black text-slate-900">
+                        هل أنت طالب جديد في القدرات؟ ابدأ بفتح "دليل الطالب والفرق بين الورقي والمحوسب"! 🧭
+                    </h2>
+                    <p class="text-slate-700 text-xs sm:text-sm font-bold leading-relaxed">
+                        تعرف على الفرق بين اللفظي والكمي، والفرق بين الورقي والمحوسب، واحذر من فخاخ التناظر والأسئلة المخادعة في قياس.
+                    </p>
+                </div>
+                <button onclick="playSound('click'); openModal('modal-student-guide')" class="bg-amber-600 hover:bg-amber-700 text-white font-black px-5 py-2.5 rounded-xl text-xs sm:text-sm transition shadow-md whitespace-nowrap flex items-center gap-2">
+                    <span>افتح الدليل والفخاخ 📖</span>
+                    <i class="fa-solid fa-book-open"></i>
+                </button>
+            </div>
+        </section>
 
         <!-- Intro -->
         <section class="bg-white border-2 border-slate-800 rounded-2xl p-5 sm:p-6 shadow-[5px_5px_0px_0px_rgba(30,41,59,1)]">
@@ -430,6 +451,83 @@
             </div>
             <div class="flex-1 bg-slate-100 p-2">
                 <iframe id="pdf-frame" src="" class="w-full h-full rounded-2xl border-0 bg-white"></iframe>
+            </div>
+        </div>
+    </div>
+
+    <!-- MODAL STUDENT GUIDE -->
+    <div id="modal-student-guide" class="fixed inset-0 z-50 hidden bg-slate-900/60 backdrop-blur-sm flex items-center justify-center p-3 sm:p-5 overflow-y-auto">
+        <div class="bg-white rounded-2xl max-w-4xl w-full max-h-[90vh] overflow-y-auto border-4 border-amber-500 shadow-2xl modal-animate p-4 sm:p-6 space-y-5">
+            <div class="sticky top-0 bg-white/95 backdrop-blur-md pb-3 border-b border-slate-200 flex justify-between items-center z-10">
+                <div class="flex items-center gap-2.5">
+                    <span class="w-9 h-9 rounded-xl bg-amber-100 text-amber-800 font-black flex items-center justify-center text-lg border-2 border-amber-400">🧭</span>
+                    <div>
+                        <h3 class="text-base sm:text-lg font-black text-slate-900">دليل الطالب الجديد 2026 - أسرار وفخاخ القدرات</h3>
+                        <p class="text-xs text-slate-500 font-bold">كل ما تحتاج معرفته قبل دخول الاختبار الفعلي</p>
+                    </div>
+                </div>
+                <button onclick="playSound('click'); closeModal('modal-student-guide')" class="w-8 h-8 rounded-lg bg-slate-100 hover:bg-slate-200 text-slate-600 flex items-center justify-center font-bold">✕</button>
+            </div>
+
+            <!-- Content Sections -->
+            <div class="space-y-4 text-xs sm:text-sm font-bold text-slate-800 leading-relaxed">
+                <div class="bg-blue-50 border-2 border-blue-200 rounded-xl p-4 space-y-2">
+                    <h4 class="font-black text-blue-900 text-sm sm:text-base flex items-center gap-2">
+                        <i class="fa-solid fa-scale-balanced text-blue-600"></i>
+                        1. الفرق بين القسم اللفظي والقسم الكمي
+                    </h4>
+                    <p class="text-slate-700">
+                        • <strong>القسم اللفظي:</strong> يقيس مهارات الفهم اللغوي، استيعاب النصوص، التناظر اللفظي، واكتشاف الأخطاء السياقية والارتباط المعنوي.<br>
+                        • <strong>القسم الكمي:</strong> يقيس المهارات الرياضية والهندسية، الحساب الذهني، وتحليل البيانات والإحصاء.
+                    </p>
+                </div>
+
+                <div class="bg-amber-50 border-2 border-amber-200 rounded-xl p-4 space-y-3">
+                    <h4 class="font-black text-amber-900 text-sm sm:text-base flex items-center gap-2">
+                        <i class="fa-solid fa-laptop-file text-amber-600"></i>
+                        2. الفرق بين الاختبار الورقي والاختبار المحوسب
+                    </h4>
+                    <div class="overflow-x-auto">
+                        <table class="w-full text-right border-collapse text-xs">
+                            <thead>
+                                <tr class="bg-amber-200/70 text-amber-950 font-black">
+                                    <th class="p-2 border border-amber-300">وجه المقارنة</th>
+                                    <th class="p-2 border border-amber-300">الاختبار الورقي</th>
+                                    <th class="p-2 border border-amber-300">الاختبار المحوسب</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr class="border-b border-amber-200">
+                                    <td class="p-2 border border-amber-200 font-black">طريقة التظليل</td>
+                                    <td class="p-2 border border-amber-200">تظليل ورقة الإجابة بقلم الرصاص</td>
+                                    <td class="p-2 border border-amber-200">اختيار الخيار بالماوس على الشاشة</td>
+                                </tr>
+                                <tr class="border-b border-amber-200 bg-white/50">
+                                    <td class="p-2 border border-amber-200 font-black">عدد الفرص</td>
+                                    <td class="p-2 border border-amber-200">فرصتان فقط في السنة</td>
+                                    <td class="p-2 border border-amber-200">3 فرص متاحة طوال العام</td>
+                                </tr>
+                                <tr>
+                                    <td class="p-2 border border-amber-200 font-black">سرعة ظهور النتائج</td>
+                                    <td class="p-2 border border-amber-200">تستغرق من 3 إلى 4 أسابيع</td>
+                                    <td class="p-2 border border-amber-200">تظهر خلال 3 إلى 10 أيام عمل</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="bg-rose-50 border-2 border-rose-200 rounded-xl p-4 space-y-2">
+                    <h4 class="font-black text-rose-900 text-sm sm:text-base flex items-center gap-2">
+                        <i class="fa-solid fa-triangle-exclamation text-rose-600"></i>
+                        3. أسرار وفخاخ القدرات (حذار من السقوط فيها!)
+                    </h4>
+                    <ul class="list-disc list-inside space-y-1.5 text-slate-700">
+                        <li><strong>فخ العكس في التناظر:</strong> إذا بدأت العلاقة بـ (منجل : حصاد) كـ [أداة : وظيفة]، لا تقتنص (قطع : سكين) بل اختر (معول : هدم) لتطابق الترتيب!</li>
+                        <li><strong>فخ المعنى الظاهري في الخطأ السياقي:</strong> لا تبحث عن الكلمة الصعبة، بل ابحث عن الكلمة البسيطة التي "تُخَرِّب" الحكمة المنطقية.</li>
+                        <li><strong>فخ العجلة في التخمين:</strong> عند استبعاد خيارين، اقرأ الخيارين المتبقيين بتركيز بدلاً من الاختيار العشوائي.</li>
+                    </ul>
+                </div>
             </div>
         </div>
     </div>
